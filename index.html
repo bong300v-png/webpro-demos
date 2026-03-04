@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebPro Demos — Bộ Sưu Tập Thiết Kế Web Chuyên Nghiệp</title>
+  <meta name="description" content="Khám phá 25+ demo thiết kế web chuyên nghiệp. Từ Agency, E-Commerce, SaaS đến Creative Portfolio." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  
+  <link rel="stylesheet" href="/gallery.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- HERO SECTION — Giới thiệu showcase chính   -->
+  <!-- ═══════════════════════════════════════════ -->
+  <header class="hero" id="hero">
+    <!-- Animated gradient background -->
+    <div class="hero__bg">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span>25+ Premium Demos</span>
+      </div>
+      <h1 class="hero__title">
+        Web<span class="hero__title--accent">Pro</span> Demos
+      </h1>
+      <p class="hero__subtitle">
+        Bộ sưu tập thiết kế web chuyên nghiệp — Mỗi demo là một tác phẩm độc lập, 
+        sẵn sàng biến ý tưởng thành hiện thực.
+      </p>
+      <div class="hero__actions">
+        <a href="#demos" class="btn btn--primary" id="explore-btn">
+          <span>Khám Phá Ngay</span>
+          <i data-lucide="arrow-down" class="btn__icon"></i>
+        </a>
+        <a href="#categories" class="btn btn--ghost">
+          <i data-lucide="grid-3x3" class="btn__icon"></i>
+          <span>Xem Theo Danh Mục</span>
+        </a>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="25">0</span>
+          <span class="hero__stat-label">Demo Templates</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="5">0</span>
+          <span class="hero__stat-label">Ngành Nghề</span>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-number" data-count="100">0</span>
+          <span class="hero__stat-label">% Responsive</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      <span>Cuộn xuống</span>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- FILTER BAR — Lọc demo theo category        -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="filter-section" id="categories">
+    <div class="container">
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-filter="all">
+          <i data-lucide="layout-grid"></i>
+          <span>Tất Cả</span>
+          <span class="filter-count" id="count-all">0</span>
+        </button>
+        <button class="filter-btn" data-filter="business">
+          <i data-lucide="building-2"></i>
+          <span>Business</span>
+          <span class="filter-count" id="count-business">0</span>
+        </button>
+        <button class="filter-btn" data-filter="ecommerce">
+          <i data-lucide="shopping-bag"></i>
+          <span>E-Commerce</span>
+          <span class="filter-count" id="count-ecommerce">0</span>
+        </button>
+        <button class="filter-btn" data-filter="saas">
+          <i data-lucide="monitor-smartphone"></i>
+          <span>SaaS & Tech</span>
+          <span class="filter-count" id="count-saas">0</span>
+        </button>
+        <button class="filter-btn" data-filter="creative">
+          <i data-lucide="palette"></i>
+          <span>Creative</span>
+          <span class="filter-count" id="count-creative">0</span>
+        </button>
+        <button class="filter-btn" data-filter="specialized">
+          <i data-lucide="sparkles"></i>
+          <span>Specialized</span>
+          <span class="filter-count" id="count-specialized">0</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- DEMOS GRID — Lưới hiển thị tất cả demos    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <main class="demos-section" id="demos">
+    <div class="container">
+      <div class="demos-grid" id="demos-grid">
+        <!-- Demo cards sẽ được render bởi JS từ data -->
+      </div>
+
+      <!-- Empty state khi filter không có kết quả -->
+      <div class="demos-empty" id="demos-empty" style="display:none;">
+        <i data-lucide="search-x"></i>
+        <p>Không tìm thấy demo nào trong danh mục này</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- FOOTER                                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__brand">
+          Web<span class="footer__brand--accent">Pro</span> Demos
+        </p>
+        <p class="footer__text">
+          Thiết kế bởi <strong>16PA</strong> — Mỗi demo, một câu chuyện.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/gallery.js"></script>
+</body>
+</html>

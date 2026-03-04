@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stellar Corp — Giải Pháp Doanh Nghiệp Hiện Đại</title>
+    <meta name="description" content="Demo website doanh nghiệp cao cấp — Navy & Gold, thanh lịch và chuyên nghiệp" />
+
+    <!-- Google Fonts — Playfair Display (serif luxury) + Inter (body clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NAVBAR — Fixed, transparent → solid on scroll -->
+    <!-- ═══════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">
+                <span class="nav__logo-icon">S</span>
+                <span class="nav__logo-text">Stellar<span class="gold">Corp</span></span>
+            </a>
+            <ul class="nav__links">
+                <li><a href="#about" class="nav__link">Giới thiệu</a></li>
+                <li><a href="#services" class="nav__link">Dịch vụ</a></li>
+                <li><a href="#stats" class="nav__link">Thành tựu</a></li>
+                <li><a href="#testimonials" class="nav__link">Đánh giá</a></li>
+                <li><a href="#contact" class="nav__link nav__link--cta">Liên Hệ</a></li>
+            </ul>
+            <!-- Mobile menu hamburger -->
+            <button class="nav__burger" id="nav-burger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO — Full-screen premium header          -->
+    <!-- ═══════════════════════════════════════════ -->
+    <header class="hero" id="hero">
+        <!-- Decorative gold lines -->
+        <div class="hero__deco">
+            <div class="hero__line hero__line--1"></div>
+            <div class="hero__line hero__line--2"></div>
+            <div class="hero__line hero__line--3"></div>
+        </div>
+
+        <div class="hero__content">
+            <p class="hero__eyebrow">— Kể từ năm 2020 —</p>
+            <h1 class="hero__title">
+                Kiến Tạo<br />
+                <span class="hero__title--gold">Tương Lai</span><br />
+                Doanh Nghiệp
+            </h1>
+            <p class="hero__subtitle">
+                Chúng tôi mang đến giải pháp toàn diện cho doanh nghiệp — từ tư vấn chiến lược,
+                chuyển đổi số đến quản trị vận hành xuất sắc.
+            </p>
+            <div class="hero__actions">
+                <a href="#services" class="btn btn--gold">Khám Phá Dịch Vụ</a>
+                <a href="#about" class="btn btn--outline">Về Chúng Tôi →</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero__scroll">
+            <div class="hero__scroll-dot"></div>
+            <span>Cuộn xuống</span>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- ABOUT — Giới thiệu công ty                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__image">
+                    <div class="about__image-inner">
+                        <!-- Placeholder image với gold border accent -->
+                        <div class="about__img-placeholder">
+                            <span class="about__img-text">15+</span>
+                            <span class="about__img-sub">Năm Kinh Nghiệm</span>
+                        </div>
+                    </div>
+                    <!-- Gold accent corner -->
+                    <div class="about__accent"></div>
+                </div>
+                <div class="about__text">
+                    <p class="section-eyebrow">Về Chúng Tôi</p>
+                    <h2 class="section-title">Đối Tác Tin Cậy Của <span class="gold">500+ Doanh Nghiệp</span></h2>
+                    <p class="about__desc">
+                        Stellar Corp là đơn vị tư vấn và phát triển doanh nghiệp hàng đầu tại Việt Nam.
+                        Với đội ngũ chuyên gia giàu kinh nghiệm, chúng tôi cam kết mang đến các giải pháp
+                        tối ưu giúp doanh nghiệp bạn phát triển bền vững và đột phá trên thị trường.
+                    </p>
+                    <div class="about__features">
+                        <div class="about__feature">
+                            <div class="about__feature-icon">⚡</div>
+                            <div>
+                                <h4>Tư vấn chiến lược</h4>
+                                <p>Xây dựng lộ trình phát triển dài hạn</p>
+                            </div>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon">🔄</div>
+                            <div>
+                                <h4>Chuyển đổi số</h4>
+                                <p>Ứng dụng công nghệ vào vận hành</p>
+                            </div>
+                        </div>
+                        <div class="about__feature">
+                            <div class="about__feature-icon">📈</div>
+                            <div>
+                                <h4>Tăng trưởng doanh thu</h4>
+                                <p>Tối ưu marketing & bán hàng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SERVICES — 6 dịch vụ chính                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="services" id="services">
+        <div class="container">
+            <p class="section-eyebrow center">Dịch Vụ Của Chúng Tôi</p>
+            <h2 class="section-title center">Giải Pháp <span class="gold">Toàn Diện</span></h2>
+
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon">📋</div>
+                    <h3 class="service-card__title">Tư Vấn Quản Trị</h3>
+                    <p class="service-card__desc">Tối ưu cơ cấu tổ chức, quy trình vận hành và quản trị nhân sự hiệu
+                        quả.</p>
+                    <div class="service-card__line"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">💻</div>
+                    <h3 class="service-card__title">Chuyển Đổi Số</h3>
+                    <p class="service-card__desc">Số hóa toàn bộ quy trình, triển khai ERP, CRM và các giải pháp cloud.
+                    </p>
+                    <div class="service-card__line"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">📊</div>
+                    <h3 class="service-card__title">Phân Tích Dữ Liệu</h3>
+                    <p class="service-card__desc">Khai thác dữ liệu kinh doanh, dự báo xu hướng, hỗ trợ ra quyết định.
+                    </p>
+                    <div class="service-card__line"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🎯</div>
+                    <h3 class="service-card__title">Marketing Chiến Lược</h3>
+                    <p class="service-card__desc">Xây dựng thương hiệu, content marketing, quảng cáo đa kênh ROI cao.
+                    </p>
+                    <div class="service-card__line"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🤝</div>
+                    <h3 class="service-card__title">Đào Tạo Nhân Sự</h3>
+                    <p class="service-card__desc">Chương trình đào tạo nội bộ, phát triển năng lực lãnh đạo kế thừa.</p>
+                    <div class="service-card__line"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🛡️</div>
+                    <h3 class="service-card__title">Pháp Lý & Tuân Thủ</h3>
+                    <p class="service-card__desc">Tư vấn pháp lý doanh nghiệp, sở hữu trí tuệ, bảo vệ tài sản.</p>
+                    <div class="service-card__line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- STATS — Con số ấn tượng                    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stat-item">
+                    <span class="stat-item__number" data-target="500">0</span>
+                    <span class="stat-item__plus">+</span>
+                    <p class="stat-item__label">Doanh Nghiệp<br />Đã Hợp Tác</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-item__number" data-target="98">0</span>
+                    <span class="stat-item__plus">%</span>
+                    <p class="stat-item__label">Khách Hàng<br />Hài Lòng</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-item__number" data-target="15">0</span>
+                    <span class="stat-item__plus">+</span>
+                    <p class="stat-item__label">Năm<br />Kinh Nghiệm</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-item__number" data-target="1200">0</span>
+                    <span class="stat-item__plus">+</span>
+                    <p class="stat-item__label">Dự Án<br />Hoàn Thành</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- TESTIMONIALS — Đánh giá khách hàng         -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <p class="section-eyebrow center">Đánh Giá Khách Hàng</p>
+            <h2 class="section-title center">Lời Nhận Xét Từ <span class="gold">Đối Tác</span></h2>
+
+            <div class="testimonials__grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p class="testimonial-card__text">
+                        "Stellar Corp đã giúp công ty chúng tôi tăng trưởng 300% doanh thu chỉ trong 18 tháng.
+                        Đội ngũ tư vấn rất chuyên nghiệp và tận tâm."
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">NT</div>
+                        <div>
+                            <p class="testimonial-card__name">Nguyễn Thanh Tùng</p>
+                            <p class="testimonial-card__role">CEO — Vina Tech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p class="testimonial-card__text">
+                        "Chuyển đổi số hoàn hảo! Từ quy trình giấy tờ rối rắm, giờ mọi thứ đều tự động hóa.
+                        ROI vượt xa kỳ vọng ban đầu."
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">LH</div>
+                        <div>
+                            <p class="testimonial-card__name">Lê Hồng Minh</p>
+                            <p class="testimonial-card__role">Giám đốc — Golden Group</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p class="testimonial-card__text">
+                        "Chiến lược marketing mà Stellar thiết kế cho chúng tôi đã tạo ra bước ngoặt.
+                        Thương hiệu được nhận diện mạnh mẽ trên thị trường."
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">PT</div>
+                        <div>
+                            <p class="testimonial-card__name">Phạm Thị Hải</p>
+                            <p class="testimonial-card__role">CMO — Asia Foods Corp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CTA — Call to Action                       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta__content">
+                <p class="section-eyebrow center">Bắt Đầu Ngay</p>
+                <h2 class="cta__title">Sẵn Sàng <span class="gold">Chuyển Mình?</span></h2>
+                <p class="cta__subtitle">
+                    Đặt lịch tư vấn miễn phí với chuyên gia của chúng tôi.
+                    Cùng nhau kiến tạo tương lai doanh nghiệp bạn.
+                </p>
+                <div class="cta__actions">
+                    <a href="#" class="btn btn--gold btn--lg">Đặt Lịch Tư Vấn Miễn Phí</a>
+                    <a href="#" class="btn btn--outline btn--lg">Hotline: 1900-xxxx</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- FOOTER                                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <span class="nav__logo-icon">S</span>
+                    <span class="nav__logo-text">Stellar<span class="gold">Corp</span></span>
+                    <p class="footer__desc">Đối tác tư vấn doanh nghiệp hàng đầu Việt Nam. Kiến tạo tương lai bền vững.
+                    </p>
+                </div>
+                <div class="footer__links">
+                    <h4>Dịch vụ</h4>
+                    <a href="#">Tư vấn quản trị</a>
+                    <a href="#">Chuyển đổi số</a>
+                    <a href="#">Marketing</a>
+                    <a href="#">Đào tạo</a>
+                </div>
+                <div class="footer__links">
+                    <h4>Liên hệ</h4>
+                    <a href="#">info@stellarcorp.vn</a>
+                    <a href="#">1900-xxxx</a>
+                    <a href="#">TP. Hồ Chí Minh</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2025 Stellar Corp. Demo by <strong>WebPro</strong></p>
+                <a href="/" class="footer__back">← Quay lại Gallery</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
