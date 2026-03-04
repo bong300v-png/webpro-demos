@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>ProxyNet — Proxy & Tool Chuyên Nghiệp</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <h3 class="modal__title">[root@proxy ~]# login</h3>
+            <form class="modal__form" onsubmit="return showToast()"><input type="text" placeholder="username"
+                    class="modal__input" required /><input type="password" placeholder="password" class="modal__input"
+                    required /><button type="submit" class="btn btn--lime btn--full">ACCESS →</button>
+                <p class="modal__alt">Chưa có? <a href="#" onclick="showToast();return false">Register</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">[<span class="lime">proxy</span>net]</a>
+            <ul class="nav__links">
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#how">API Docs</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal()">Login</button><button
+                    class="btn btn--lime" onclick="showToast()">Register</button></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero__hud">
+            <div class="hud-box"><span class="lime">STATUS</span><strong>ACTIVE</strong></div>
+            <div class="hud-box"><span class="lime">UPTIME</span><strong>99.98%</strong></div>
+            <div class="hud-box"><span class="lime">NODES</span><strong>240+</strong></div>
+        </div>
+        <h1>PROXY <span class="lime glow">&</span> TOOLS<br />CHO DÂN <span class="lime glow">PRO</span></h1>
+        <p>Residential proxy, datacenter proxy, SOCKS5, HTTP — 190+ quốc gia. API mạnh, giá rẻ.</p>
+        <div class="hero__cta">
+            <a href="#products" class="btn btn--lime btn--lg">XEM SẢN PHẨM</a>
+            <button class="btn btn--outline btn--lg" onclick="openModal()">LOGIN / API KEY</button>
+        </div>
+    </header>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="st">[<span class="lime">products</span>]</h2>
+            <div class="products__grid">
+                <div class="prod-card">
+                    <h3>🌐 Residential Proxy</h3>
+                    <p>IP thật từ ISP, xoay tự động, bypass mọi anti-bot.</p>
+                    <div class="prod-stat"><span>190+ quốc gia</span><span>10M+ IPs</span></div>
+                    <div class="prod-price">Từ <strong class="lime">$2.5</strong>/GB</div><button
+                        class="btn btn--lime btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+                <div class="prod-card">
+                    <h3>⚡ Datacenter Proxy</h3>
+                    <p>Tốc độ cao, latency thấp, unlimited bandwidth.</p>
+                    <div class="prod-stat"><span>30+ quốc gia</span><span>100K+ IPs</span></div>
+                    <div class="prod-price">Từ <strong class="lime">$1.2</strong>/GB</div><button
+                        class="btn btn--lime btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+                <div class="prod-card">
+                    <h3>🧦 SOCKS5 Proxy</h3>
+                    <p>Private SOCKS5, authentication, dedicated IP.</p>
+                    <div class="prod-stat"><span>50+ quốc gia</span><span>Dedicated</span></div>
+                    <div class="prod-price">Từ <strong class="lime">$3</strong>/IP/ngày</div><button
+                        class="btn btn--lime btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+                <div class="prod-card">
+                    <h3>🤖 Anti-Detect Browser</h3>
+                    <p>Fingerprint masking, multi-profile, automation.</p>
+                    <div class="prod-stat"><span>Canvas spoof</span><span>WebRTC mask</span></div>
+                    <div class="prod-price">Từ <strong class="lime">$15</strong>/tháng</div><button
+                        class="btn btn--lime btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how" id="how">
+        <div class="container">
+            <h2 class="st">[<span class="lime">api_docs</span>]</h2>
+            <div class="code-block">
+                <pre><code><span class="dim"># Lấy proxy bằng API</span>
+<span class="lime">curl</span> -X GET "https://api.proxynet.vn/v1/proxy" \
+  -H "Authorization: Bearer <span class="y">YOUR_API_KEY</span>" \
+  -d "country=VN&type=residential"
+
+<span class="dim"># Response</span>
+{
+  "proxy": "<span class="lime">103.x.x.x:8080</span>",
+  "country": "VN",
+  "type": "residential",
+  "ttl": 600
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="st">[<span class="lime">pricing</span>]</h2>
+            <div class="pricing__grid">
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <div class="price"><span class="lime">$10</span>/tháng</div>
+                    <ul>
+                        <li>✓ 5GB traffic</li>
+                        <li>✓ Residential</li>
+                        <li>✓ API access</li>
+                    </ul><button class="btn btn--outline btn--full" onclick="openModal()">Mua</button>
+                </div>
+                <div class="price-card price-card--hot">
+                    <div class="hot-badge">BEST VALUE</div>
+                    <h3>Pro</h3>
+                    <div class="price"><span class="lime">$49</span>/tháng</div>
+                    <ul>
+                        <li>✓ 50GB traffic</li>
+                        <li>✓ All proxy types</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ Anti-detect browser</li>
+                    </ul><button class="btn btn--lime btn--full" onclick="openModal()">Mua</button>
+                </div>
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <div class="price"><span class="lime">Custom</span></div>
+                    <ul>
+                        <li>✓ Unlimited</li>
+                        <li>✓ Dedicated IPs</li>
+                        <li>✓ SLA 99.99%</li>
+                        <li>✓ Account manager</li>
+                    </ul><button class="btn btn--outline btn--full" onclick="showToast()">Liên hệ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>[<span class="lime">proxy</span>net] — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>DigiPay — Ví Điện Tử & Tài Khoản Số</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Auth Modal — hiện khi click Đăng nhập/Đăng ký -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs">
+                <button class="modal__tab active" onclick="switchTab('login')">Đăng nhập</button>
+                <button class="modal__tab" onclick="switchTab('register')">Đăng ký</button>
+            </div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()">
+                <input type="email" placeholder="Email" class="modal__input" required />
+                <input type="password" placeholder="Mật khẩu" class="modal__input" required />
+                <button type="submit" class="btn btn--blue btn--full">Đăng nhập</button>
+                <p class="modal__hint">Hoặc đăng nhập bằng</p>
+                <div class="modal__social"><button type="button" class="social-btn"
+                        onclick="showToast()">G</button><button type="button" class="social-btn"
+                        onclick="showToast()">f</button></div>
+            </form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()">
+                <input type="text" placeholder="Họ tên" class="modal__input" required />
+                <input type="email" placeholder="Email" class="modal__input" required />
+                <input type="tel" placeholder="Số điện thoại" class="modal__input" required />
+                <input type="password" placeholder="Mật khẩu" class="modal__input" required />
+                <button type="submit" class="btn btn--blue btn--full">Tạo tài khoản</button>
+            </form>
+        </div>
+    </div>
+    <!-- Toast notification -->
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">💎 Digi<span>Pay</span></a>
+            <ul class="nav__links">
+                <li><a href="#features">Tính năng</a></li>
+                <li><a href="#security">Bảo mật</a></li>
+                <li><a href="#pricing">Gói dịch vụ</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button class="btn btn--ghost" onclick="openModal('login')">Đăng nhập</button>
+                <button class="btn btn--blue" onclick="openModal('register')">Mở tài khoản</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero__visual">
+            <div class="hero__card card--main">
+                <div class="card__chip">💳</div>
+                <div class="card__number">•••• •••• •••• 4827</div>
+                <div class="card__row"><span>NGUYEN VAN A</span><span>09/28</span></div>
+                <div class="card__brand">DigiPay</div>
+            </div>
+            <div class="hero__card card--back"></div>
+        </div>
+        <div class="hero__content">
+            <span class="hero__badge">🏆 Top 1 Fintech Việt Nam</span>
+            <h1>Quản Lý Tài Chính<br /><span class="blue-text">Thông Minh</span></h1>
+            <p>Chuyển tiền 0đ phí, thanh toán QR, đầu tư tự động, quản lý chi tiêu — tất cả trong một ứng dụng.</p>
+            <div class="hero__cta">
+                <button class="btn btn--blue btn--lg" onclick="openModal('register')">Mở tài khoản miễn phí →</button>
+                <a href="#features" class="btn btn--outline btn--lg">Tìm hiểu thêm</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="container">
+            <p class="section-tag">Tính năng</p>
+            <h2 class="section-title">Tất cả trong <span class="blue-text">một app</span></h2>
+            <div class="features__grid">
+                <div class="feat-card">
+                    <div class="feat-card__icon">💸</div>
+                    <h3>Chuyển tiền 0đ</h3>
+                    <p>Chuyển khoản liên ngân hàng miễn phí, 24/7, xử lý tức thì.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card__icon">📊</div>
+                    <h3>Quản lý chi tiêu</h3>
+                    <p>AI tự phân loại chi tiêu, cảnh báo budget, biểu đồ trực quan.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card__icon">🔐</div>
+                    <h3>Bảo mật 3 lớp</h3>
+                    <p>Face ID, OTP, mã hóa AES-256. Bảo hiểm giao dịch 100%.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card__icon">📈</div>
+                    <h3>Đầu tư tự động</h3>
+                    <p>Robo-advisor thông minh, lãi suất từ 8%/năm, rút bất cứ lúc nào.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card__icon">🎁</div>
+                    <h3>Cashback 5%</h3>
+                    <p>Hoàn tiền tự động khi mua sắm tại 10,000+ đối tác.</p>
+                </div>
+                <div class="feat-card">
+                    <div class="feat-card__icon">🌍</div>
+                    <h3>Quốc tế</h3>
+                    <p>Thanh toán 150+ quốc gia, tỷ giá tốt nhất, Visa/Mastercard ảo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="security" id="security">
+        <div class="container">
+            <div class="security__grid">
+                <div class="security__text">
+                    <p class="section-tag">Bảo mật</p>
+                    <h2 class="section-title left">Tiền bạn, <span class="blue-text">an toàn tuyệt đối</span></h2>
+                    <ul class="security__list">
+                        <li>🛡️ Được NHNN cấp phép hoạt động</li>
+                        <li>🔒 Mã hóa end-to-end AES-256</li>
+                        <li>👁️ Xác thực sinh trắc học (Face ID, vân tay)</li>
+                        <li>📱 Giám sát giao dịch 24/7 bằng AI</li>
+                        <li>💰 Bảo hiểm giao dịch lên đến 500 triệu</li>
+                    </ul>
+                </div>
+                <div class="security__visual">
+                    <div class="shield-card">🛡️<p>256-bit<br />Encryption</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <p class="section-tag">Gói dịch vụ</p>
+            <h2 class="section-title">Chọn gói <span class="blue-text">phù hợp</span></h2>
+            <div class="pricing__grid">
+                <div class="price-card">
+                    <h3>Basic</h3>
+                    <div class="price">0₫</div>
+                    <p>Cá nhân</p>
+                    <ul>
+                        <li>✓ Chuyển tiền 0đ</li>
+                        <li>✓ 1 thẻ ảo</li>
+                        <li>✓ Quản lý chi tiêu</li>
+                    </ul><button class="btn btn--outline btn--full" onclick="openModal('register')">Đăng ký</button>
+                </div>
+                <div class="price-card price-card--hot">
+                    <div class="hot-tag">Phổ biến</div>
+                    <h3>Premium</h3>
+                    <div class="price">49K<span>/tháng</span></div>
+                    <p>Cá nhân & Freelancer</p>
+                    <ul>
+                        <li>✓ Mọi thứ Basic</li>
+                        <li>✓ Cashback 5%</li>
+                        <li>✓ 3 thẻ ảo</li>
+                        <li>✓ Đầu tư tự động</li>
+                    </ul><button class="btn btn--blue btn--full" onclick="openModal('register')">Dùng thử 30
+                        ngày</button>
+                </div>
+                <div class="price-card">
+                    <h3>Business</h3>
+                    <div class="price">199K<span>/tháng</span></div>
+                    <p>Doanh nghiệp SME</p>
+                    <ul>
+                        <li>✓ Mọi thứ Premium</li>
+                        <li>✓ Unlimited thẻ</li>
+                        <li>✓ API integration</li>
+                        <li>✓ Multi-user</li>
+                    </ul><button class="btn btn--outline btn--full" onclick="openModal('register')">Liên hệ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Sẵn sàng quản lý tài chính <span class="blue-text">thông minh?</span></h2>
+                <p>Mở tài khoản miễn phí trong 60 giây. Không cần giấy tờ.</p>
+                <button class="btn btn--blue btn--lg" onclick="openModal('register')">Mở tài khoản ngay →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>💎 Digi<span class="blue-text">Pay</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

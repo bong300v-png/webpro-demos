@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>KeyVault — Phần Mềm Bản Quyền Giá Tốt</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="scanlines"></div>
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__header">&gt;_ Đăng nhập hệ thống</div>
+            <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                <label>username:</label><input type="text" class="modal__input" placeholder="your@email.com" required />
+                <label>password:</label><input type="password" class="modal__input" placeholder="••••••••" required />
+                <button type="submit" class="btn btn--green btn--full">&gt; LOGIN</button>
+                <p class="modal__switch">Chưa có tài khoản? <a href="#" onclick="showToast();return false">Đăng ký</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo"><span class="g">⌘</span> Key<span class="g">Vault</span></a>
+            <ul class="nav__links">
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#how">Hướng dẫn</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal()">Đăng nhập</button><button
+                    class="btn btn--green" onclick="showToast()">Đăng ký</button></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero__code-block">
+            <p><span class="g">$</span> keyvault <span class="dim">--search</span> "Windows 11 Pro"</p>
+            <p class="fade-1"><span class="dim">→ Found 3 results...</span></p>
+            <p class="fade-2"><span class="g">✓</span> Windows 11 Pro OEM — <span class="y">299.000₫</span> <span
+                    class="dim">(retail: 4.200.000₫)</span></p>
+            <p class="fade-3"><span class="g">✓</span> Office 365 Family — <span class="y">450.000₫</span></p>
+            <p class="fade-4"><span class="g">$</span> <span class="cursor">_</span></p>
+        </div>
+        <h1>Key Bản Quyền<br /><span class="g glow">Giá Sinh Viên</span></h1>
+        <p class="hero__sub">Windows, Office, Antivirus, Adobe — Key chính hãng, kích hoạt vĩnh viễn, bảo hành trọn đời.
+        </p>
+        <div class="hero__cta">
+            <a href="#products" class="btn btn--green btn--lg">XEM SẢN PHẨM →</a>
+            <button class="btn btn--outline btn--lg" onclick="openModal()">ĐĂNG NHẬP</button>
+        </div>
+    </header>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="st"><span class="g">//</span> Sản phẩm bán chạy</h2>
+            <div class="products__grid">
+                <div class="prod-card">
+                    <div class="prod-emoji">🪟</div>
+                    <h3>Windows 11 Pro</h3>
+                    <p>Key OEM, kích hoạt online, vĩnh viễn</p>
+                    <div class="prod-price"><span class="old">4.200K</span><span class="now">299K</span></div><button
+                        class="btn btn--green btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-emoji">📝</div>
+                    <h3>Office 365 Family</h3>
+                    <p>6 user, 1TB OneDrive, 12 tháng</p>
+                    <div class="prod-price"><span class="old">1.800K</span><span class="now">450K</span></div><button
+                        class="btn btn--green btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-emoji">🛡️</div>
+                    <h3>Kaspersky Total</h3>
+                    <p>3 thiết bị, 12 tháng, auto-renew</p>
+                    <div class="prod-price"><span class="old">890K</span><span class="now">250K</span></div><button
+                        class="btn btn--green btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-emoji">🎨</div>
+                    <h3>Adobe CC All Apps</h3>
+                    <p>Trọn bộ Adobe, 12 tháng, update</p>
+                    <div class="prod-price"><span class="old">16.000K</span><span class="now">1.200K</span></div><button
+                        class="btn btn--green btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-emoji">💻</div>
+                    <h3>Visual Studio Pro</h3>
+                    <p>License vĩnh viễn, đầy đủ feature</p>
+                    <div class="prod-price"><span class="old">12.000K</span><span class="now">890K</span></div><button
+                        class="btn btn--green btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+                <div class="prod-card">
+                    <div class="prod-emoji">🎮</div>
+                    <h3>Windows 10 Pro</h3>
+                    <p>Key Retail, kích hoạt mọi máy</p>
+                    <div class="prod-price"><span class="old">3.500K</span><span class="now">199K</span></div><button
+                        class="btn btn--green btn--sm" onclick="showToast()">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how" id="how">
+        <div class="container">
+            <h2 class="st"><span class="g">//</span> Mua hàng như thế nào?</h2>
+            <div class="how__steps">
+                <div class="step">
+                    <div class="step__n">01</div>
+                    <h3>Chọn sản phẩm</h3>
+                    <p>Tìm key phần mềm bạn cần</p>
+                </div>
+                <div class="step">
+                    <div class="step__n">02</div>
+                    <h3>Thanh toán</h3>
+                    <p>Chuyển khoản / Momo / ZaloPay</p>
+                </div>
+                <div class="step">
+                    <div class="step__n">03</div>
+                    <h3>Nhận key tự động</h3>
+                    <p>Key gửi qua email trong 30 giây</p>
+                </div>
+                <div class="step">
+                    <div class="step__n">04</div>
+                    <h3>Kích hoạt</h3>
+                    <p>Làm theo hướng dẫn, bảo hành vĩnh viễn</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Sẵn sàng <span class="g glow">tiết kiệm?</span></h2>
+                <p>Đăng ký thành viên để nhận ưu đãi riêng và tích điểm.</p>
+                <button class="btn btn--green btn--lg" onclick="openModal()">TẠO TÀI KHOẢN →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p><span class="g">⌘</span> Key<span class="g">Vault</span> — Demo by <strong>WebPro</strong></p><a
+                    href="/" class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

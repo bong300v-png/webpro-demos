@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>GameZone — Nạp Game & Top-up Nhanh Nhất</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <h3 class="modal__title">🎮 ĐĂNG NHẬP</h3>
+            <form class="modal__form" onsubmit="return showToast()">
+                <input type="text" placeholder="Email / Username" class="modal__input" required />
+                <input type="password" placeholder="Mật khẩu" class="modal__input" required />
+                <button type="submit" class="btn btn--purple btn--full">VÀO GAME →</button>
+                <p class="modal__alt">Chưa có tài khoản? <a href="#" onclick="showToast();return false">Đăng ký</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">🎮 Game<span>Zone</span></a>
+            <ul class="nav__links">
+                <li><a href="#games">Games</a></li>
+                <li><a href="#topup">Nạp game</a></li>
+                <li><a href="#deals">Deal hot</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal()">Đăng nhập</button><button
+                    class="btn btn--purple" onclick="showToast()">Đăng ký</button></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>NẠP GAME<br /><span class="neon">SIÊU TỐC</span></h1>
+        <p>Top-up Genshin, MLBB, Free Fire, Valorant — nhận ngay trong 30 giây. Giá rẻ nhất thị trường.</p>
+        <div class="hero__cta">
+            <a href="#topup" class="btn btn--purple btn--lg">NẠP NGAY →</a>
+            <button class="btn btn--outline btn--lg" onclick="openModal()">ĐĂNG NHẬP</button>
+        </div>
+        <div class="hero__games">
+            <div class="game-icon">🎯</div>
+            <div class="game-icon">⚔️</div>
+            <div class="game-icon">🏆</div>
+            <div class="game-icon">🎲</div>
+            <div class="game-icon">🔫</div>
+        </div>
+    </header>
+
+    <section class="topup" id="topup">
+        <div class="container">
+            <h2 class="st">TOP-UP <span class="neon">GAME</span></h2>
+            <div class="topup__grid">
+                <div class="game-card">
+                    <div class="game-card__bg" style="background:linear-gradient(135deg,#1a237e,#4a148c)"></div>
+                    <div class="game-card__content">
+                        <div class="game-emoji">⚔️</div>
+                        <h3>Genshin Impact</h3>
+                        <p>Genesis Crystal</p>
+                        <div class="game-prices"><span>60💎 22K</span><span>300💎 99K</span></div><button
+                            class="btn btn--purple btn--sm" onclick="showToast()">Nạp ngay</button>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-card__bg" style="background:linear-gradient(135deg,#e65100,#ff6d00)"></div>
+                    <div class="game-card__content">
+                        <div class="game-emoji">🏆</div>
+                        <h3>MLBB</h3>
+                        <p>Diamond</p>
+                        <div class="game-prices"><span>86💎 20K</span><span>568💎 99K</span></div><button
+                            class="btn btn--purple btn--sm" onclick="showToast()">Nạp ngay</button>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-card__bg" style="background:linear-gradient(135deg,#004d40,#00c853)"></div>
+                    <div class="game-card__content">
+                        <div class="game-emoji">🔫</div>
+                        <h3>Free Fire</h3>
+                        <p>Kim Cương</p>
+                        <div class="game-prices"><span>100💎 20K</span><span>520💎 99K</span></div><button
+                            class="btn btn--purple btn--sm" onclick="showToast()">Nạp ngay</button>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-card__bg" style="background:linear-gradient(135deg,#b71c1c,#d32f2f)"></div>
+                    <div class="game-card__content">
+                        <div class="game-emoji">🎯</div>
+                        <h3>Valorant</h3>
+                        <p>VP Points</p>
+                        <div class="game-prices"><span>475VP 99K</span><span>1000VP 199K</span></div><button
+                            class="btn btn--purple btn--sm" onclick="showToast()">Nạp ngay</button>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-card__bg" style="background:linear-gradient(135deg,#1565c0,#42a5f5)"></div>
+                    <div class="game-card__content">
+                        <div class="game-emoji">⚽</div>
+                        <h3>FIFA Online</h3>
+                        <p>FC Points</p>
+                        <div class="game-prices"><span>100FC 22K</span><span>500FC 99K</span></div><button
+                            class="btn btn--purple btn--sm" onclick="showToast()">Nạp ngay</button>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-card__bg" style="background:linear-gradient(135deg,#311b92,#7c4dff)"></div>
+                    <div class="game-card__content">
+                        <div class="game-emoji">🎲</div>
+                        <h3>Liên Quân</h3>
+                        <p>Quân Huy</p>
+                        <div class="game-prices"><span>90QH 20K</span><span>530QH 99K</span></div><button
+                            class="btn btn--purple btn--sm" onclick="showToast()">Nạp ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="deals" id="deals">
+        <div class="container">
+            <div class="deal-banner">
+                <h2>🔥 DEAL <span class="neon">CUỐI TUẦN</span></h2>
+                <p>Nạp từ 200K tặng thêm 10% giá trị. Áp dụng tất cả game.</p>
+                <button class="btn btn--purple btn--lg" onclick="openModal()">NHẬN DEAL →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🎮 Game<span class="neon">Zone</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

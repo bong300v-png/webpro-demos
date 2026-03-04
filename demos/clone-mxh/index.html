@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>SocialVibe — Mạng Xã Hội Thế Hệ Mới</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()">
+                <input type="text" placeholder="Username hoặc Email" class="modal__input" required />
+                <input type="password" placeholder="Mật khẩu" class="modal__input" required />
+                <button type="submit" class="btn btn--gradient btn--full">Đăng nhập</button>
+                <p class="modal__or">— hoặc —</p>
+                <button type="button" class="btn btn--social btn--full" onclick="showToast()">📱 Đăng nhập bằng
+                    Google</button>
+                <button type="button" class="btn btn--social btn--full" onclick="showToast()">🍎 Đăng nhập bằng
+                    Apple</button>
+            </form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()">
+                <input type="text" placeholder="Tên hiển thị" class="modal__input" required />
+                <input type="email" placeholder="Email" class="modal__input" required />
+                <input type="text" placeholder="@username" class="modal__input" required />
+                <input type="password" placeholder="Mật khẩu" class="modal__input" required />
+                <button type="submit" class="btn btn--gradient btn--full">Tạo tài khoản</button>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">🌈 Social<span>Vibe</span></a>
+            <ul class="nav__links">
+                <li><a href="#features">Tính năng</a></li>
+                <li><a href="#community">Cộng đồng</a></li>
+                <li><a href="#download">Tải app</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal('login')">Đăng
+                    nhập</button><button class="btn btn--gradient" onclick="openModal('register')">Tham gia
+                    ngay</button></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero__phones">
+            <div class="phone phone--left">
+                <div class="phone__screen">
+                    <div class="story-row">
+                        <div class="story">
+                            <div class="story__ring"></div>🌸
+                        </div>
+                        <div class="story">
+                            <div class="story__ring"></div>🎵
+                        </div>
+                        <div class="story">
+                            <div class="story__ring"></div>🎮
+                        </div>
+                    </div>
+                    <div class="post">
+                        <div class="post__header">
+                            <div class="avatar" style="background:linear-gradient(135deg,#f09433,#dc2743)">A</div>
+                            <div><strong>anhtu_vn</strong><br /><span>2 giờ trước</span></div>
+                        </div>
+                        <div class="post__img">🏞️</div>
+                        <div class="post__actions">❤️ 2.4K &nbsp;💬 89 &nbsp;↗️</div>
+                    </div>
+                </div>
+            </div>
+            <div class="phone phone--right">
+                <div class="phone__screen">
+                    <div class="reel">
+                        <div class="reel__overlay"><strong>@ngocmai</strong>
+                            <p>Dance challenge 🔥 #viral</p>
+                            <div class="reel__music">🎵 Trending Sound</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__content">
+            <h1>Kết Nối.<br /><span class="gradient-text">Sáng Tạo.</span><br />Viral.</h1>
+            <p>Chia sẻ khoảnh khắc, khám phá nội dung trending, kết nối với triệu người dùng Việt Nam.</p>
+            <div class="hero__cta">
+                <button class="btn btn--gradient btn--lg" onclick="openModal('register')">Tạo tài khoản miễn
+                    phí</button>
+                <a href="#features" class="btn btn--outline btn--lg">Khám phá</a>
+            </div>
+            <div class="hero__stats">
+                <div class="stat"><strong>5M+</strong><span>Users</span></div>
+                <div class="stat"><strong>20M+</strong><span>Posts/ngày</span></div>
+                <div class="stat"><strong>4.9★</strong><span>App Store</span></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Mọi thứ bạn <span class="gradient-text">yêu thích</span></h2>
+            <div class="features__grid">
+                <div class="feat-card feat-card--ig">
+                    <div class="feat-icon">📸</div>
+                    <h3>Stories & Reels</h3>
+                    <p>Chia sẻ video ngắn, story 24h, filter AR cực đỉnh.</p>
+                </div>
+                <div class="feat-card feat-card--tt">
+                    <div class="feat-icon">🎵</div>
+                    <h3>Live Stream</h3>
+                    <p>Phát trực tiếp, nhận quà, tương tác realtime.</p>
+                </div>
+                <div class="feat-card feat-card--tw">
+                    <div class="feat-icon">💬</div>
+                    <h3>Nhắn tin</h3>
+                    <p>Chat 1:1, group chat, gọi video HD, sticker.</p>
+                </div>
+                <div class="feat-card feat-card--yt">
+                    <div class="feat-icon">🛒</div>
+                    <h3>Shop trong App</h3>
+                    <p>Mua sắm trực tiếp từ creator, thanh toán 1 chạm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="community" id="community">
+        <div class="container">
+            <h2 class="section-title">Cộng đồng <span class="gradient-text">sôi động</span></h2>
+            <div class="community__grid">
+                <div class="user-card">
+                    <div class="user-card__avatar" style="background:linear-gradient(135deg,#f09433,#e6683c)">🌟</div>
+                    <h4>nhaphuong_official</h4>
+                    <p>Fashion & Beauty Creator</p><span>1.2M followers</span>
+                </div>
+                <div class="user-card">
+                    <div class="user-card__avatar" style="background:linear-gradient(135deg,#667eea,#764ba2)">🎮</div>
+                    <h4>gamer_minhduc</h4>
+                    <p>Gaming & Entertainment</p><span>890K followers</span>
+                </div>
+                <div class="user-card">
+                    <div class="user-card__avatar" style="background:linear-gradient(135deg,#11998e,#38ef7d)">🍜</div>
+                    <h4>foodie_saigon</h4>
+                    <p>Food Review & Travel</p><span>650K followers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-box">
+                <h2>Tải app <span class="gradient-text">ngay hôm nay</span></h2>
+                <p>Có mặt trên iOS & Android. Miễn phí 100%.</p>
+                <div class="download__btns">
+                    <button class="btn btn--dark btn--lg" onclick="showToast()">🍎 App Store</button>
+                    <button class="btn btn--dark btn--lg" onclick="showToast()">▶ Google Play</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🌈 Social<span class="gradient-text">Vibe</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
