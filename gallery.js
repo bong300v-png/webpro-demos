@@ -23,7 +23,7 @@ const demos = [
         category: 'saas',
         gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
         tags: ['Glassmorphism', 'Gradient', 'Modern'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 3, slug: 'ai-tools',
@@ -32,7 +32,7 @@ const demos = [
         category: 'tech',
         gradient: 'linear-gradient(135deg, #0d0d0d 0%, #0a192f 40%, #00d4aa 100%)',
         tags: ['Futuristic', 'Neon', 'AI Effect'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 4, slug: 'ecommerce',
@@ -41,7 +41,7 @@ const demos = [
         category: 'ecommerce',
         gradient: 'linear-gradient(135deg, #ff6b6b 0%, #ffa07a 50%, #ffe66d 100%)',
         tags: ['Product Grid', 'Cart UI', 'Vibrant'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 5, slug: 'tai-khoan-so',
@@ -95,7 +95,7 @@ const demos = [
         category: 'beauty',
         gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 40%, #e8a0bf 100%)',
         tags: ['Pastel', 'Elegant', 'Organic'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 11, slug: 'fitness-coaching',
@@ -104,7 +104,7 @@ const demos = [
         category: 'fitness',
         gradient: 'linear-gradient(135deg, #eb3349 0%, #f45c43 50%, #f9a825 100%)',
         tags: ['Bold', 'Energetic', 'Strong'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 12, slug: 'khoa-hoc',

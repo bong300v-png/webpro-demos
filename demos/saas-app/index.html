@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudSync — SaaS Platform Quản Lý Dự Án</title>
+    <meta name="description" content="Demo SaaS App — Glassmorphism, gradient purple-blue, modern UI" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Animated mesh gradient background -->
+    <div class="mesh-bg">
+        <div class="mesh-blob mesh-blob--1"></div>
+        <div class="mesh-blob mesh-blob--2"></div>
+        <div class="mesh-blob mesh-blob--3"></div>
+    </div>
+
+    <!-- ── Navbar ── -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">☁️ Cloud<span>Sync</span></a>
+            <ul class="nav__links">
+                <li><a href="#features">Tính năng</a></li>
+                <li><a href="#pricing">Bảng giá</a></li>
+                <li><a href="#testimonials">Đánh giá</a></li>
+            </ul>
+            <div class="nav__actions">
+                <a href="#" class="btn btn--ghost">Đăng nhập</a>
+                <a href="#" class="btn btn--primary">Dùng thử miễn phí</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <header class="hero">
+        <div class="hero__badge glass-sm">🚀 Phiên bản 3.0 — Nhanh hơn 10x</div>
+        <h1 class="hero__title">Quản Lý Dự Án<br /><span class="gradient-text">Thông Minh Hơn</span></h1>
+        <p class="hero__sub">Nền tảng all-in-one giúp team của bạn cộng tác, theo dõi tiến độ và đạt mục tiêu nhanh hơn
+            bao giờ hết.</p>
+        <div class="hero__cta">
+            <a href="#" class="btn btn--primary btn--lg">Bắt đầu miễn phí →</a>
+            <a href="#" class="btn btn--glass btn--lg">▶ Xem demo</a>
+        </div>
+        <!-- Glassmorphism floating cards -->
+        <div class="hero__cards">
+            <div class="float-card glass" style="--delay:0s;--x:-60%;--y:-20%">
+                <div class="float-card__icon">📊</div>
+                <div class="float-card__text">
+                    <strong>Dashboard</strong>
+                    <span>Realtime analytics</span>
+                </div>
+            </div>
+            <div class="float-card glass" style="--delay:0.3s;--x:55%;--y:10%">
+                <div class="float-card__icon">⚡</div>
+                <div class="float-card__text">
+                    <strong>Tự động hóa</strong>
+                    <span>AI-powered workflows</span>
+                </div>
+            </div>
+            <div class="float-card glass" style="--delay:0.6s;--x:-40%;--y:60%">
+                <div class="float-card__icon">🔒</div>
+                <div class="float-card__text">
+                    <strong>Bảo mật</strong>
+                    <span>End-to-end encryption</span>
+                </div>
+            </div>
+            <div class="float-card glass" style="--delay:0.9s;--x:50%;--y:70%">
+                <div class="float-card__icon">🌍</div>
+                <div class="float-card__text">
+                    <strong>Multi-region</strong>
+                    <span>Deploy toàn cầu</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ── Features Bento Grid ── -->
+    <section class="features" id="features">
+        <div class="container">
+            <p class="section-tag">Tính năng nổi bật</p>
+            <h2 class="section-title">Mọi thứ bạn cần,<br /><span class="gradient-text">trong một nền tảng</span></h2>
+            <div class="features__grid">
+                <div class="feature-card glass">
+                    <div class="feature-card__icon">📋</div>
+                    <h3>Kanban Board</h3>
+                    <p>Kéo thả task linh hoạt, tuỳ chỉnh workflow theo nhu cầu team.</p>
+                </div>
+                <div class="feature-card glass feature-card--wide">
+                    <div class="feature-card__icon">📈</div>
+                    <h3>Analytics Realtime</h3>
+                    <p>Biểu đồ live, báo cáo tự động, theo dõi KPI team mọi lúc mọi nơi.</p>
+                </div>
+                <div class="feature-card glass feature-card--wide">
+                    <div class="feature-card__icon">🤖</div>
+                    <h3>AI Assistant</h3>
+                    <p>Trợ lý AI gợi ý task, ưu tiên công việc, tự summary meeting notes.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-card__icon">💬</div>
+                    <h3>Team Chat</h3>
+                    <p>Nhắn tin, gọi video, chia sẻ file ngay trong dự án.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-card__icon">🔗</div>
+                    <h3>Integrations</h3>
+                    <p>Kết nối Slack, GitHub, Figma, Google Drive và 200+ ứng dụng.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-card__icon">📱</div>
+                    <h3>Mobile App</h3>
+                    <p>Quản lý dự án trên iOS & Android, đồng bộ realtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Pricing ── -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <p class="section-tag">Bảng giá</p>
+            <h2 class="section-title">Chọn gói <span class="gradient-text">phù hợp</span></h2>
+            <div class="pricing__grid">
+                <div class="price-card glass">
+                    <h3 class="price-card__name">Starter</h3>
+                    <div class="price-card__price">Miễn phí</div>
+                    <p class="price-card__desc">Dành cho cá nhân & freelancer</p>
+                    <ul class="price-card__features">
+                        <li>✓ 3 dự án</li>
+                        <li>✓ 5 thành viên</li>
+                        <li>✓ 1GB lưu trữ</li>
+                        <li>✓ Kanban cơ bản</li>
+                    </ul>
+                    <a href="#" class="btn btn--ghost btn--full">Bắt đầu</a>
+                </div>
+                <div class="price-card glass price-card--popular">
+                    <div class="price-card__badge">Phổ biến nhất</div>
+                    <h3 class="price-card__name">Pro</h3>
+                    <div class="price-card__price">299K<span>/tháng</span></div>
+                    <p class="price-card__desc">Dành cho team 5-50 người</p>
+                    <ul class="price-card__features">
+                        <li>✓ Unlimited dự án</li>
+                        <li>✓ 50 thành viên</li>
+                        <li>✓ 100GB lưu trữ</li>
+                        <li>✓ AI Assistant</li>
+                        <li>✓ Analytics nâng cao</li>
+                    </ul>
+                    <a href="#" class="btn btn--primary btn--full">Dùng thử 14 ngày</a>
+                </div>
+                <div class="price-card glass">
+                    <h3 class="price-card__name">Enterprise</h3>
+                    <div class="price-card__price">Liên hệ</div>
+                    <p class="price-card__desc">Dành cho tổ chức lớn</p>
+                    <ul class="price-card__features">
+                        <li>✓ Mọi thứ của Pro</li>
+                        <li>✓ Unlimited thành viên</li>
+                        <li>✓ SSO & SAML</li>
+                        <li>✓ SLA 99.99%</li>
+                        <li>✓ Dedicated support</li>
+                    </ul>
+                    <a href="#" class="btn btn--ghost btn--full">Liên hệ sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Testimonials ── -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <p class="section-tag">Khách hàng nói gì</p>
+            <h2 class="section-title"><span class="gradient-text">10,000+</span> team tin dùng</h2>
+            <div class="testi__grid">
+                <div class="testi-card glass">
+                    <p>"CloudSync giúp team marketing tăng 40% hiệu suất. Dashboard realtime là game-changer!"</p>
+                    <div class="testi-card__author">
+                        <div class="testi-card__avatar" style="background:linear-gradient(135deg,#667eea,#764ba2)">TH
+                        </div>
+                        <div><strong>Trần Hải</strong><br /><span>Head of Marketing — TechVN</span></div>
+                    </div>
+                </div>
+                <div class="testi-card glass">
+                    <p>"Từ khi dùng CloudSync, team dev không còn miss deadline nào. AI gợi ý rất chính xác."</p>
+                    <div class="testi-card__author">
+                        <div class="testi-card__avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">LM
+                        </div>
+                        <div><strong>Lê Minh</strong><br /><span>CTO — StartupX</span></div>
+                    </div>
+                </div>
+                <div class="testi-card glass">
+                    <p>"Integration với GitHub & Figma mượt mà. Workflow tự động giúp tiết kiệm 15h/tuần."</p>
+                    <div class="testi-card__author">
+                        <div class="testi-card__avatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">NP
+                        </div>
+                        <div><strong>Ngọc Phương</strong><br /><span>PM — Digital Agency</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box glass">
+                <h2 class="section-title">Sẵn sàng <span class="gradient-text">nâng cấp workflow?</span></h2>
+                <p>Dùng thử miễn phí 14 ngày. Không cần thẻ tín dụng.</p>
+                <a href="#" class="btn btn--primary btn--lg">Bắt đầu ngay →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>☁️ Cloud<span style="color:var(--accent)">Sync</span> — Demo by <strong>WebPro</strong></p>
+                <a href="/" class="footer__back">← Quay lại Gallery</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

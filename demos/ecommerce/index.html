@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VivaMart — Mua Sắm Thông Minh</title>
+    <meta name="description" content="Demo E-commerce — Bento UI Grid, warm coral tones, modern shopping" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">🛍️ Viva<span>Mart</span></a>
+            <ul class="nav__links">
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#categories">Danh mục</a></li>
+                <li><a href="#deals">Flash Sale</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button class="nav__icon-btn">🔍</button>
+                <button class="nav__icon-btn">🛒 <span class="badge">3</span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero — Bento layout -->
+    <header class="hero">
+        <div class="container">
+            <div class="bento-hero">
+                <div class="bento-hero__main">
+                    <span class="pill">🔥 Flash Sale hôm nay</span>
+                    <h1>Giảm đến <span class="accent">50%</span><br />Toàn bộ mùa hè</h1>
+                    <p>Hàng ngàn sản phẩm chính hãng, giao hàng nhanh 2h, đổi trả miễn phí.</p>
+                    <a href="#products" class="btn btn--coral">Mua ngay →</a>
+                </div>
+                <div class="bento-hero__side bento-hero__card card-gradient--1">
+                    <span class="bento-tag">Bestseller</span>
+                    <div class="bento-hero__product-img">👟</div>
+                    <h3>Sneaker Limited</h3>
+                    <div class="bento-price"><span class="old">1.200K</span> 699K</div>
+                </div>
+                <div class="bento-hero__side bento-hero__card card-gradient--2">
+                    <span class="bento-tag">Mới</span>
+                    <div class="bento-hero__product-img">🎧</div>
+                    <h3>Tai nghe Pro Max</h3>
+                    <div class="bento-price"><span class="old">890K</span> 499K</div>
+                </div>
+                <div class="bento-hero__stat bento-hero__card card-gradient--3">
+                    <div class="stat-big">50K+</div>
+                    <p>Đơn hàng mỗi ngày</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories — Bento Grid -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Khám phá <span class="accent">danh mục</span></h2>
+            <div class="cat-bento">
+                <div class="cat-card cat-card--tall card-gradient--warm">
+                    <div class="cat-card__emoji">👗</div>
+                    <h3>Thời trang</h3>
+                    <span>2,340 SP</span>
+                </div>
+                <div class="cat-card card-gradient--cool">
+                    <div class="cat-card__emoji">📱</div>
+                    <h3>Điện tử</h3>
+                    <span>890 SP</span>
+                </div>
+                <div class="cat-card card-gradient--earth">
+                    <div class="cat-card__emoji">🏠</div>
+                    <h3>Nhà cửa</h3>
+                    <span>1,200 SP</span>
+                </div>
+                <div class="cat-card cat-card--wide card-gradient--sunset">
+                    <div class="cat-card__emoji">💄</div>
+                    <h3>Làm đẹp</h3>
+                    <span>3,100 SP</span>
+                </div>
+                <div class="cat-card card-gradient--forest">
+                    <div class="cat-card__emoji">🏋️</div>
+                    <h3>Thể thao</h3>
+                    <span>760 SP</span>
+                </div>
+                <div class="cat-card card-gradient--ocean">
+                    <div class="cat-card__emoji">📚</div>
+                    <h3>Sách & VPP</h3>
+                    <span>1,890 SP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Sản phẩm <span class="accent">nổi bật</span></h2>
+            <div class="products__grid">
+                <div class="product-card">
+                    <div class="product-card__img">⌚</div>
+                    <div class="product-card__body">
+                        <h4>Smart Watch Pro</h4>
+                        <div class="product-card__rating">★★★★★ <span>4.9</span></div>
+                        <div class="product-card__price">
+                            <span class="product-card__old">1.500K</span>
+                            <span class="product-card__now">899K</span>
+                        </div>
+                        <button class="btn btn--coral btn--sm">Thêm giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card__img">🎒</div>
+                    <div class="product-card__body">
+                        <h4>Balo Chống Nước</h4>
+                        <div class="product-card__rating">★★★★☆ <span>4.7</span></div>
+                        <div class="product-card__price">
+                            <span class="product-card__old">650K</span>
+                            <span class="product-card__now">399K</span>
+                        </div>
+                        <button class="btn btn--coral btn--sm">Thêm giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card__img">🕶️</div>
+                    <div class="product-card__body">
+                        <h4>Kính Thời Trang UV</h4>
+                        <div class="product-card__rating">★★★★★ <span>4.8</span></div>
+                        <div class="product-card__price">
+                            <span class="product-card__old">450K</span>
+                            <span class="product-card__now">249K</span>
+                        </div>
+                        <button class="btn btn--coral btn--sm">Thêm giỏ hàng</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card__img">🧴</div>
+                    <div class="product-card__body">
+                        <h4>Serum Vitamin C</h4>
+                        <div class="product-card__rating">★★★★★ <span>5.0</span></div>
+                        <div class="product-card__price">
+                            <span class="product-card__old">380K</span>
+                            <span class="product-card__now">199K</span>
+                        </div>
+                        <button class="btn btn--coral btn--sm">Thêm giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Sale Banner -->
+    <section class="flash-sale" id="deals">
+        <div class="container">
+            <div class="flash-banner">
+                <div class="flash-banner__text">
+                    <span class="pill pill--white">⏰ Kết thúc trong</span>
+                    <h2>Flash Sale <span class="accent">Cuối Tuần</span></h2>
+                    <p>Giảm thêm 20% cho đơn từ 500K. Miễn phí vận chuyển toàn quốc.</p>
+                    <a href="#" class="btn btn--white">Xem tất cả deal →</a>
+                </div>
+                <div class="flash-banner__countdown">
+                    <div class="countdown-item"><span id="hours">08</span><small>Giờ</small></div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-item"><span id="minutes">45</span><small>Phút</small></div>
+                    <div class="countdown-sep">:</div>
+                    <div class="countdown-item"><span id="seconds">23</span><small>Giây</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🛍️ Viva<span class="accent">Mart</span> — Demo by <strong>WebPro</strong></p>
+                <a href="/" class="footer__back">← Quay lại Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

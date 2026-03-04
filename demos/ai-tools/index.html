@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeuraTech — AI Tools Thế Hệ Mới</title>
+    <meta name="description" content="Demo AI Tools — Cyberpunk neon, futuristic dark theme, matrix aesthetic" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Matrix rain canvas -->
+    <canvas id="matrix-rain"></canvas>
+
+    <!-- ── Nav ── -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo"><span class="neon">&gt;_</span> Neura<span class="cyan">Tech</span></a>
+            <ul class="nav__links">
+                <li><a href="#tools">Công cụ</a></li>
+                <li><a href="#how">Cách hoạt động</a></li>
+                <li><a href="#pricing">Bảng giá</a></li>
+            </ul>
+            <a href="#" class="btn btn--neon">Truy cập Console →</a>
+        </div>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <header class="hero">
+        <div class="hero__terminal">
+            <div class="terminal__bar">
+                <span class="terminal__dot" style="--c:#ff5f57"></span>
+                <span class="terminal__dot" style="--c:#ffbd2e"></span>
+                <span class="terminal__dot" style="--c:#28c840"></span>
+                <span class="terminal__title">neuratech ~ console</span>
+            </div>
+            <div class="terminal__body">
+                <p class="terminal__line"><span class="cyan">$</span> neura <span class="green">--init</span> ai-engine
+                </p>
+                <p class="terminal__line fade-1"><span class="dim">→ Loading models...</span></p>
+                <p class="terminal__line fade-2"><span class="green">✓</span> GPT-5 Turbo loaded</p>
+                <p class="terminal__line fade-3"><span class="green">✓</span> Vision Pro ready</p>
+                <p class="terminal__line fade-4"><span class="green">✓</span> Audio engine active</p>
+                <p class="terminal__line fade-5"><span class="cyan">$</span> <span class="typing">_</span></p>
+            </div>
+        </div>
+        <h1 class="hero__title">Công Cụ AI<br /><span class="neon-glow">Không Giới Hạn</span></h1>
+        <p class="hero__sub">Viết content, tạo hình ảnh, phân tích dữ liệu, code automation — tất cả bằng AI mạnh nhất
+            thị trường.</p>
+        <div class="hero__cta">
+            <a href="#" class="btn btn--neon btn--lg">Chạy thử ngay →</a>
+            <a href="#" class="btn btn--outline btn--lg">Xem Docs</a>
+        </div>
+        <div class="hero__stats-row">
+            <div class="hero__stat"><span class="neon" data-target="2">0</span>M+ <span>requests/ngày</span></div>
+            <div class="hero__stat"><span class="neon" data-target="35">0</span>+ <span>AI models</span></div>
+            <div class="hero__stat"><span class="neon" data-target="99">0</span>.9% <span>uptime</span></div>
+        </div>
+    </header>
+
+    <!-- ── Tools Grid ── -->
+    <section class="tools" id="tools">
+        <div class="container">
+            <p class="section-tag"><span class="cyan">//</span> Công cụ AI</p>
+            <h2 class="section-title">35+ Models, <span class="neon-glow">Một API</span></h2>
+            <div class="tools__grid">
+                <div class="tool-card">
+                    <div class="tool-card__glow" style="--gc:var(--cyan)"></div>
+                    <div class="tool-card__icon">🧠</div>
+                    <h3>Text Generation</h3>
+                    <p>Viết blog, email, quảng cáo, story với GPT-5 & Claude. Hỗ trợ tiếng Việt native.</p>
+                    <span class="tool-card__tag">GPT-5 · Claude 4</span>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-card__glow" style="--gc:var(--green)"></div>
+                    <div class="tool-card__icon">🎨</div>
+                    <h3>Image AI</h3>
+                    <p>Tạo ảnh từ text, xóa background, upscale, style transfer. Kết quả 4K.</p>
+                    <span class="tool-card__tag">DALL-E 4 · Midjourney</span>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-card__glow" style="--gc:var(--purple)"></div>
+                    <div class="tool-card__icon">🎙️</div>
+                    <h3>Voice & Audio</h3>
+                    <p>Text-to-Speech tự nhiên, nhận diện giọng nói, dịch realtime 50+ ngôn ngữ.</p>
+                    <span class="tool-card__tag">Whisper V4 · ElevenLabs</span>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-card__glow" style="--gc:var(--pink)"></div>
+                    <div class="tool-card__icon">📊</div>
+                    <h3>Data Analysis</h3>
+                    <p>Upload CSV/Excel, AI tự phân tích, tạo chart, tìm insights, xuất báo cáo.</p>
+                    <span class="tool-card__tag">Python · Pandas</span>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-card__glow" style="--gc:var(--yellow)"></div>
+                    <div class="tool-card__icon">💻</div>
+                    <h3>Code Assistant</h3>
+                    <p>Generate code, debug, review, viết test. Hỗ trợ 40+ ngôn ngữ lập trình.</p>
+                    <span class="tool-card__tag">Copilot X · Codeium</span>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-card__glow" style="--gc:var(--cyan)"></div>
+                    <div class="tool-card__icon">🎬</div>
+                    <h3>Video AI</h3>
+                    <p>Tạo video từ script, AI edit, thêm subtitle tự động, avatar ảo thuyết trình.</p>
+                    <span class="tool-card__tag">Sora · Runway</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── How it works ── -->
+    <section class="how" id="how">
+        <div class="container">
+            <p class="section-tag"><span class="cyan">//</span> Quy trình</p>
+            <h2 class="section-title">3 bước để <span class="neon-glow">bắt đầu</span></h2>
+            <div class="how__steps">
+                <div class="how-step">
+                    <div class="how-step__num">01</div>
+                    <h3>Đăng ký & Nhận API Key</h3>
+                    <p>Tạo tài khoản trong 30 giây, nhận API key miễn phí ngay lập tức.</p>
+                </div>
+                <div class="how-step__arrow">→</div>
+                <div class="how-step">
+                    <div class="how-step__num">02</div>
+                    <h3>Chọn Model & Config</h3>
+                    <p>Lựa chọn AI model phù hợp, tuỳ chỉnh parameters theo nhu cầu.</p>
+                </div>
+                <div class="how-step__arrow">→</div>
+                <div class="how-step">
+                    <div class="how-step__num">03</div>
+                    <h3>Gọi API & Deploy</h3>
+                    <p>Tích hợp vào app của bạn với SDK hoặc REST API. Scale tự động.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Pricing ── -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <p class="section-tag"><span class="cyan">//</span> Bảng giá</p>
+            <h2 class="section-title">Trả theo <span class="neon-glow">dùng bao nhiêu</span></h2>
+            <div class="pricing__grid">
+                <div class="price-card">
+                    <h3>Hobby</h3>
+                    <div class="price-card__price">0₫<span>/tháng</span></div>
+                    <ul>
+                        <li><span class="green">✓</span> 1,000 requests/tháng</li>
+                        <li><span class="green">✓</span> 5 AI models</li>
+                        <li><span class="green">✓</span> Community support</li>
+                    </ul>
+                    <a href="#" class="btn btn--outline btn--full">Bắt đầu free</a>
+                </div>
+                <div class="price-card price-card--hot">
+                    <div class="price-card__badge">HOT</div>
+                    <h3>Developer</h3>
+                    <div class="price-card__price">199K<span>/tháng</span></div>
+                    <ul>
+                        <li><span class="green">✓</span> 50,000 requests/tháng</li>
+                        <li><span class="green">✓</span> 35+ AI models</li>
+                        <li><span class="green">✓</span> Priority support</li>
+                        <li><span class="green">✓</span> Custom fine-tuning</li>
+                    </ul>
+                    <a href="#" class="btn btn--neon btn--full">Chọn gói này</a>
+                </div>
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <div class="price-card__price">Custom</div>
+                    <ul>
+                        <li><span class="green">✓</span> Unlimited requests</li>
+                        <li><span class="green">✓</span> Dedicated infra</li>
+                        <li><span class="green">✓</span> SLA 99.99%</li>
+                        <li><span class="green">✓</span> On-premise option</li>
+                    </ul>
+                    <a href="#" class="btn btn--outline btn--full">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p><span class="cyan">&gt;_</span> Neura<span class="cyan">Tech</span> — Demo by <strong>WebPro</strong>
+                </p>
+                <a href="/" class="footer__back">← Quay lại Gallery</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

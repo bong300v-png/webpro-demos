@@ -1,0 +1,472 @@
+/* ═══════════════════════════════════════════════════════════
+   DEMO: Fitness / Coaching — IRONFIT
+   Style: BOLD TYPOGRAPHY — Bebas Neue display, dark bg,
+   red-orange fire gradient, strong lines, aggressive energy,
+   diagonal cuts, sport aesthetic
+   ═══════════════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+:root {
+    --bg: #0a0a0a;
+    --bg2: #141414;
+    --bg3: #1e1e1e;
+    --fire: #ff4d00;
+    --fire2: #ff6b2b;
+    --fire3: #ffaa00;
+    --text: #f5f5f5;
+    --text-60: rgba(245, 245, 245, .6);
+    --text-30: rgba(245, 245, 245, .25);
+    --font-display: 'Bebas Neue', Impact, sans-serif;
+    --font-body: 'Barlow', sans-serif;
+    --radius: 8px;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px
+}
+
+.fire {
+    color: var(--fire);
+    text-shadow: 0 0 20px rgba(255, 77, 0, .3)
+}
+
+.dot {
+    color: var(--fire)
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: .05em;
+    text-align: center;
+    margin-bottom: 48px;
+    line-height: 1.1
+}
+
+/* ── Nav ── */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 12px 0;
+    background: rgba(10, 10, 10, .9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 77, 0, .15)
+}
+
+.nav__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.nav__logo {
+    font-family: var(--font-display);
+    font-size: 24px;
+    letter-spacing: .08em;
+    text-decoration: none;
+    color: var(--text)
+}
+
+.nav__logo span {
+    color: var(--fire)
+}
+
+.nav__links {
+    display: flex;
+    gap: 4px;
+    list-style: none
+}
+
+.nav__links a {
+    font-family: var(--font-body);
+    color: var(--text-60);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: 8px 14px;
+    transition: .3s
+}
+
+.nav__links a:hover {
+    color: var(--fire)
+}
+
+/* ── Buttons ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 28px;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all .3s
+}
+
+.btn--fire {
+    background: linear-gradient(135deg, var(--fire), var(--fire2));
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(255, 77, 0, .3)
+}
+
+.btn--fire:hover {
+    box-shadow: 0 8px 30px rgba(255, 77, 0, .5);
+    transform: translateY(-2px)
+}
+
+.btn--dark {
+    background: var(--bg3);
+    color: var(--text);
+    border: 1px solid rgba(255, 255, 255, .1)
+}
+
+.btn--dark:hover {
+    border-color: var(--fire);
+    color: var(--fire)
+}
+
+.btn--lg {
+    padding: 16px 36px;
+    font-size: 14px
+}
+
+.btn--xl {
+    padding: 18px 48px;
+    font-size: 16px
+}
+
+/* ── Hero ── */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 100px 24px;
+    overflow: hidden
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 77, 0, .08) 0%, transparent 50%, rgba(255, 170, 0, .05) 100%)
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px
+}
+
+.hero__tag {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--fire);
+    letter-spacing: .12em;
+    margin-bottom: 24px;
+    animation: fade-up .6s ease both
+}
+
+.hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 15vw, 10rem);
+    line-height: .85;
+    letter-spacing: .02em;
+    margin-bottom: 24px;
+    animation: fade-up .6s ease .15s both
+}
+
+.hero__sub {
+    font-size: 16px;
+    color: var(--text-60);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fade-up .6s ease .3s both
+}
+
+.hero__cta {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fade-up .6s ease .45s both
+}
+
+.hero__metrics {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 60px;
+    animation: fade-up .6s ease .6s both
+}
+
+.metric {
+    text-align: center
+}
+
+.metric span {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--fire);
+    letter-spacing: .02em
+}
+
+.metric p {
+    font-size: 12px;
+    color: var(--text-30);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-top: 4px
+}
+
+/* ── Programs ── */
+.programs {
+    padding: 100px 0;
+    background: var(--bg2)
+}
+
+.programs__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px
+}
+
+.program-card {
+    padding: 32px 24px;
+    background: var(--bg);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+    transition: all .35s ease
+}
+
+.program-card:hover {
+    border-color: var(--fire);
+    transform: translateY(-4px)
+}
+
+.program-card__num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    color: rgba(255, 77, 0, .12);
+    line-height: 1;
+    margin-bottom: 12px
+}
+
+.program-card h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    letter-spacing: .06em;
+    margin-bottom: 10px;
+    color: var(--fire2)
+}
+
+.program-card p {
+    font-size: 13px;
+    color: var(--text-60);
+    line-height: 1.6
+}
+
+/* Fire bar accent */
+.program-card__bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--fire), var(--fire3));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s ease
+}
+
+.program-card:hover .program-card__bar {
+    transform: scaleX(1)
+}
+
+/* ── Trainers ── */
+.trainers {
+    padding: 100px 0
+}
+
+.trainers__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px
+}
+
+.trainer-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: var(--bg2);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: var(--radius);
+    transition: all .3s
+}
+
+.trainer-card:hover {
+    border-color: var(--fire);
+    transform: translateY(-3px)
+}
+
+.trainer-card__avatar {
+    font-size: 52px;
+    margin-bottom: 16px
+}
+
+.trainer-card h4 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: .04em;
+    margin-bottom: 4px
+}
+
+.trainer-card__spec {
+    font-size: 14px;
+    color: var(--fire);
+    font-weight: 600;
+    margin-bottom: 4px
+}
+
+.trainer-card__exp {
+    font-size: 12px;
+    color: var(--text-30)
+}
+
+/* ── Join CTA ── */
+.join {
+    padding: 100px 0;
+    background: var(--bg2)
+}
+
+.join-box {
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 77, 0, .2);
+    background: linear-gradient(135deg, rgba(255, 77, 0, .05), rgba(255, 170, 0, .03))
+}
+
+.join-box p {
+    color: var(--text-60);
+    margin-bottom: 32px;
+    font-size: 16px
+}
+
+/* ── Footer ── */
+.footer {
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, .06)
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-30)
+}
+
+.footer__inner p {
+    font-family: var(--font-display);
+    font-size: 16px;
+    letter-spacing: .06em
+}
+
+.footer__back {
+    color: var(--fire);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .5s ease
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+@media(max-width:768px) {
+    .nav__links {
+        display: none
+    }
+
+    .programs__grid,
+    .trainers__grid {
+        grid-template-columns: 1fr
+    }
+
+    .hero__title {
+        font-size: clamp(4rem, 12vw, 7rem)
+    }
+
+    .hero__metrics {
+        flex-direction: column;
+        gap: 16px
+    }
+
+    .join-box {
+        padding: 40px 24px
+    }
+
+    .footer__inner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center
+    }
+}
