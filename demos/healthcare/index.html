@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>MediCare — Phòng Khám Đa Khoa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <h3 class="modal__title">Đăng nhập / Đăng ký</h3>
+            <form class="modal__form" onsubmit="return showToast()"><input type="tel" placeholder="Số điện thoại"
+                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
+                    required /><button type="submit" class="btn btn--med btn--full">Đăng nhập</button>
+                <p class="modal__alt">Chưa có? <a href="#" onclick="showToast();return false">Đăng ký</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">🏥 Medi<span>Care</span></a>
+            <ul class="nav__links">
+                <li><a href="#services">Chuyên khoa</a></li>
+                <li><a href="#doctors">Bác sĩ</a></li>
+                <li><a href="#booking">Đặt lịch</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal()">Đăng nhập</button><button
+                    class="btn btn--med" onclick="openModal()">Đặt lịch khám</button></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero__grid">
+                <div class="hero__text"><span class="hero__tag">🩺 Uy tín — Chất lượng — Tận tâm</span>
+                    <h1>Chăm Sóc Sức Khỏe<br /><span class="med-blue">Toàn Diện</span></h1>
+                    <p>Phòng khám đa khoa tiêu chuẩn quốc tế — 15+ chuyên khoa, đội ngũ bác sĩ giỏi, trang thiết bị hiện
+                        đại.</p>
+                    <div class="hero__cta"><button class="btn btn--med btn--lg" onclick="openModal()">Đặt lịch khám
+                            →</button><a href="#services" class="btn btn--outline btn--lg">Xem chuyên khoa</a></div>
+                </div>
+                <div class="hero__visual">
+                    <div class="med-card">🏥<h4>Phòng khám<br />đạt chuẩn JCI</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Chuyên khoa <span class="med-blue">nổi bật</span></h2>
+            <div class="services__grid">
+                <div class="sv-card"><span>🫀</span>
+                    <h3>Tim mạch</h3>
+                    <p>Siêu âm tim, đo điện tim, tư vấn chuyên sâu</p>
+                </div>
+                <div class="sv-card"><span>🧠</span>
+                    <h3>Thần kinh</h3>
+                    <p>Đau đầu, mất ngủ, rối loạn lo âu</p>
+                </div>
+                <div class="sv-card"><span>🦷</span>
+                    <h3>Nha khoa</h3>
+                    <p>Niềng răng, implant, tẩy trắng</p>
+                </div>
+                <div class="sv-card"><span>👁️</span>
+                    <h3>Mắt</h3>
+                    <p>Cận thị, đục thuỷ tinh thể, Lasik</p>
+                </div>
+                <div class="sv-card"><span>🦴</span>
+                    <h3>Xương khớp</h3>
+                    <p>Thoái hoá, thoát vị, vật lý trị liệu</p>
+                </div>
+                <div class="sv-card"><span>👶</span>
+                    <h3>Nhi khoa</h3>
+                    <p>Khám tổng quát, tiêm chủng, dinh dưỡng</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doctors" id="doctors">
+        <div class="container">
+            <h2 class="section-title">Đội ngũ <span class="med-blue">bác sĩ</span></h2>
+            <div class="doctors__grid">
+                <div class="doc-card">
+                    <div class="doc-avatar" style="background:linear-gradient(135deg,#0ea5e9,#0284c7)">👨‍⚕️</div>
+                    <h4>BS. Trần Văn Minh</h4>
+                    <p>Chuyên khoa Tim mạch</p><span>20 năm kinh nghiệm</span>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-avatar" style="background:linear-gradient(135deg,#14b8a6,#0d9488)">👩‍⚕️</div>
+                    <h4>BS. Lê Thu Hà</h4>
+                    <p>Chuyên khoa Nhi</p><span>15 năm kinh nghiệm</span>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-avatar" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)">👨‍⚕️</div>
+                    <h4>BS. Phạm Đức</h4>
+                    <p>Chuyên khoa Thần kinh</p><span>18 năm kinh nghiệm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-box">
+                <h2>Đặt lịch khám <span class="med-blue">online</span></h2>
+                <p>Chọn chuyên khoa, chọn bác sĩ, chọn giờ — xác nhận trong 5 phút.</p><button
+                    class="btn btn--med btn--lg" onclick="openModal()">Đặt lịch ngay →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🏥 Medi<span class="med-blue">Care</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

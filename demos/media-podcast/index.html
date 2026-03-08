@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>SoundWave — Media & Podcast</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <form class="modal__form" onsubmit="return showToast()"><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
+                    required /><button type="submit" class="btn btn--violet btn--full">Đăng nhập</button>
+                <p class="alt">Chưa có? <a href="#" onclick="showToast();return false">Đăng ký</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">🎧 Sound<span>Wave</span></a>
+            <ul class="nav__links">
+                <li><a href="#podcasts">Podcasts</a></li>
+                <li><a href="#trending">Trending</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal()">Login</button><button
+                    class="btn btn--violet" onclick="openModal()">Đăng ký</button></div>
+        </div>
+    </nav>
+    <header class="hero">
+        <h1>Nghe.<br /><span class="vi">Cảm Nhận.</span><br />Kết Nối.</h1>
+        <p>Podcast & media platform — hàng ngàn episodes, host chất lượng, nghe mọi lúc mọi nơi.</p>
+        <div class="hero__cta"><button class="btn btn--violet btn--lg" onclick="openModal()">Nghe miễn phí →</button>
+        </div>
+        <div class="wave-bar">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </header>
+    <section class="podcasts" id="podcasts">
+        <div class="container">
+            <h2 class="st">Podcasts <span class="vi">nổi bật</span></h2>
+            <div class="pod__grid">
+                <div class="pod-card">
+                    <div class="pod-cover" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">🎙️</div>
+                    <div class="pod-info">
+                        <h3>Tech Talk VN</h3>
+                        <p>Xu hướng công nghệ mỗi tuần</p><span>120 episodes · 45K listeners</span>
+                    </div>
+                </div>
+                <div class="pod-card">
+                    <div class="pod-cover" style="background:linear-gradient(135deg,#ec4899,#f43f5e)">💼</div>
+                    <div class="pod-info">
+                        <h3>Startup Stories</h3>
+                        <p>Câu chuyện khởi nghiệp Việt</p><span>85 episodes · 30K listeners</span>
+                    </div>
+                </div>
+                <div class="pod-card">
+                    <div class="pod-cover" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">🧠</div>
+                    <div class="pod-info">
+                        <h3>Mindful Life</h3>
+                        <p>Sức khỏe tinh thần & thiền</p><span>200 episodes · 60K listeners</span>
+                    </div>
+                </div>
+                <div class="pod-card">
+                    <div class="pod-cover" style="background:linear-gradient(135deg,#f59e0b,#d97706)">😂</div>
+                    <div class="pod-info">
+                        <h3>Hài Kịch FM</h3>
+                        <p>Stand-up comedy Vietnam</p><span>50 episodes · 25K listeners</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Bắt đầu nghe <span class="vi">ngay</span></h2>
+                <p>Miễn phí — không quảng cáo — không giới hạn.</p><button class="btn btn--violet btn--lg"
+                    onclick="openModal()">Tạo tài khoản →</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🎧 Sound<span class="vi">Wave</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,747 @@
+/* Gaming/Esport — ArenaX: AGGRESSIVE DARK — Rajdhani+Orbitron, red accent, angular shapes, esport energy */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+:root {
+    --bg: #0a0a0a;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --red: #dc2626;
+    --red2: #ef4444;
+    --red-glow: rgba(220, 38, 38, .15);
+    --text: #f5f5f5;
+    --text-60: rgba(245, 245, 245, .6);
+    --text-30: rgba(245, 245, 245, .2);
+    --font: 'Rajdhani', sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+    --radius: 12px
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px
+}
+
+.red {
+    color: var(--red)
+}
+
+.st {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: .04em;
+    text-transform: uppercase
+}
+
+/* ── Modal ── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center
+}
+
+.modal-overlay.open {
+    display: flex
+}
+
+.modal {
+    background: var(--bg2);
+    border: 1px solid var(--text-30);
+    border-radius: var(--radius);
+    padding: 28px;
+    width: min(380px, 90vw);
+    animation: pop .3s ease
+}
+
+@keyframes pop {
+    from {
+        transform: scale(.93);
+        opacity: 0
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.modal__close {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--text-30)
+}
+
+.modal__tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    background: var(--bg3);
+    border-radius: 8px;
+    padding: 3px;
+    clear: both
+}
+
+.modal__tab {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-60);
+    transition: .2s;
+    font-family: var(--font);
+    text-transform: uppercase;
+    letter-spacing: .05em
+}
+
+.modal__tab.active {
+    background: var(--red);
+    color: #fff
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.modal__form.hidden {
+    display: none
+}
+
+.modal__input {
+    padding: 12px 16px;
+    border: 1.5px solid var(--text-30);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: var(--font);
+    outline: none;
+    transition: .2s;
+    background: var(--bg3);
+    color: var(--text)
+}
+
+.modal__input:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px var(--red-glow)
+}
+
+/* ── Toast ── */
+.toast {
+    position: fixed;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 300;
+    transition: bottom .4s ease
+}
+
+.toast.show {
+    bottom: 32px
+}
+
+/* ═══════════════════════════════════
+   NAVBAR
+   ═══════════════════════════════════ */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 10px 0;
+    background: rgba(10, 10, 10, .95);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--text-30)
+}
+
+.nav__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.nav__logo {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text);
+    letter-spacing: .06em
+}
+
+.nav__logo span {
+    color: var(--red)
+}
+
+.nav__links {
+    display: flex;
+    gap: 4px;
+    list-style: none
+}
+
+.nav__links a {
+    color: var(--text-60);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: .2s;
+    text-transform: uppercase;
+    letter-spacing: .04em
+}
+
+.nav__links a:hover {
+    color: var(--red)
+}
+
+.nav__actions {
+    display: flex;
+    gap: 8px
+}
+
+/* ═══════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+    font-family: var(--font);
+    text-transform: uppercase;
+    letter-spacing: .04em
+}
+
+.btn--red {
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 4px 14px var(--red-glow)
+}
+
+.btn--red:hover {
+    background: var(--red2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(220, 38, 38, .3)
+}
+
+.btn--ghost {
+    background: none;
+    color: var(--text-60)
+}
+
+.btn--ghost:hover {
+    color: var(--red)
+}
+
+.btn--outline {
+    background: none;
+    color: var(--text);
+    border: 1.5px solid var(--text-30)
+}
+
+.btn--outline:hover {
+    border-color: var(--red);
+    color: var(--red)
+}
+
+.btn--lg {
+    padding: 14px 32px;
+    font-size: 15px
+}
+
+.btn--sm {
+    padding: 8px 18px;
+    font-size: 12px
+}
+
+.btn--full {
+    width: 100%
+}
+
+/* ═══════════════════════════════════
+   HERO — Aggressive banner
+   ═══════════════════════════════════ */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 24px 60px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 30%, rgba(220, 38, 38, .08) 0%, transparent 60%)
+}
+
+/* Đường kẻ chéo trang trí */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 2px;
+    height: 120%;
+    background: linear-gradient(to bottom, transparent, var(--red), transparent);
+    transform: rotate(25deg);
+    opacity: .15
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 1px;
+    height: 120%;
+    background: linear-gradient(to bottom, transparent, var(--red-glow), transparent);
+    transform: rotate(-15deg);
+    opacity: .3
+}
+
+/* Glitch background — hiệu ứng nhiễu hình */
+.hero__glitch {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(220, 38, 38, .02) 2px, rgba(220, 38, 38, .02) 4px);
+    pointer-events: none
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px
+}
+
+.hero__tag {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--red);
+    background: var(--red-glow);
+    border: 1px solid rgba(220, 38, 38, .3);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    animation: pulse-tag 2s ease-in-out infinite
+}
+
+@keyframes pulse-tag {
+
+    0%,
+    100% {
+        opacity: 1
+    }
+
+    50% {
+        opacity: .7
+    }
+}
+
+.hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: .03em;
+    margin-bottom: 16px
+}
+
+.hero__content>p {
+    font-size: 16px;
+    color: var(--text-60);
+    max-width: 500px;
+    margin: 0 auto 28px;
+    line-height: 1.7
+}
+
+.hero__cta {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+/* Stats bar — số liệu nhanh */
+.hero__stats {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 40px
+}
+
+.hero__stats div {
+    text-align: center
+}
+
+.hero__stats strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--red)
+}
+
+.hero__stats span {
+    font-size: 11px;
+    color: var(--text-30);
+    text-transform: uppercase;
+    letter-spacing: .06em
+}
+
+/* ═══════════════════════════════════
+   TOURNAMENTS — Cards giải đấu
+   ═══════════════════════════════════ */
+.tournaments {
+    padding: 80px 0
+}
+
+.tour__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px
+}
+
+.tour-card {
+    background: var(--bg2);
+    border: 1px solid var(--text-30);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all .3s
+}
+
+.tour-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--red);
+    box-shadow: 0 12px 32px rgba(220, 38, 38, .1)
+}
+
+.tour-banner {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px
+}
+
+.tour-body {
+    padding: 18px
+}
+
+/* Trạng thái: LIVE hoặc sắp diễn ra */
+.tour-status {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 8px
+}
+
+.tour-status.live {
+    background: rgba(220, 38, 38, .15);
+    color: var(--red);
+    border: 1px solid rgba(220, 38, 38, .3);
+    animation: pulse-tag 2s ease-in-out infinite
+}
+
+.tour-status.upcoming {
+    background: rgba(245, 158, 11, .12);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, .2)
+}
+
+.tour-body h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px
+}
+
+.tour-body p {
+    font-size: 13px;
+    color: var(--text-60);
+    margin-bottom: 8px
+}
+
+.tour-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: var(--text-30);
+    margin-bottom: 12px
+}
+
+/* ═══════════════════════════════════
+   GAMES — Grid tựa game
+   ═══════════════════════════════════ */
+.games {
+    padding: 80px 0;
+    background: var(--bg2)
+}
+
+.games__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px
+}
+
+.game-card {
+    text-align: center;
+    padding: 24px 12px;
+    background: var(--bg);
+    border: 1px solid var(--text-30);
+    border-radius: var(--radius);
+    transition: all .3s
+}
+
+.game-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--red);
+    box-shadow: 0 8px 20px var(--red-glow)
+}
+
+.game-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 10px
+}
+
+.game-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 2px
+}
+
+.game-card span {
+    font-size: 11px;
+    color: var(--text-30);
+    text-transform: uppercase;
+    letter-spacing: .05em
+}
+
+/* ═══════════════════════════════════
+   TEAMS — Đội tuyển nổi bật
+   ═══════════════════════════════════ */
+.teams {
+    padding: 80px 0
+}
+
+.teams__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px
+}
+
+.team-card {
+    text-align: center;
+    padding: 28px 20px;
+    background: var(--bg2);
+    border: 1px solid var(--text-30);
+    border-radius: var(--radius);
+    transition: all .3s
+}
+
+.team-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--red);
+    box-shadow: 0 8px 24px var(--red-glow)
+}
+
+.team-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 12px
+}
+
+.team-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px
+}
+
+.team-card p {
+    font-size: 13px;
+    color: var(--text-60);
+    margin-bottom: 4px
+}
+
+.team-card span {
+    font-size: 12px;
+    color: var(--red);
+    font-weight: 600
+}
+
+/* ═══════════════════════════════════
+   CTA — Kêu gọi tham gia
+   ═══════════════════════════════════ */
+.cta {
+    padding: 80px 0
+}
+
+.cta-box {
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(220, 38, 38, .08), rgba(10, 10, 10, .9));
+    border: 1px solid rgba(220, 38, 38, .2)
+}
+
+.cta-box h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: .03em
+}
+
+.cta-box p {
+    font-size: 15px;
+    color: var(--text-60);
+    margin-bottom: 24px
+}
+
+/* ═══════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════ */
+.footer {
+    padding: 28px 0;
+    border-top: 1px solid var(--text-30)
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-30)
+}
+
+.footer__back {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 600
+}
+
+/* ═══════════════════════════════════
+   REVEAL ANIMATION
+   ═══════════════════════════════════ */
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all .5s ease
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════ */
+@media(max-width:768px) {
+
+    .nav__links,
+    .nav__actions .btn--ghost {
+        display: none
+    }
+
+    .hero {
+        padding: 80px 20px 40px;
+        min-height: auto
+    }
+
+    .tour__grid {
+        grid-template-columns: 1fr
+    }
+
+    .games__grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .teams__grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .hero__stats {
+        gap: 20px
+    }
+
+    .footer__inner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center
+    }
+}
+
+@media(max-width:480px) {
+    .games__grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .teams__grid {
+        grid-template-columns: 1fr
+    }
+}

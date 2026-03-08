@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>StarVibe — Creator & KOL Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
+                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
+                    class="modal__input" required /><button type="submit" class="btn btn--hot btn--full">Đăng
+                    nhập</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Tên Creator" class="modal__input" required /><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="text" placeholder="Link social (TikTok/IG)"
+                    class="modal__input" /><input type="password" placeholder="Mật khẩu" class="modal__input"
+                    required /><button type="submit" class="btn btn--hot btn--full">Tạo tài khoản Creator</button>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">⭐ Star<span>Vibe</span></a>
+            <ul class="nav__links">
+                <li><a href="#creators">Creators</a></li>
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#join">Tham gia</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal('login')">Đăng
+                    nhập</button><button class="btn btn--hot" onclick="openModal('register')">Trở thành Creator</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Tỏa Sáng.<br /><span class="hot-text">Kiếm Tiền.</span><br />Là Chính Mình.</h1>
+        <p>Nền tảng kết nối Creator & Brand — booking, campaign, analytics tất cả trong một.</p>
+        <div class="hero__cta"><button class="btn btn--hot btn--lg" onclick="openModal('register')">Đăng ký Creator
+                →</button><a href="#creators" class="btn btn--outline btn--lg">Khám phá</a></div>
+        <div class="hero__social"><span>📱 TikTok</span><span>📸 Instagram</span><span>▶ YouTube</span><span>🐦
+                Twitter</span></div>
+    </header>
+
+    <section class="creators" id="creators">
+        <div class="container">
+            <h2 class="section-title">Top <span class="hot-text">Creators</span></h2>
+            <div class="creators__grid">
+                <div class="creator-card">
+                    <div class="creator-avatar" style="background:linear-gradient(135deg,#ff0099,#ff6600)">👩</div>
+                    <div class="creator-info">
+                        <h3>Linh Ngọc</h3>
+                        <p>Beauty & Lifestyle</p>
+                        <div class="creator-stats"><span>2.5M followers</span><span>⭐ 4.9</span></div>
+                    </div><button class="btn btn--hot btn--sm" onclick="showToast()">Book</button>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-avatar" style="background:linear-gradient(135deg,#667eea,#764ba2)">👨</div>
+                    <div class="creator-info">
+                        <h3>Minh Tech</h3>
+                        <p>Tech Review & Unbox</p>
+                        <div class="creator-stats"><span>1.8M followers</span><span>⭐ 4.8</span></div>
+                    </div><button class="btn btn--hot btn--sm" onclick="showToast()">Book</button>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-avatar" style="background:linear-gradient(135deg,#11998e,#38ef7d)">🎭</div>
+                    <div class="creator-info">
+                        <h3>Hương Travel</h3>
+                        <p>Travel & Food</p>
+                        <div class="creator-stats"><span>3.2M followers</span><span>⭐ 5.0</span></div>
+                    </div><button class="btn btn--hot btn--sm" onclick="showToast()">Book</button>
+                </div>
+                <div class="creator-card">
+                    <div class="creator-avatar" style="background:linear-gradient(135deg,#f7971e,#ffd200)">🎵</div>
+                    <div class="creator-info">
+                        <h3>DJ Phong</h3>
+                        <p>Music & Entertainment</p>
+                        <div class="creator-stats"><span>900K followers</span><span>⭐ 4.7</span></div>
+                    </div><button class="btn btn--hot btn--sm" onclick="showToast()">Book</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Dịch vụ cho <span class="hot-text">Brand</span></h2>
+            <div class="services__grid">
+                <div class="sv-card"><span>📢</span>
+                    <h3>Influencer Marketing</h3>
+                    <p>Matching brand với creator phù hợp, quản lý campaign end-to-end.</p>
+                </div>
+                <div class="sv-card"><span>🎬</span>
+                    <h3>Content Production</h3>
+                    <p>Sản xuất video TikTok, Reels, YouTube Shorts chuyên nghiệp.</p>
+                </div>
+                <div class="sv-card"><span>📊</span>
+                    <h3>Analytics & Report</h3>
+                    <p>Đo lường ROI, engagement rate, conversion tracking realtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="join" id="join">
+        <div class="container">
+            <div class="join-box">
+                <h2>Sẵn sàng <span class="hot-text">toả sáng?</span></h2>
+                <p>Đăng ký miễn phí — nhận booking từ 1000+ thương hiệu lớn.</p><button class="btn btn--hot btn--lg"
+                    onclick="openModal('register')">Đăng ký ngay →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>⭐ Star<span class="hot-text">Vibe</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

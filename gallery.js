@@ -50,7 +50,7 @@ const demos = [
         category: 'fintech',
         gradient: 'linear-gradient(135deg, #00b4d8 0%, #0077b6 50%, #03045e 100%)',
         tags: ['Fintech', 'Data-driven', 'Clean'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 6, slug: 'key-phan-mem',
@@ -59,7 +59,7 @@ const demos = [
         category: 'tech',
         gradient: 'linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 40%, #00ff88 100%)',
         tags: ['Terminal', 'Dark Mode', 'Tech'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 7, slug: 'clone-mxh',
@@ -68,7 +68,7 @@ const demos = [
         category: 'social',
         gradient: 'linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
         tags: ['Social', 'Colorful', 'Card-based'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 8, slug: 'topup-game',
@@ -77,7 +77,7 @@ const demos = [
         category: 'gaming',
         gradient: 'linear-gradient(135deg, #2d1b69 0%, #6c3fa0 40%, #ff6ec7 100%)',
         tags: ['Gaming', 'Neon', 'Dynamic'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 9, slug: 'proxy-tool',
@@ -86,7 +86,7 @@ const demos = [
         category: 'tech',
         gradient: 'linear-gradient(135deg, #000000 0%, #0a0a0a 40%, #00ff41 100%)',
         tags: ['Cyberpunk', 'Matrix', 'Dark'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 10, slug: 'spa-beauty',
@@ -113,7 +113,7 @@ const demos = [
         category: 'education',
         gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 50%, #43e97b 100%)',
         tags: ['Education', 'Friendly', 'Course'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 13, slug: 'dich-vu',
@@ -122,7 +122,7 @@ const demos = [
         category: 'business',
         gradient: 'linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%)',
         tags: ['Professional', 'Clean', 'Service'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 14, slug: 'healthcare',
@@ -131,7 +131,7 @@ const demos = [
         category: 'health',
         gradient: 'linear-gradient(135deg, #e0f7fa 0%, #4dd0e1 50%, #00838f 100%)',
         tags: ['Medical', 'Clean', 'Trustworthy'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 15, slug: 'food-restaurant',
@@ -140,7 +140,7 @@ const demos = [
         category: 'food',
         gradient: 'linear-gradient(135deg, #3e2723 0%, #8d6e63 40%, #ff8a65 100%)',
         tags: ['Warm', 'Appetizing', 'Cozy'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 16, slug: 'creator-kol',
@@ -149,7 +149,7 @@ const demos = [
         category: 'creative',
         gradient: 'linear-gradient(135deg, #ff0099 0%, #ff6600 50%, #ffcc00 100%)',
         tags: ['Trendy', 'Bold', 'Personal'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 17, slug: 'media-podcast',
@@ -158,7 +158,7 @@ const demos = [
         category: 'media',
         gradient: 'linear-gradient(135deg, #1a0533 0%, #4a148c 40%, #e040fb 100%)',
         tags: ['Audio', 'Dark', 'Waveform'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 18, slug: 'su-kien',
@@ -167,7 +167,7 @@ const demos = [
         category: 'event',
         gradient: 'linear-gradient(135deg, #f7971e 0%, #ffd200 50%, #ff6f61 100%)',
         tags: ['Event', 'Countdown', 'Festive'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 19, slug: 'gaming-esport',
@@ -176,7 +176,7 @@ const demos = [
         category: 'gaming',
         gradient: 'linear-gradient(135deg, #0a0a0a 0%, #1a0000 40%, #ff0000 80%, #ff4444 100%)',
         tags: ['Aggressive', 'Angular', 'Competitive'],
-        status: 'soon',
+        status: 'live',
     },
     {
         id: 20, slug: 'custom-shop',
@@ -185,7 +185,7 @@ const demos = [
         category: 'ecommerce',
         gradient: 'linear-gradient(135deg, #4a3728 0%, #8b7355 40%, #c9b89e 70%, #e8d5b7 100%)',
         tags: ['Artisan', 'Earth Tone', 'Boutique'],
-        status: 'soon',
+        status: 'live',
     },
 ];
 

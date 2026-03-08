@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>FixPro — Dịch Vụ Sửa Chữa Tận Nơi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="tel"
+                    placeholder="Số điện thoại" class="modal__input" required /><input type="password"
+                    placeholder="Mật khẩu" class="modal__input" required /><button type="submit"
+                    class="btn btn--slate btn--full">Đăng nhập</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Họ tên" class="modal__input" required /><input type="tel" placeholder="Số điện thoại"
+                    class="modal__input" required /><input type="email" placeholder="Email" class="modal__input"
+                    required /><input type="password" placeholder="Mật khẩu" class="modal__input" required /><button
+                    type="submit" class="btn btn--slate btn--full">Tạo tài khoản</button></form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">🔧 Fix<span>Pro</span></a>
+            <ul class="nav__links">
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#process">Quy trình</a></li>
+                <li><a href="#booking">Đặt lịch</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal('login')">Đăng
+                    nhập</button><button class="btn btn--slate" onclick="openModal('register')">Đăng ký</button></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero__grid">
+                <div class="hero__text"><span class="hero__tag">⚡ Có mặt trong 30 phút</span>
+                    <h1>Dịch Vụ Sửa Chữa<br /><span class="accent">Chuyên Nghiệp</span></h1>
+                    <p>Sửa điện, nước, điều hoà, máy giặt — thợ giỏi, giá rõ ràng, bảo hành dài hạn.</p><button
+                        class="btn btn--slate btn--lg" onclick="openModal('register')">Đặt Lịch Ngay →</button>
+                </div>
+                <div class="hero__stats-grid">
+                    <div class="stat-card"><span>15K+</span>
+                        <p>Đơn hoàn thành</p>
+                    </div>
+                    <div class="stat-card"><span>4.9★</span>
+                        <p>Đánh giá</p>
+                    </div>
+                    <div class="stat-card"><span>200+</span>
+                        <p>Thợ chuyên nghiệp</p>
+                    </div>
+                    <div class="stat-card"><span>30'</span>
+                        <p>Có mặt nhanh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Dịch vụ <span class="accent">nổi bật</span></h2>
+            <div class="services__grid">
+                <div class="sv-card">
+                    <div class="sv-icon">💡</div>
+                    <h3>Điện dân dụng</h3>
+                    <p>Sửa ổ cắm, bảng điện, đèn LED, quạt trần</p><span class="sv-price">Từ 100K</span>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-icon">🚰</div>
+                    <h3>Nước & Ống</h3>
+                    <p>Thông tắc, lắp đặt thiết bị vệ sinh, chống thấm</p><span class="sv-price">Từ 150K</span>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-icon">❄️</div>
+                    <h3>Điều hoà</h3>
+                    <p>Vệ sinh, bơm gas, sửa chữa, lắp đặt mới</p><span class="sv-price">Từ 200K</span>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-icon">🧹</div>
+                    <h3>Vệ sinh</h3>
+                    <p>Tổng vệ sinh nhà, giặt sofa, giặt thảm</p><span class="sv-price">Từ 300K</span>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-icon">🪟</div>
+                    <h3>Cửa & Khoá</h3>
+                    <p>Sửa cửa, thay khoá, lắp cửa cuốn, rèm</p><span class="sv-price">Từ 120K</span>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-icon">📺</div>
+                    <h3>Điện tử</h3>
+                    <p>Sửa TV, máy giặt, tủ lạnh, lò vi sóng</p><span class="sv-price">Từ 200K</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title">Quy trình <span class="accent">4 bước</span></h2>
+            <div class="process__grid">
+                <div class="step"><span>01</span>
+                    <h3>Đặt lịch</h3>
+                    <p>Chọn dịch vụ & thời gian</p>
+                </div>
+                <div class="step"><span>02</span>
+                    <h3>Xác nhận</h3>
+                    <p>Nhận báo giá trong 5 phút</p>
+                </div>
+                <div class="step"><span>03</span>
+                    <h3>Thợ đến</h3>
+                    <p>Có mặt trong 30 phút</p>
+                </div>
+                <div class="step"><span>04</span>
+                    <h3>Hoàn thành</h3>
+                    <p>Thanh toán & bảo hành</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-box">
+                <h2>Cần sửa chữa? <span class="accent">Gọi ngay!</span></h2>
+                <p>Hotline: <strong>1900-xxxx</strong> hoặc đặt lịch online</p><button class="btn btn--slate btn--lg"
+                    onclick="openModal('register')">Đặt lịch online →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🔧 Fix<span class="accent">Pro</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

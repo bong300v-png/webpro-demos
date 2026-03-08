@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>NhàHàng Việt — Ẩm Thực Đỉnh Cao</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <h3 class="modal__title">Đặt bàn / Đăng nhập</h3>
+            <form class="modal__form" onsubmit="return showToast()"><input type="text" placeholder="Họ tên"
+                    class="modal__input" required /><input type="tel" placeholder="Số điện thoại" class="modal__input"
+                    required /><select class="modal__input">
+                    <option>2 người</option>
+                    <option>4 người</option>
+                    <option>6 người</option>
+                    <option>8+ người</option>
+                </select><input type="date" class="modal__input" required /><button type="submit"
+                    class="btn btn--warm btn--full">Đặt bàn</button></form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">🍜 NhàHàng<span>Việt</span></a>
+            <ul class="nav__links">
+                <li><a href="#menu">Thực đơn</a></li>
+                <li><a href="#story">Câu chuyện</a></li>
+                <li><a href="#reserv">Đặt bàn</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="showToast()">Đăng nhập</button><button
+                    class="btn btn--warm" onclick="openModal()">Đặt bàn</button></div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <p class="hero__eyebrow">✨ Fine Dining Việt Nam</p>
+            <h1><em>Hương Vị</em><br />Truyền Thống</h1>
+            <p>Trải nghiệm ẩm thực Việt đỉnh cao — nguyên liệu tươi, công thức gia truyền, không gian sang trọng.</p>
+            <button class="btn btn--warm btn--lg" onclick="openModal()">Đặt Bàn Ngay</button>
+        </div>
+    </header>
+
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title"><em>Thực đơn</em> đặc biệt</h2>
+            <div class="menu__grid">
+                <div class="dish-card">
+                    <div class="dish-img">🍲</div>
+                    <div class="dish-body">
+                        <h3>Phở Bò Wagyu</h3>
+                        <p>Nước dùng hầm 24h, thịt bò Wagyu A5</p><span class="dish-price">389K</span>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-img">🦐</div>
+                    <div class="dish-body">
+                        <h3>Tôm Hùm Nướng</h3>
+                        <p>Tôm hùm Alaska, sốt bơ tỏi homemade</p><span class="dish-price">890K</span>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-img">🥟</div>
+                    <div class="dish-body">
+                        <h3>Bánh Cuốn Hà Nội</h3>
+                        <p>Bột gạo tươi, nhân thịt, nước mắm cà cuống</p><span class="dish-price">89K</span>
+                    </div>
+                </div>
+                <div class="dish-card">
+                    <div class="dish-img">🍰</div>
+                    <div class="dish-body">
+                        <h3>Chè Bưởi Huế</h3>
+                        <p>Bưởi Năm Roi, bột lọc, nước cốt dừa</p><span class="dish-price">69K</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story" id="story">
+        <div class="container">
+            <div class="story__grid">
+                <div class="story__text">
+                    <h2 class="section-title left"><em>Câu chuyện</em> của chúng tôi</h2>
+                    <p>Từ một quán nhỏ ở phố cổ Hà Nội năm 1998, NhàHàng Việt đã trở thành biểu tượng ẩm thực Việt — nơi
+                        mỗi món ăn kể một câu chuyện, mỗi nguyên liệu mang một tâm huyết.</p>
+                    <div class="story__stats">
+                        <div><strong>26</strong><span>Năm</span></div>
+                        <div><strong>3</strong><span>Chi nhánh</span></div>
+                        <div><strong>50K+</strong><span>Khách/năm</span></div>
+                    </div>
+                </div>
+                <div class="story__visual">
+                    <div class="story__img">🏮</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reserv" id="reserv">
+        <div class="container">
+            <div class="reserv-box">
+                <h2><em>Đặt bàn</em> tại NhàHàng Việt</h2>
+                <p>Hotline: <strong>028-xxxx-xxxx</strong> | Mở cửa 10:00 - 22:00</p><button
+                    class="btn btn--warm btn--lg" onclick="openModal()">Đặt bàn online →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🍜 NhàHàng<span class="warm">Việt</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

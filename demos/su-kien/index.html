@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>EventHub — Sự Kiện & Hội Nghị</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <form class="modal__form" onsubmit="return showToast()"><input type="text" placeholder="Họ tên"
+                    class="modal__input" required /><input type="email" placeholder="Email" class="modal__input"
+                    required /><input type="tel" placeholder="SĐT" class="modal__input" required /><button type="submit"
+                    class="btn btn--amber btn--full">Đăng ký tham gia</button></form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">🎪 Event<span>Hub</span></a>
+            <ul class="nav__links">
+                <li><a href="#events">Sự kiện</a></li>
+                <li><a href="#tickets">Vé</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="showToast()">Đăng nhập</button><button
+                    class="btn btn--amber" onclick="openModal()">Mua vé</button></div>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero__countdown">
+            <div class="cd"><span id="cd-d">12</span>
+                <p>Ngày</p>
+            </div>
+            <div class="cd"><span id="cd-h">08</span>
+                <p>Giờ</p>
+            </div>
+            <div class="cd"><span id="cd-m">45</span>
+                <p>Phút</p>
+            </div>
+            <div class="cd"><span id="cd-s">00</span>
+                <p>Giây</p>
+            </div>
+        </div>
+        <h1>TECH SUMMIT<br /><span class="amber">VIETNAM 2026</span></h1>
+        <p>Hội nghị công nghệ lớn nhất Đông Nam Á — 50+ speakers, 5000+ attendees, 3 ngày.</p><button
+            class="btn btn--amber btn--lg" onclick="openModal()">ĐẶT VÉ EARLY BIRD →</button>
+    </header>
+    <section class="events" id="events">
+        <div class="container">
+            <h2 class="st">Sự kiện <span class="amber">sắp tới</span></h2>
+            <div class="events__grid">
+                <div class="ev-card">
+                    <div class="ev-date"><span>15</span>MAR</div>
+                    <div class="ev-info">
+                        <h3>AI & Future of Work</h3>
+                        <p>Keynote bởi CEO các công ty AI hàng đầu</p><span>Q7, HCM · 2000 chỗ</span>
+                    </div><button class="btn btn--amber btn--sm" onclick="openModal()">Đặt vé</button>
+                </div>
+                <div class="ev-card">
+                    <div class="ev-date"><span>22</span>MAR</div>
+                    <div class="ev-info">
+                        <h3>Startup Demo Day</h3>
+                        <p>20 startups pitch trước 100 nhà đầu tư</p><span>Dist.1, HCM · 500 chỗ</span>
+                    </div><button class="btn btn--amber btn--sm" onclick="openModal()">Đặt vé</button>
+                </div>
+                <div class="ev-card">
+                    <div class="ev-date"><span>05</span>APR</div>
+                    <div class="ev-info">
+                        <h3>Design Conference</h3>
+                        <p>Workshop UI/UX, typography, branding</p><span>Hoàn Kiếm, HN · 800 chỗ</span>
+                    </div><button class="btn btn--amber btn--sm" onclick="openModal()">Đặt vé</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tickets" id="tickets">
+        <div class="container">
+            <h2 class="st">Loại <span class="amber">vé</span></h2>
+            <div class="tickets__grid">
+                <div class="ticket">
+                    <h3>Standard</h3>
+                    <div class="ticket-price">990K</div>
+                    <ul>
+                        <li>✓ 3 ngày full access</li>
+                        <li>✓ Networking lunch</li>
+                    </ul><button class="btn btn--outline btn--full" onclick="openModal()">Mua vé</button>
+                </div>
+                <div class="ticket ticket--vip">
+                    <div class="vip-tag">VIP</div>
+                    <h3>Premium</h3>
+                    <div class="ticket-price">2.490K</div>
+                    <ul>
+                        <li>✓ Mọi thứ Standard</li>
+                        <li>✓ Workshop exclusive</li>
+                        <li>✓ Meet & Greet speakers</li>
+                        <li>✓ Quà tặng VIP</li>
+                    </ul><button class="btn btn--amber btn--full" onclick="openModal()">Mua vé VIP</button>
+                </div>
+                <div class="ticket">
+                    <h3>Group (5+)</h3>
+                    <div class="ticket-price">790K<span>/người</span></div>
+                    <ul>
+                        <li>✓ Giảm 20%</li>
+                        <li>✓ Chỗ ngồi cạnh nhau</li>
+                    </ul><button class="btn btn--outline btn--full" onclick="showToast()">Liên hệ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🎪 Event<span class="amber">Hub</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

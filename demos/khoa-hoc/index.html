@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>EduMaster — Khoá Học Online Chất Lượng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
+                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
+                    class="modal__input" required /><button type="submit" class="btn btn--teal btn--full">Đăng
+                    nhập</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Họ tên" class="modal__input" required /><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
+                    required /><button type="submit" class="btn btn--teal btn--full">Tạo tài khoản miễn phí</button>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">📚 Edu<span>Master</span></a>
+            <ul class="nav__links">
+                <li><a href="#courses">Khoá học</a></li>
+                <li><a href="#instructors">Giảng viên</a></li>
+                <li><a href="#pricing">Gói học</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal('login')">Đăng
+                    nhập</button><button class="btn btn--teal" onclick="openModal('register')">Học thử miễn phí</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero__content"><span class="hero__badge">🎓 500+ Khoá học chất lượng</span>
+            <h1>Học Mọi Thứ,<br /><span class="teal">Mọi Lúc, Mọi Nơi</span></h1>
+            <p>Nền tảng học trực tuyến hàng đầu VN — video HD, bài tập thực hành, chứng chỉ quốc tế.</p>
+            <div class="hero__cta"><button class="btn btn--teal btn--lg" onclick="openModal('register')">Bắt đầu học
+                    →</button><a href="#courses" class="btn btn--outline btn--lg">Xem khoá học</a></div>
+            <div class="hero__trust"><span>⭐ 4.8/5</span><span>👥 200K+ học viên</span><span>📜 Chứng chỉ</span></div>
+        </div>
+        <div class="hero__visual">
+            <div class="course-preview">
+                <div class="course-preview__video">🎬</div>
+                <div class="course-preview__info">
+                    <h4>React & Next.js Masterclass</h4>
+                    <div class="progress-bar">
+                        <div class="progress-bar__fill" style="width:65%"></div>
+                    </div><span>65% hoàn thành</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="courses" id="courses">
+        <div class="container">
+            <h2 class="section-title">Khoá học <span class="teal">nổi bật</span></h2>
+            <div class="courses__grid">
+                <div class="course-card">
+                    <div class="course-card__thumb" style="background:linear-gradient(135deg,#667eea,#764ba2)">💻</div>
+                    <div class="course-card__body"><span class="course-card__cat">Lập trình</span>
+                        <h3>React & Next.js 2026</h3>
+                        <p>Từ zero tới hero, 120 bài, project thực tế</p>
+                        <div class="course-card__meta"><span>⭐ 4.9</span><span>👥 15K</span><span>🕐 40h</span></div>
+                        <div class="course-card__price"><span class="old">1.200K</span><span class="now">499K</span>
+                        </div><button class="btn btn--teal btn--sm" onclick="showToast()">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-card__thumb" style="background:linear-gradient(135deg,#f093fb,#f5576c)">🎨</div>
+                    <div class="course-card__body"><span class="course-card__cat">Design</span>
+                        <h3>UI/UX Design Pro</h3>
+                        <p>Figma, prototyping, design system, portfolio</p>
+                        <div class="course-card__meta"><span>⭐ 4.8</span><span>👥 8K</span><span>🕐 35h</span></div>
+                        <div class="course-card__price"><span class="old">990K</span><span class="now">399K</span></div>
+                        <button class="btn btn--teal btn--sm" onclick="showToast()">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-card__thumb" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">📊</div>
+                    <div class="course-card__body"><span class="course-card__cat">Data</span>
+                        <h3>Data Science & AI</h3>
+                        <p>Python, ML, Deep Learning, dự án thực tế</p>
+                        <div class="course-card__meta"><span>⭐ 4.9</span><span>👥 12K</span><span>🕐 60h</span></div>
+                        <div class="course-card__price"><span class="old">1.500K</span><span class="now">599K</span>
+                        </div><button class="btn btn--teal btn--sm" onclick="showToast()">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-card__thumb" style="background:linear-gradient(135deg,#11998e,#38ef7d)">📱</div>
+                    <div class="course-card__body"><span class="course-card__cat">Marketing</span>
+                        <h3>Digital Marketing A-Z</h3>
+                        <p>SEO, Ads, Content, Social Media, Analytics</p>
+                        <div class="course-card__meta"><span>⭐ 4.7</span><span>👥 20K</span><span>🕐 25h</span></div>
+                        <div class="course-card__price"><span class="old">890K</span><span class="now">349K</span></div>
+                        <button class="btn btn--teal btn--sm" onclick="showToast()">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="instructors" id="instructors">
+        <div class="container">
+            <h2 class="section-title">Giảng viên <span class="teal">hàng đầu</span></h2>
+            <div class="inst__grid">
+                <div class="inst-card">
+                    <div class="inst-avatar" style="background:linear-gradient(135deg,#667eea,#764ba2)">👨‍💻</div>
+                    <h4>Nguyễn Minh</h4>
+                    <p>Senior Dev tại Google</p><span>25 khoá · 50K học viên</span>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">👩‍🎨</div>
+                    <h4>Thu Hằng</h4>
+                    <p>Lead Designer tại Grab</p><span>12 khoá · 30K học viên</span>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-avatar" style="background:linear-gradient(135deg,#11998e,#38ef7d)">📈</div>
+                    <h4>Đức Anh</h4>
+                    <p>Marketing Director</p><span>18 khoá · 45K học viên</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Gói <span class="teal">học tập</span></h2>
+            <div class="pricing__grid">
+                <div class="price-card">
+                    <h3>Free</h3>
+                    <div class="price">0₫</div>
+                    <ul>
+                        <li>✓ 10 khoá miễn phí</li>
+                        <li>✓ Bài tập cơ bản</li>
+                        <li>✓ Forum cộng đồng</li>
+                    </ul><button class="btn btn--outline btn--full" onclick="openModal('register')">Bắt đầu</button>
+                </div>
+                <div class="price-card price-card--hot">
+                    <div class="hot-tag">HOT</div>
+                    <h3>Pro</h3>
+                    <div class="price">199K<span>/tháng</span></div>
+                    <ul>
+                        <li>✓ Toàn bộ 500+ khoá</li>
+                        <li>✓ Chứng chỉ</li>
+                        <li>✓ Mentoring 1:1</li>
+                        <li>✓ Project review</li>
+                    </ul><button class="btn btn--teal btn--full" onclick="openModal('register')">Đăng ký Pro</button>
+                </div>
+                <div class="price-card">
+                    <h3>Team</h3>
+                    <div class="price">99K<span>/người/tháng</span></div>
+                    <ul>
+                        <li>✓ Mọi thứ Pro</li>
+                        <li>✓ Admin dashboard</li>
+                        <li>✓ Learning paths</li>
+                        <li>✓ Invoice VAT</li>
+                    </ul><button class="btn btn--outline btn--full" onclick="showToast()">Liên hệ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>📚 Edu<span class="teal">Master</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

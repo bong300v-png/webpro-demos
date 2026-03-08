@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>ArenaX — Gaming & Esport</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Modal đăng ký/đăng nhập -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Username / Email" class="modal__input" required /><input type="password"
+                    placeholder="Password" class="modal__input" required /><button type="submit"
+                    class="btn btn--red btn--full">ĐĂNG NHẬP</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Gamer Tag" class="modal__input" required /><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="password" placeholder="Password" class="modal__input"
+                    required /><button type="submit" class="btn btn--red btn--full">TẠO TÀI KHOẢN</button></form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <!-- NAVBAR -->
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">🎮 Arena<span>X</span></a>
+            <ul class="nav__links">
+                <li><a href="#tournaments">Giải đấu</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#teams">Đội tuyển</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal('login')">Login</button><button
+                    class="btn btn--red" onclick="openModal('register')">Đăng ký</button></div>
+        </div>
+    </nav>
+
+    <!-- HERO — Banner chính -->
+    <header class="hero">
+        <div class="hero__glitch"></div>
+        <div class="hero__content">
+            <span class="hero__tag">🏆 SEASON 4 — ĐANG DIỄN RA</span>
+            <h1>ARENA<span class="red">X</span><br />CHAMPIONSHIP</h1>
+            <p>Giải đấu esport lớn nhất Việt Nam — 128 đội tuyển, 500 triệu tiền thưởng, trực tiếp trên mọi nền tảng.
+            </p>
+            <div class="hero__cta"><button class="btn btn--red btn--lg" onclick="openModal('register')">ĐĂNG KÝ THI
+                    ĐẤU →</button><a href="#tournaments" class="btn btn--outline btn--lg">Xem giải đấu</a></div>
+            <div class="hero__stats">
+                <div><strong>128</strong><span>Đội tuyển</span></div>
+                <div><strong>500M</strong><span>Tiền thưởng</span></div>
+                <div><strong>2M+</strong><span>Viewers</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TOURNAMENTS — Giải đấu đang diễn ra -->
+    <section class="tournaments" id="tournaments">
+        <div class="container">
+            <h2 class="st">Giải đấu <span class="red">hot</span></h2>
+            <div class="tour__grid">
+                <div class="tour-card">
+                    <div class="tour-banner" style="background:linear-gradient(135deg,#dc2626,#450a0a)">🏆</div>
+                    <div class="tour-body">
+                        <span class="tour-status live">● LIVE</span>
+                        <h3>ArenaX Grand Final</h3>
+                        <p>Chung kết mùa 4 — Top 8 đội mạnh nhất</p>
+                        <div class="tour-meta"><span>💰 200M VNĐ</span><span>👥 8 đội</span></div>
+                        <button class="btn btn--red btn--sm" onclick="showToast()">Xem ngay</button>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-banner" style="background:linear-gradient(135deg,#7c3aed,#1e1b4b)">⚔️</div>
+                    <div class="tour-body">
+                        <span class="tour-status upcoming">Sắp diễn ra</span>
+                        <h3>Valorant Open Cup</h3>
+                        <p>Giải mở cho tất cả — rank Diamond+</p>
+                        <div class="tour-meta"><span>💰 100M VNĐ</span><span>👥 64 đội</span></div>
+                        <button class="btn btn--red btn--sm" onclick="openModal('register')">Đăng ký</button>
+                    </div>
+                </div>
+                <div class="tour-card">
+                    <div class="tour-banner" style="background:linear-gradient(135deg,#0ea5e9,#0c1f3c)">🎯</div>
+                    <div class="tour-body">
+                        <span class="tour-status upcoming">Sắp diễn ra</span>
+                        <h3>LMHT Challenger</h3>
+                        <p>League of Legends — rank Challenger only</p>
+                        <div class="tour-meta"><span>💰 150M VNĐ</span><span>👥 32 đội</span></div>
+                        <button class="btn btn--red btn--sm" onclick="openModal('register')">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAMES — Các tựa game hỗ trợ -->
+    <section class="games" id="games">
+        <div class="container">
+            <h2 class="st">Tựa game <span class="red">hỗ trợ</span></h2>
+            <div class="games__grid">
+                <div class="game-card">
+                    <div class="game-icon" style="background:linear-gradient(135deg,#dc2626,#991b1b)">🔫</div>
+                    <h3>Valorant</h3>
+                    <span>FPS Tactical</span>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon" style="background:linear-gradient(135deg,#2563eb,#1e3a5f)">⚔️</div>
+                    <h3>LMHT</h3>
+                    <span>MOBA</span>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon" style="background:linear-gradient(135deg,#f59e0b,#78350f)">🎯</div>
+                    <h3>CS2</h3>
+                    <span>FPS Competitive</span>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon" style="background:linear-gradient(135deg,#8b5cf6,#3b0764)">🏰</div>
+                    <h3>Dota 2</h3>
+                    <span>MOBA</span>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon" style="background:linear-gradient(135deg,#22c55e,#14532d)">🎮</div>
+                    <h3>FC Online</h3>
+                    <span>Sports</span>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon" style="background:linear-gradient(135deg,#ec4899,#831843)">📱</div>
+                    <h3>PUBG Mobile</h3>
+                    <span>Battle Royale</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAMS — Đội tuyển nổi bật -->
+    <section class="teams" id="teams">
+        <div class="container">
+            <h2 class="st">Đội tuyển <span class="red">nổi bật</span></h2>
+            <div class="teams__grid">
+                <div class="team-card">
+                    <div class="team-logo" style="background:linear-gradient(135deg,#dc2626,#7f1d1d)">🐉</div>
+                    <h3>Dragon Fury</h3>
+                    <p>Valorant — Top 1 VN</p><span>W: 42 · L: 3</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-logo" style="background:linear-gradient(135deg,#2563eb,#1e40af)">⚡</div>
+                    <h3>Thunder Storm</h3>
+                    <p>LMHT — Vô địch mùa 3</p><span>W: 38 · L: 5</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-logo" style="background:linear-gradient(135deg,#f59e0b,#92400e)">🦁</div>
+                    <h3>Golden Lions</h3>
+                    <p>CS2 — Top 3 SEA</p><span>W: 35 · L: 8</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-logo" style="background:linear-gradient(135deg,#8b5cf6,#5b21b6)">🐺</div>
+                    <h3>Shadow Wolves</h3>
+                    <p>Dota 2 — Newcomers</p><span>W: 28 · L: 12</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA — Kêu gọi tham gia -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Sẵn sàng <span class="red">chiến đấu?</span></h2>
+                <p>Đăng ký ngay — tham gia đấu trường, chứng minh bản lĩnh, giành phần thưởng.</p><button
+                    class="btn btn--red btn--lg" onclick="openModal('register')">THAM GIA NGAY →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🎮 Arena<span class="red">X</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

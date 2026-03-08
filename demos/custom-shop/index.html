@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Artisan — Custom Handcraft Shop</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Modal đăng ký/đăng nhập -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
+                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
+                    class="modal__input" required /><button type="submit" class="btn btn--earth btn--full">Đăng
+                    nhập</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Họ tên" class="modal__input" required /><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
+                    required /><button type="submit" class="btn btn--earth btn--full">Tạo tài khoản</button></form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <!-- NAVBAR -->
+    <nav class="nav">
+        <div class="nav__inner"><a href="#" class="nav__logo">🪵 Arti<span>san</span></a>
+            <ul class="nav__links">
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#story">Câu chuyện</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal('login')">Đăng
+                    nhập</button><button class="btn btn--earth" onclick="openModal('register')">Đăng ký</button></div>
+        </div>
+    </nav>
+
+    <!-- HERO — Banner boutique -->
+    <header class="hero">
+        <div class="hero__content">
+            <span class="hero__tag">✦ Thủ Công — Tinh Tế — Độc Bản</span>
+            <h1>Tác Phẩm<br /><em class="cursive">Thủ Công Mỹ Nghệ</em></h1>
+            <p>Mỗi sản phẩm là một câu chuyện — handmade bởi nghệ nhân Việt, chất liệu tự nhiên, giá trị bền vững.
+            </p>
+            <div class="hero__cta"><button class="btn btn--earth btn--lg" onclick="openModal('register')">Khám phá
+                    →</button><a href="#story" class="btn btn--outline btn--lg">Câu chuyện</a></div>
+        </div>
+        <div class="hero__visual">
+            <div class="hero__showcase">
+                <div class="showcase-item" style="background:linear-gradient(135deg,#8b7355,#c9b89e)">🏺</div>
+                <div class="showcase-item" style="background:linear-gradient(135deg,#a0845c,#d4c4a8)">🧶</div>
+                <div class="showcase-item" style="background:linear-gradient(135deg,#6d5a3a,#b09e7e)">🪵</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PRODUCTS — Sản phẩm thủ công -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title"><em>Sản phẩm</em> nổi bật</h2>
+            <div class="products__grid">
+                <div class="product-card">
+                    <div class="product-img" style="background:linear-gradient(135deg,#8b7355,#c9b89e)">🏺</div>
+                    <div class="product-body">
+                        <span class="product-cat">Gốm sứ</span>
+                        <h3>Bình Gốm Bát Tràng</h3>
+                        <p>Gốm thủ công, men tự nhiên, hoa văn truyền thống</p>
+                        <div class="product-price">890.000₫</div>
+                        <button class="btn btn--earth btn--sm" onclick="showToast()">Thêm giỏ</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background:linear-gradient(135deg,#a0845c,#d4c4a8)">🧶</div>
+                    <div class="product-body">
+                        <span class="product-cat">Dệt may</span>
+                        <h3>Khăn Thổ Cẩm Sapa</h3>
+                        <p>Tơ tằm dệt tay, hoạ tiết dân tộc H'Mông</p>
+                        <div class="product-price">450.000₫</div>
+                        <button class="btn btn--earth btn--sm" onclick="showToast()">Thêm giỏ</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background:linear-gradient(135deg,#6d5a3a,#b09e7e)">🪵</div>
+                    <div class="product-body">
+                        <span class="product-cat">Đồ gỗ</span>
+                        <h3>Hộp Gỗ Walnut</h3>
+                        <p>Gỗ óc chó nguyên khối, chạm khắc tinh xảo</p>
+                        <div class="product-price">1.290.000₫</div>
+                        <button class="btn btn--earth btn--sm" onclick="showToast()">Thêm giỏ</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img" style="background:linear-gradient(135deg,#c4a882,#e8d5b7)">🕯️</div>
+                    <div class="product-body">
+                        <span class="product-cat">Nến thơm</span>
+                        <h3>Nến Sáp Ong Đà Lạt</h3>
+                        <p>Sáp ong nguyên chất, tinh dầu lavender tự nhiên</p>
+                        <div class="product-price">320.000₫</div>
+                        <button class="btn btn--earth btn--sm" onclick="showToast()">Thêm giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY — Câu chuyện nghệ nhân -->
+    <section class="story" id="story">
+        <div class="container">
+            <div class="story__grid">
+                <div class="story__text">
+                    <h2 class="section-title left"><em>Câu chuyện</em> của chúng tôi</h2>
+                    <p>Artisan ra đời từ tình yêu với nghề thủ công truyền thống Việt Nam. Chúng tôi kết nối nghệ nhân
+                        làng nghề với người yêu thích đồ handmade — mỗi sản phẩm mang theo câu chuyện, tâm huyết và kỹ
+                        thuật hàng trăm năm.</p>
+                    <div class="story__values">
+                        <div class="value">
+                            <span>🌿</span>
+                            <h4>Bền Vững</h4>
+                            <p>Chất liệu tự nhiên, thân thiện môi trường</p>
+                        </div>
+                        <div class="value">
+                            <span>✋</span>
+                            <h4>Thủ Công</h4>
+                            <p>100% handmade bởi nghệ nhân Việt</p>
+                        </div>
+                        <div class="value">
+                            <span>💎</span>
+                            <h4>Độc Bản</h4>
+                            <p>Mỗi sản phẩm là duy nhất, không đại trà</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="story__visual">
+                    <div class="story__img"
+                        style="background:linear-gradient(135deg,#8b7355 0%,#c9b89e 50%,#e8d5b7 100%)">🪴</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT — Liên hệ đặt hàng -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2><em>Đặt hàng</em> riêng</h2>
+                <p>Bạn muốn sản phẩm custom theo ý? Liên hệ nghệ nhân — thiết kế riêng, giá hợp lý.</p>
+                <button class="btn btn--earth btn--lg" onclick="openModal('register')">Liên hệ ngay →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🪵 Arti<span class="earth">san</span> — Demo by <strong>WebPro</strong></p><a href="/"
+                    class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
