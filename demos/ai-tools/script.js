@@ -98,3 +98,10 @@ document.addEventListener('DOMContentLoaded', function () {
     new MutationObserver(function () { if (modal.classList.contains('open')) fill(); }).observe(modal, { attributes: true, attributeFilter: ['class'] });
     document.querySelectorAll('.modal__tab').forEach(function (t) { t.addEventListener('click', function () { setTimeout(fill, 100); }); });
 });
+
+// Export to window for inline onclick handlers
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.switchTab = switchTab;
+window.showToast = showToast;
+window.runDemo = runDemo;
