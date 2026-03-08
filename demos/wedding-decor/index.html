@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>BloomDecor — Trang Trí Tiệc Cưới & Gia Tiệc</title>
+    <meta name="description"
+        content="Dịch vụ decor cưới đang trend — cổng hoa, bàn tiệc, backdrop, gia tiệc, trang trí sân khấu" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Modal báo giá / đăng ký -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Nhận báo giá</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()">
+                <input type="tel" placeholder="Số điện thoại" class="modal__input" required />
+                <input type="password" placeholder="Mật khẩu" class="modal__input" required />
+                <button type="submit" class="btn btn--sage btn--full">Đăng nhập</button>
+            </form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()">
+                <input type="text" placeholder="Họ và tên" class="modal__input" required />
+                <input type="tel" placeholder="Số điện thoại" class="modal__input" required />
+                <input type="date" class="modal__input" required />
+                <select class="modal__input">
+                    <option>Chọn dịch vụ quan tâm</option>
+                    <option>Trọn gói tiệc cưới</option>
+                    <option>Cổng hoa & Backdrop</option>
+                    <option>Bàn tiệc & Gia tiệc</option>
+                    <option>Sân khấu & Ánh sáng</option>
+                    <option>Trang trí lễ gia tiên</option>
+                </select>
+                <textarea placeholder="Mô tả ý tưởng của bạn..." class="modal__input modal__textarea"></textarea>
+                <button type="submit" class="btn btn--sage btn--full">Nhận báo giá miễn phí 📋</button>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo">🌿 Bloom<span>Decor</span></a>
+            <ul class="nav__links">
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#packages">Gói dịch vụ</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button class="btn btn--ghost" onclick="openModal('login')">Đăng nhập</button>
+                <button class="btn btn--sage" onclick="openModal('register')">Nhận báo giá</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO — Banner chính -->
+    <header class="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <span class="hero__tag">✨ Decor đang trend 2026</span>
+            <h1><em>Biến Giấc Mơ</em><br />Thành Hiện Thực</h1>
+            <p>Dịch vụ trang trí tiệc cưới & gia tiệc cao cấp — cổng hoa, bàn tiệc, backdrop, sân khấu. Thiết kế theo
+                concept riêng, thi công trọn gói.</p>
+            <div class="hero__cta">
+                <button class="btn btn--sage btn--lg" onclick="openModal('register')">Nhận Báo Giá →</button>
+                <a href="#portfolio" class="btn btn--outline btn--lg">Xem Portfolio</a>
+            </div>
+            <div class="hero__trust">
+                <span>⭐ 4.9/5</span>
+                <span>💒 500+ tiệc cưới</span>
+                <span>🎨 100% custom</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICES — Dịch vụ trang trí -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title"><em>Dịch vụ</em> trang trí</h2>
+            <div class="services__grid">
+                <div class="sv-card">
+                    <div class="sv-img" style="background:linear-gradient(135deg,#a8d5a2,#7cb07a)">🌺</div>
+                    <div class="sv-body">
+                        <h3>Cổng Hoa & Backdrop</h3>
+                        <p>Cổng hoa tươi, backdrop vải, backdrop hoa, cổng chữ nhật, cổng vòm — theo mọi concept.</p>
+                        <span class="sv-price">Từ 8.000.000₫</span>
+                    </div>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-img" style="background:linear-gradient(135deg,#d4a574,#c08b5c)">🍽️</div>
+                    <div class="sv-body">
+                        <h3>Bàn Tiệc & Gia Tiệc</h3>
+                        <p>Trang trí bàn tiệc, bàn gallery, bàn đón khách, bàn gia tiệc — hoa tươi, nến, phụ kiện cao
+                            cấp.</p>
+                        <span class="sv-price">Từ 5.000.000₫</span>
+                    </div>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-img" style="background:linear-gradient(135deg,#c9a0dc,#a678c8)">🎭</div>
+                    <div class="sv-body">
+                        <h3>Sân Khấu & Ánh Sáng</h3>
+                        <p>Thiết kế sân khấu, hệ thống đèn LED, spotlight, đèn fairy light, fog machine.</p>
+                        <span class="sv-price">Từ 12.000.000₫</span>
+                    </div>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-img" style="background:linear-gradient(135deg,#f0b8b8,#e08a8a)">🏡</div>
+                    <div class="sv-body">
+                        <h3>Lễ Gia Tiên & Đám Hỏi</h3>
+                        <p>Trang trí bàn gia tiên, mâm quả, phông bạt, cổng nhà — phong cách truyền thống hoặc hiện đại.
+                        </p>
+                        <span class="sv-price">Từ 3.500.000₫</span>
+                    </div>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-img" style="background:linear-gradient(135deg,#b8d4e3,#8ab7d1)">📸</div>
+                    <div class="sv-body">
+                        <h3>Photo Corner & Props</h3>
+                        <p>Góc chụp hình check-in, props chụp ảnh, bảng tên, khung ảnh — Instagram-worthy.</p>
+                        <span class="sv-price">Từ 2.000.000₫</span>
+                    </div>
+                </div>
+                <div class="sv-card">
+                    <div class="sv-img" style="background:linear-gradient(135deg,#ffd4a8,#f0b878)">🌸</div>
+                    <div class="sv-body">
+                        <h3>Hoa Tươi & Centerpiece</h3>
+                        <p>Bó hoa cưới, hoa bàn tiệc, hoa xe hoa, hoa cổng — import & local, theo mùa.</p>
+                        <span class="sv-price">Từ 4.000.000₫</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO — Các concept trend -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Concept <em>đang trend</em></h2>
+            <div class="concepts__grid">
+                <div class="concept-card">
+                    <div class="concept-img" style="background:linear-gradient(135deg,#f5e6d3,#e8d5b7)">🤍</div>
+                    <div class="concept-body">
+                        <span class="concept-tag">HOT 2026</span>
+                        <h3>Minimalist White</h3>
+                        <p>Tone trắng tinh khôi, hoa baby, nến trắng, vải organza. Thanh lịch, sang trọng.</p>
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-img" style="background:linear-gradient(135deg,#2d3436,#636e72)">🖤</div>
+                    <div class="concept-body">
+                        <span class="concept-tag">TRENDING</span>
+                        <h3>Moody & Dark</h3>
+                        <p>Tone tối, hoa hồng đỏ đậm, nến đen, velvet. Bí ẩn, cá tính, phá cách.</p>
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-img" style="background:linear-gradient(135deg,#dfe6e9,#b2bec3)">🌿</div>
+                    <div class="concept-body">
+                        <span class="concept-tag">CLASSIC</span>
+                        <h3>Rustic Garden</h3>
+                        <p>Gỗ, lá xanh, hoa đồng cỏ nội, đèn dây. Phong cách đồng quê Châu Âu.</p>
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-img" style="background:linear-gradient(135deg,#ffeaa7,#fdcb6e)">✨</div>
+                    <div class="concept-body">
+                        <span class="concept-tag">LUXURY</span>
+                        <h3>Royal Gold</h3>
+                        <p>Vàng đồng, pha lê, hoa lan trắng, khăn trải satin. Hoàng gia, đẳng cấp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES — Gói dịch vụ trọn gói -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <h2 class="section-title">Gói <em>trọn gói</em></h2>
+            <div class="packages__grid">
+                <div class="pkg-card">
+                    <h3>Essential</h3>
+                    <div class="pkg-price">15.000.000₫</div>
+                    <ul>
+                        <li>✓ Cổng hoa tiêu chuẩn</li>
+                        <li>✓ Bàn gallery</li>
+                        <li>✓ 15 bàn tiệc cơ bản</li>
+                        <li>✓ Photo corner</li>
+                    </ul>
+                    <button class="btn btn--outline btn--full" onclick="openModal('register')">Nhận báo giá</button>
+                </div>
+                <div class="pkg-card pkg-card--hot">
+                    <div class="pkg-hot">BEST SELLER</div>
+                    <h3>Premium</h3>
+                    <div class="pkg-price">35.000.000₫</div>
+                    <ul>
+                        <li>✓ Mọi thứ Essential</li>
+                        <li>✓ Backdrop cao cấp</li>
+                        <li>✓ Sân khấu + LED</li>
+                        <li>✓ Hoa tươi import</li>
+                        <li>✓ Đội ngũ setup chuyên nghiệp</li>
+                    </ul>
+                    <button class="btn btn--sage btn--full" onclick="openModal('register')">Nhận báo giá</button>
+                </div>
+                <div class="pkg-card">
+                    <h3>Luxury</h3>
+                    <div class="pkg-price">65.000.000₫</div>
+                    <ul>
+                        <li>✓ Mọi thứ Premium</li>
+                        <li>✓ Concept designer riêng</li>
+                        <li>✓ Lễ gia tiên + đám hỏi</li>
+                        <li>✓ Xe hoa + trang trí xe</li>
+                        <li>✓ After-party decor</li>
+                    </ul>
+                    <button class="btn btn--outline btn--full" onclick="openModal('register')">Nhận báo giá</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Sẵn sàng cho <em>ngày trọng đại?</em></h2>
+                <p>Liên hệ ngay — tư vấn miễn phí, thiết kế concept riêng theo budget của bạn.</p>
+                <button class="btn btn--sage btn--lg" onclick="openModal('register')">Tư vấn miễn phí →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>🌿 Bloom<span class="sage">Decor</span> — Demo by <strong>WebPro</strong></p>
+                <a href="/" class="footer__back">← Gallery</a>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>

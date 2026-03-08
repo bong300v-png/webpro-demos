@@ -187,6 +187,24 @@ const demos = [
         tags: ['Artisan', 'Earth Tone', 'Boutique'],
         status: 'live',
     },
+    {
+        id: 21, slug: 'wedding',
+        title: 'Wedding',
+        desc: 'Thiệp cưới online — Rose gold, romantic serif, countdown, timeline story, RSVP form.',
+        category: 'event',
+        gradient: 'linear-gradient(135deg, #fce4ec 0%, #f8bbd0 30%, #c0626a 70%, #b08d57 100%)',
+        tags: ['Romantic', 'Countdown', 'RSVP'],
+        status: 'live',
+    },
+    {
+        id: 22, slug: 'wedding-decor',
+        title: 'Wedding Decor',
+        desc: 'Dịch vụ decor cưới trend — Cổng hoa, bàn tiệc, backdrop, gia tiệc, concept design.',
+        category: 'creative',
+        gradient: 'linear-gradient(135deg, #a8d5a2 0%, #6b8e6b 40%, #f0ece4 70%, #d4a574 100%)',
+        tags: ['Trending', 'Decor', 'Organic'],
+        status: 'live',
+    },
 ];
 
 // ═══════════════════════════════════════════════════════
