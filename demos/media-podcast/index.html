@@ -14,9 +14,10 @@
 <body>
     <div class="modal-overlay" id="authModal">
         <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
-            <form class="modal__form" onsubmit="return showToast()"><input type="email" placeholder="Email"
-                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
-                    required /><button type="submit" class="btn btn--violet btn--full">Đăng nhập</button>
+            <form id="loginForm" class="modal__form" onsubmit="return showToast()"><input type="email"
+                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
+                    class="modal__input" required /><button type="submit" class="btn btn--violet btn--full">Đăng
+                    nhập</button>
                 <p class="alt">Chưa có? <a href="#" onclick="showToast();return false">Đăng ký</a></p>
             </form>
         </div>
