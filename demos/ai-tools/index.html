@@ -15,6 +15,24 @@
 </head>
 
 <body>
+    <!-- Modal đăng ký/đăng nhập -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
+                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Password"
+                    class="modal__input" required /><button type="submit" class="btn btn--neon btn--full">Đăng nhập
+                    Console</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Tên của bạn" class="modal__input" required /><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="password" placeholder="Password" class="modal__input"
+                    required /><button type="submit" class="btn btn--neon btn--full">Nhận API Key miễn phí</button>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
     <!-- Matrix rain canvas -->
     <canvas id="matrix-rain"></canvas>
 
@@ -27,7 +45,9 @@
                 <li><a href="#how">Cách hoạt động</a></li>
                 <li><a href="#pricing">Bảng giá</a></li>
             </ul>
-            <a href="#" class="btn btn--neon">Truy cập Console →</a>
+            <div class="nav__actions"><a href="#" class="btn btn--outline"
+                    onclick="openModal('login');return false">Đăng nhập</a><a href="#" class="btn btn--neon"
+                    onclick="openModal('register');return false">Đăng ký</a></div>
         </div>
     </nav>
 
@@ -54,8 +74,8 @@
         <p class="hero__sub">Viết content, tạo hình ảnh, phân tích dữ liệu, code automation — tất cả bằng AI mạnh nhất
             thị trường.</p>
         <div class="hero__cta">
-            <a href="#" class="btn btn--neon btn--lg">Chạy thử ngay →</a>
-            <a href="#" class="btn btn--outline btn--lg">Xem Docs</a>
+            <a href="#" class="btn btn--neon btn--lg" onclick="openModal('register');return false">Chạy thử ngay →</a>
+            <a href="#console" class="btn btn--outline btn--lg">Console Demo</a>
         </div>
         <div class="hero__stats-row">
             <div class="hero__stat"><span class="neon" data-target="2">0</span>M+ <span>requests/ngày</span></div>
@@ -157,7 +177,8 @@
                         <li><span class="green">✓</span> 5 AI models</li>
                         <li><span class="green">✓</span> Community support</li>
                     </ul>
-                    <a href="#" class="btn btn--outline btn--full">Bắt đầu free</a>
+                    <a href="#" class="btn btn--outline btn--full" onclick="openModal('register');return false">Bắt đầu
+                        free</a>
                 </div>
                 <div class="price-card price-card--hot">
                     <div class="price-card__badge">HOT</div>
@@ -169,7 +190,8 @@
                         <li><span class="green">✓</span> Priority support</li>
                         <li><span class="green">✓</span> Custom fine-tuning</li>
                     </ul>
-                    <a href="#" class="btn btn--neon btn--full">Chọn gói này</a>
+                    <a href="#" class="btn btn--neon btn--full" onclick="openModal('register');return false">Chọn gói
+                        này</a>
                 </div>
                 <div class="price-card">
                     <h3>Enterprise</h3>
@@ -180,7 +202,51 @@
                         <li><span class="green">✓</span> SLA 99.99%</li>
                         <li><span class="green">✓</span> On-premise option</li>
                     </ul>
-                    <a href="#" class="btn btn--outline btn--full">Liên hệ</a>
+                    <a href="#" class="btn btn--outline btn--full" onclick="openModal('register');return false">Liên
+                        hệ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Console Demo ── -->
+    <section class="console-demo" id="console">
+        <div class="container">
+            <p class="section-tag"><span class="cyan">//</span> Console</p>
+            <h2 class="section-title">Thử ngay <span class="neon-glow">Console AI</span></h2>
+            <div class="console-box">
+                <div class="terminal__bar"><span class="terminal__dot" style="--c:#ff5f57"></span><span
+                        class="terminal__dot" style="--c:#ffbd2e"></span><span class="terminal__dot"
+                        style="--c:#28c840"></span><span class="terminal__title">neuratech ~ playground</span></div>
+                <div class="console-body">
+                    <div class="console-row"><label>Model:</label><select class="console-select">
+                            <option>GPT-5 Turbo</option>
+                            <option>Claude 4</option>
+                            <option>DALL-E 4</option>
+                            <option>Whisper V4</option>
+                        </select></div>
+                    <div class="console-row"><label>Prompt:</label><textarea class="console-textarea"
+                            placeholder="Nhập prompt của bạn... VD: Viết email marketing cho sản phẩm skincare"></textarea>
+                    </div>
+                    <div class="console-row"><button class="btn btn--neon" onclick="runDemo()">▶ Chạy
+                            thử</button><button class="btn btn--outline" onclick="openModal('register')">Nhận API
+                            Key</button></div>
+                    <div class="console-output" id="consoleOutput"><span class="dim">// Kết quả sẽ hiển thị ở
+                            đây...</span></div>
+                </div>
+            </div>
+            <div class="console-docs">
+                <div class="doc-card">
+                    <h4>📖 Quickstart</h4>
+                    <p>Hướng dẫn tích hợp API trong 5 phút</p>
+                </div>
+                <div class="doc-card">
+                    <h4>🔧 API Reference</h4>
+                    <p>Docs đầy đủ cho tất cả endpoints</p>
+                </div>
+                <div class="doc-card">
+                    <h4>💡 Examples</h4>
+                    <p>50+ ví dụ code sẵn cho mọi ngôn ngữ</p>
                 </div>
             </div>
         </div>
