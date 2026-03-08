@@ -15,20 +15,30 @@
 </head>
 
 <body>
-    <!-- Auth Modal — Neumorphism rose style -->
+    <!-- Auth Modal — Spa Neumorphic organic -->
     <div class="modal-overlay" id="authModal">
-        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
-            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
-                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
-            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
-                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
-                    class="modal__input" required /><button type="submit" class="btn btn--rose btn--full">Đăng
-                    nhập</button></form>
-            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
-                    placeholder="Họ tên" class="modal__input" required /><input type="email" placeholder="Email"
-                    class="modal__input" required /><input type="tel" placeholder="Số điện thoại"
-                    class="modal__input" /><input type="password" placeholder="Mật khẩu" class="modal__input"
-                    required /><button type="submit" class="btn btn--rose btn--full">Tạo tài khoản</button></form>
+        <div class="modal spa-modal">
+            <div class="spa-modal__blob"></div>
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="spa-modal__icon">🌿</div>
+            <h3 class="spa-modal__title">Chào mừng trở lại</h3>
+            <p class="spa-modal__sub">Đăng nhập để đặt lịch spa</p>
+            <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                <div class="spa-input-group"><label>Email</label><input type="email" required /></div>
+                <div class="spa-input-group"><label>Mật khẩu</label><input type="password" required /></div>
+                <button type="submit" class="btn btn--rose btn--full">Đăng nhập</button>
+            </form>
+            <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                <div class="spa-input-group"><label>Họ tên</label><input type="text" required /></div>
+                <div class="spa-input-group"><label>Email</label><input type="email" required /></div>
+                <div class="spa-input-group"><label>SĐT</label><input type="tel" /></div>
+                <div class="spa-input-group"><label>Mật khẩu</label><input type="password" required /></div>
+                <button type="submit" class="btn btn--rose btn--full">Tạo tài khoản</button>
+            </form>
+            <p class="spa-modal__toggle">
+                <span id="toggleText">Chưa có tài khoản?</span>
+                <a href="#" onclick="spaToggle();return false" id="toggleLink">Đăng ký</a>
+            </p>
         </div>
     </div>
     <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>

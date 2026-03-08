@@ -197,7 +197,7 @@ body {
     gap: 8px
 }
 
-/* Modal — Dark fire */
+/* Modal — Fitness aggressive (unique) */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -213,92 +213,118 @@ body {
     display: flex
 }
 
-.modal {
+.fit-modal {
     background: var(--bg2);
-    border: 1px solid rgba(255, 77, 0, .15);
-    border-radius: 16px;
-    padding: 28px;
+    border: 1px solid rgba(255, 77, 0, .2);
+    border-radius: 4px;
+    padding: 0;
     width: min(380px, 90vw);
     position: relative;
-    animation: pop .3s ease
+    animation: fit-slide .35s ease;
+    overflow: hidden
 }
 
-@keyframes pop {
+@keyframes fit-slide {
     from {
-        transform: scale(.9);
+        transform: translateY(40px);
         opacity: 0
     }
 
     to {
-        transform: scale(1);
+        transform: translateY(0);
         opacity: 1
     }
 }
 
+.fit-modal__bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--fire), var(--fire3));
+}
+
 .modal__close {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 14px;
     background: none;
     border: none;
     font-size: 22px;
     cursor: pointer;
-    color: var(--text-30)
+    color: var(--text-30);
+    z-index: 1
 }
 
-.modal__tabs {
+.fit-modal__head {
     display: flex;
-    gap: 4px;
-    margin-bottom: 16px;
-    background: var(--bg);
-    border-radius: 8px;
-    padding: 3px
+    align-items: center;
+    gap: 14px;
+    padding: 24px 24px 0
 }
 
-.modal__tab {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    font-family: var(--font-body);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    cursor: pointer;
-    background: transparent;
-    color: var(--text-60);
-    transition: .2s
+.fit-modal__num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    color: rgba(255, 77, 0, .12);
+    line-height: 1
 }
 
-.modal__tab.active {
-    background: linear-gradient(135deg, var(--fire), var(--fire2));
-    color: #fff
+.fit-modal__head h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    letter-spacing: .08em;
+    color: var(--fire)
 }
 
-.modal__form {
+.fit-modal .modal__form {
     display: flex;
     flex-direction: column;
-    gap: 10px
+    gap: 10px;
+    padding: 20px 24px
 }
 
-.modal__form.hidden {
+.fit-modal .modal__form.hidden {
     display: none
 }
 
-.modal__input {
-    padding: 12px 16px;
+.fit-modal .modal__input {
+    padding: 14px 16px;
     border: 1px solid rgba(255, 255, 255, .08);
-    border-radius: var(--radius);
-    font-size: 14px;
+    border-radius: 4px;
+    font-size: 13px;
     font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
     outline: none;
     background: var(--bg);
-    color: var(--text)
+    color: var(--text);
+    transition: border-color .3s
 }
 
-.modal__input:focus {
+.fit-modal .modal__input:focus {
     border-color: var(--fire)
+}
+
+.fit-modal .modal__input::placeholder {
+    color: var(--text-30)
+}
+
+.fit-modal__toggle {
+    padding: 0 24px 20px;
+    text-align: center
+}
+
+.fit-modal__toggle a {
+    color: var(--text-30);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-decoration: none;
+    transition: color .2s
+}
+
+.fit-modal__toggle a:hover {
+    color: var(--fire)
 }
 
 .toast {

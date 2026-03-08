@@ -15,20 +15,29 @@
 </head>
 
 <body>
-    <!-- Auth Modal — Bold dark fire -->
+    <!-- Auth Modal — Fitness aggressive (unique) -->
     <div class="modal-overlay" id="authModal">
-        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
-            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">ĐĂNG
-                    NHẬP</button><button class="modal__tab" onclick="switchTab('register')">ĐĂNG KÝ</button></div>
-            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
-                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
-                    class="modal__input" required /><button type="submit" class="btn btn--fire btn--full">ĐĂNG
-                    NHẬP</button></form>
-            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
-                    placeholder="Họ tên" class="modal__input" required /><input type="email" placeholder="Email"
-                    class="modal__input" required /><input type="tel" placeholder="SĐT" class="modal__input" /><input
-                    type="password" placeholder="Mật khẩu" class="modal__input" required /><button type="submit"
-                    class="btn btn--fire btn--full">TẠO TÀI KHOẢN</button></form>
+        <div class="modal fit-modal">
+            <div class="fit-modal__bar"></div>
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="fit-modal__head">
+                <span class="fit-modal__num">01</span>
+                <h3>ĐĂNG NHẬP</h3>
+            </div>
+            <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                <input type="email" placeholder="EMAIL" class="modal__input" required />
+                <input type="password" placeholder="MẬT KHẨU" class="modal__input" required />
+                <button type="submit" class="btn btn--fire btn--full">VÀO TẬP →</button>
+            </form>
+            <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                <input type="text" placeholder="HỌ TÊN" class="modal__input" required />
+                <input type="email" placeholder="EMAIL" class="modal__input" required />
+                <input type="tel" placeholder="SĐT" class="modal__input" />
+                <input type="password" placeholder="MẬT KHẨU" class="modal__input" required />
+                <button type="submit" class="btn btn--fire btn--full">TẠO TÀI KHOẢN →</button>
+            </form>
+            <p class="fit-modal__toggle"><a href="#" onclick="fitToggle();return false" id="fitToggleLink">CHƯA CÓ TÀI
+                    KHOẢN? ĐĂNG KÝ</a></p>
         </div>
     </div>
     <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
