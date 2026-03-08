@@ -15,6 +15,24 @@
 </head>
 
 <body>
+    <!-- Auth Modal — Neumorphism rose style -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
+                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
+                    class="modal__input" required /><button type="submit" class="btn btn--rose btn--full">Đăng
+                    nhập</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Họ tên" class="modal__input" required /><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="tel" placeholder="Số điện thoại"
+                    class="modal__input" /><input type="password" placeholder="Mật khẩu" class="modal__input"
+                    required /><button type="submit" class="btn btn--rose btn--full">Tạo tài khoản</button></form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
     <nav class="nav">
         <div class="nav__inner">
             <a href="#" class="nav__logo">🌿 Serene <span>Spa</span></a>
@@ -23,7 +41,9 @@
                 <li><a href="#experience">Trải nghiệm</a></li>
                 <li><a href="#booking">Đặt lịch</a></li>
             </ul>
-            <a href="#booking" class="btn btn--rose">Đặt Lịch Ngay</a>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal('login')">Đăng
+                    nhập</button><button class="btn btn--rose" onclick="openModal('register')">Đặt Lịch Ngay</button>
+            </div>
         </div>
     </nav>
 

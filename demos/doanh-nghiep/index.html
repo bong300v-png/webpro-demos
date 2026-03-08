@@ -18,6 +18,22 @@
 </head>
 
 <body>
+    <!-- Auth Modal — Navy & Gold premium -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
+                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
+                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
+                    class="modal__input" required /><button type="submit" class="btn btn--gold btn--full">Đăng
+                    nhập</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Tên công ty" class="modal__input" required /><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
+                    required /><button type="submit" class="btn btn--gold btn--full">Tạo tài khoản</button></form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
 
     <!-- ═══════════════════════════════════════════ -->
     <!-- NAVBAR — Fixed, transparent → solid on scroll -->
@@ -33,7 +49,9 @@
                 <li><a href="#services" class="nav__link">Dịch vụ</a></li>
                 <li><a href="#stats" class="nav__link">Thành tựu</a></li>
                 <li><a href="#testimonials" class="nav__link">Đánh giá</a></li>
-                <li><a href="#contact" class="nav__link nav__link--cta">Liên Hệ</a></li>
+                <li><button class="nav__link nav__link--ghost" onclick="openModal('login')">Đăng nhập</button></li>
+                <li><a href="#contact" class="nav__link nav__link--cta"
+                        onclick="openModal('register');return false">Liên Hệ</a></li>
             </ul>
             <!-- Mobile menu hamburger -->
             <button class="nav__burger" id="nav-burger" aria-label="Menu">

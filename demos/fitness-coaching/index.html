@@ -15,6 +15,24 @@
 </head>
 
 <body>
+    <!-- Auth Modal — Bold dark fire -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">ĐĂNG
+                    NHẬP</button><button class="modal__tab" onclick="switchTab('register')">ĐĂNG KÝ</button></div>
+            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
+                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
+                    class="modal__input" required /><button type="submit" class="btn btn--fire btn--full">ĐĂNG
+                    NHẬP</button></form>
+            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
+                    placeholder="Họ tên" class="modal__input" required /><input type="email" placeholder="Email"
+                    class="modal__input" required /><input type="tel" placeholder="SĐT" class="modal__input" /><input
+                    type="password" placeholder="Mật khẩu" class="modal__input" required /><button type="submit"
+                    class="btn btn--fire btn--full">TẠO TÀI KHOẢN</button></form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
     <nav class="nav">
         <div class="nav__inner">
             <a href="#" class="nav__logo">IRON<span>FIT</span></a>
@@ -23,7 +41,9 @@
                 <li><a href="#trainers">HLV</a></li>
                 <li><a href="#join">Đăng ký</a></li>
             </ul>
-            <a href="#join" class="btn btn--fire">THAM GIA NGAY</a>
+            <div class="nav__actions"><button class="btn btn--ghost" onclick="openModal('login')">Đăng
+                    nhập</button><button class="btn btn--fire" onclick="openModal('register')">THAM GIA NGAY</button>
+            </div>
         </div>
     </nav>
 
