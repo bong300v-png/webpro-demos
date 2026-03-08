@@ -14,19 +14,30 @@
 </head>
 
 <body>
-    <!-- Auth Modal — Coral warm -->
+    <!-- Auth Modal — Shopping card style (unique) -->
     <div class="modal-overlay" id="authModal">
-        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
-            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
-                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
-            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
-                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
-                    class="modal__input" required /><button type="submit" class="btn btn--coral btn--full">Đăng
-                    nhập</button></form>
-            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
-                    placeholder="Họ tên" class="modal__input" required /><input type="email" placeholder="Email"
-                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
-                    required /><button type="submit" class="btn btn--coral btn--full">Tạo tài khoản</button></form>
+        <div class="modal shop-modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="shop-modal__header">
+                <span class="shop-modal__emoji">🛍️</span>
+                <h3>Chào bạn!</h3>
+                <p>Đăng nhập để mua sắm & nhận ưu đãi</p>
+            </div>
+            <div class="shop-modal__pill-tabs">
+                <button class="shop-pill active" onclick="switchTab('login')">Đăng nhập</button>
+                <button class="shop-pill" onclick="switchTab('register')">Tạo tài khoản</button>
+            </div>
+            <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                <input type="email" placeholder="📧 Email của bạn" class="shop-input" required />
+                <input type="password" placeholder="🔑 Mật khẩu" class="shop-input" required />
+                <button type="submit" class="btn btn--coral btn--full shop-btn">Đăng nhập →</button>
+            </form>
+            <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                <input type="text" placeholder="👤 Họ tên" class="shop-input" required />
+                <input type="email" placeholder="📧 Email" class="shop-input" required />
+                <input type="password" placeholder="🔑 Mật khẩu" class="shop-input" required />
+                <button type="submit" class="btn btn--coral btn--full shop-btn">Tạo tài khoản →</button>
+            </form>
         </div>
     </div>
     <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>

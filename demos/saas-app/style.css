@@ -262,7 +262,7 @@ body {
     margin-top: auto
 }
 
-/* Modal — Glassmorphism purple */
+/* Modal — Glass glow panel (unique) */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -278,46 +278,110 @@ body {
     display: flex
 }
 
-.modal.glass {
-    padding: 28px;
-    width: min(380px, 90vw);
+.saas-modal {
     position: relative;
-    animation: pop .3s ease
+    padding: 28px;
+    width: min(400px, 90vw);
+    animation: saas-float .4s ease;
+    border-radius: 16px;
+    overflow: hidden
 }
 
-@keyframes pop {
+.saas-modal::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 17px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2), transparent, var(--accent));
+    z-index: -2;
+    animation: saas-border-spin 4s linear infinite
+}
+
+.saas-modal::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 15px;
+    background: rgba(20, 10, 40, .92);
+    z-index: -1;
+    backdrop-filter: blur(20px)
+}
+
+@keyframes saas-float {
     from {
-        transform: scale(.9);
+        transform: translateY(30px);
         opacity: 0
     }
 
     to {
-        transform: scale(1);
+        transform: translateY(0);
         opacity: 1
     }
 }
 
+@keyframes saas-border-spin {
+    0% {
+        filter: hue-rotate(0deg)
+    }
+
+    100% {
+        filter: hue-rotate(360deg)
+    }
+}
+
+.saas-modal__glow {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 100px;
+    background: var(--accent);
+    filter: blur(60px);
+    opacity: .2;
+    pointer-events: none
+}
+
 .modal__close {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 14px;
     background: none;
     border: none;
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
-    color: var(--text-30)
+    color: var(--text-30);
+    z-index: 1
 }
 
-.modal__tabs {
+.saas-modal__head {
     display: flex;
-    gap: 4px;
-    margin-bottom: 16px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px
+}
+
+.saas-modal__head span {
+    font-size: 28px
+}
+
+.saas-modal__head h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    font-family: var(--font)
+}
+
+.saas-modal__switch {
+    position: relative;
+    display: flex;
     background: rgba(255, 255, 255, .04);
     border-radius: 10px;
-    padding: 3px
+    padding: 3px;
+    margin-bottom: 20px
 }
 
-.modal__tab {
+.saas-sw {
     flex: 1;
     padding: 10px;
     border: none;
@@ -328,37 +392,65 @@ body {
     background: transparent;
     color: var(--text-60);
     transition: .2s;
-    font-family: var(--font)
+    font-family: var(--font);
+    z-index: 1;
+    position: relative
 }
 
-.modal__tab.active {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+.saas-sw.active {
     color: #fff
 }
 
-.modal__form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px
+.saas-sw__slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(50% - 3px);
+    height: calc(100% - 6px);
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 8px;
+    transition: transform .3s ease
 }
 
-.modal__form.hidden {
+.saas-modal .modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.saas-modal .modal__form.hidden {
     display: none
 }
 
-.modal__input {
-    padding: 12px 16px;
+.saas-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, .04);
     border: 1px solid var(--glass-border);
     border-radius: 10px;
+    padding: 0 14px;
+    transition: border-color .2s
+}
+
+.saas-field:focus-within {
+    border-color: var(--accent)
+}
+
+.saas-field span {
+    font-size: 16px;
+    opacity: .5
+}
+
+.saas-field input {
+    flex: 1;
+    padding: 13px 0;
+    border: none;
+    background: none;
     font-size: 14px;
     font-family: var(--font);
     outline: none;
-    background: rgba(255, 255, 255, .04);
     color: var(--text)
-}
-
-.modal__input:focus {
-    border-color: var(--accent)
 }
 
 .toast {

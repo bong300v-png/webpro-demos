@@ -383,7 +383,7 @@ body {
     border-color: var(--gold-400)
 }
 
-/* Modal — Navy & Gold premium */
+/* Modal — Executive premium (unique) */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -399,54 +399,83 @@ body {
     display: flex
 }
 
-.modal {
+.exec-modal {
     background: var(--navy-800);
     border: 1px solid var(--white-10);
-    border-radius: 20px;
-    padding: 28px;
+    border-radius: 4px;
     width: min(400px, 90vw);
     position: relative;
-    animation: modal-pop .3s ease;
+    animation: exec-fade .35s ease;
+    overflow: hidden;
     box-shadow: 0 24px 60px rgba(0, 0, 0, .4)
 }
 
-@keyframes modal-pop {
+@keyframes exec-fade {
     from {
-        transform: scale(.9);
-        opacity: 0
+        opacity: 0;
+        transform: translateY(-20px)
     }
 
     to {
-        transform: scale(1);
-        opacity: 1
+        opacity: 1;
+        transform: translateY(0)
     }
+}
+
+.exec-modal__gold-line {
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold-400), var(--gold-300), var(--gold-400))
 }
 
 .modal__close {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 14px;
     background: none;
     border: none;
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
-    color: var(--white-30)
+    color: var(--white-30);
+    z-index: 1
 }
 
-.modal__tabs {
+.exec-modal__logo {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--gold-400), var(--gold-300));
+    border-radius: 8px;
     display: flex;
-    gap: 4px;
-    margin-bottom: 16px;
-    background: var(--navy-900);
-    border-radius: 10px;
-    padding: 3px
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy-900);
+    margin: 24px auto 12px
 }
 
-.modal__tab {
+.exec-modal__title {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 18px;
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 20px
+}
+
+.exec-modal__seg {
+    display: flex;
+    gap: 0;
+    margin: 0 24px 16px;
+    border: 1px solid var(--white-10);
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.exec-seg {
     flex: 1;
     padding: 10px;
     border: none;
-    border-radius: 8px;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -456,33 +485,49 @@ body {
     font-family: var(--font-sans)
 }
 
-.modal__tab.active {
-    background: linear-gradient(135deg, var(--gold-400), var(--gold-300));
+.exec-seg.active {
+    background: var(--gold-400);
     color: var(--navy-900)
 }
 
-.modal__form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px
+.exec-seg+.exec-seg {
+    border-left: 1px solid var(--white-10)
 }
 
-.modal__form.hidden {
+.exec-modal .modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 24px 24px
+}
+
+.exec-modal .modal__form.hidden {
     display: none
 }
 
-.modal__input {
-    padding: 12px 16px;
+.exec-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold-400);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-top: 8px
+}
+
+.exec-input {
+    width: 100%;
+    padding: 12px 14px;
     border: 1px solid var(--white-10);
-    border-radius: 10px;
+    border-radius: 4px;
     font-size: 14px;
     font-family: var(--font-sans);
     outline: none;
     background: var(--navy-700);
-    color: var(--white)
+    color: var(--white);
+    transition: border-color .2s
 }
 
-.modal__input:focus {
+.exec-input:focus {
     border-color: var(--gold-400)
 }
 
@@ -494,7 +539,7 @@ body {
     background: linear-gradient(135deg, var(--gold-400), var(--gold-300));
     color: var(--navy-900);
     padding: 12px 24px;
-    border-radius: 12px;
+    border-radius: 4px;
     font-size: 14px;
     font-weight: 600;
     z-index: 300;

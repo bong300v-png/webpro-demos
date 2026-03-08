@@ -18,19 +18,33 @@
 </head>
 
 <body>
-    <!-- Auth Modal — Navy & Gold premium -->
+    <!-- Auth Modal — Executive premium (unique) -->
     <div class="modal-overlay" id="authModal">
-        <div class="modal"><button class="modal__close" onclick="closeModal()">&times;</button>
-            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
-                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
-            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
-                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
-                    class="modal__input" required /><button type="submit" class="btn btn--gold btn--full">Đăng
-                    nhập</button></form>
-            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
-                    placeholder="Tên công ty" class="modal__input" required /><input type="email" placeholder="Email"
-                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
-                    required /><button type="submit" class="btn btn--gold btn--full">Tạo tài khoản</button></form>
+        <div class="modal exec-modal">
+            <div class="exec-modal__gold-line"></div>
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="exec-modal__logo">S</div>
+            <h3 class="exec-modal__title">StellarCorp Portal</h3>
+            <div class="exec-modal__seg">
+                <button class="exec-seg active" onclick="switchTab('login')">Đăng nhập</button>
+                <button class="exec-seg" onclick="switchTab('register')">Đăng ký</button>
+            </div>
+            <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                <label class="exec-label">Email doanh nghiệp</label>
+                <input type="email" class="exec-input" required />
+                <label class="exec-label">Mật khẩu</label>
+                <input type="password" class="exec-input" required />
+                <button type="submit" class="btn btn--gold btn--full">Đăng nhập</button>
+            </form>
+            <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                <label class="exec-label">Tên công ty</label>
+                <input type="text" class="exec-input" required />
+                <label class="exec-label">Email doanh nghiệp</label>
+                <input type="email" class="exec-input" required />
+                <label class="exec-label">Mật khẩu</label>
+                <input type="password" class="exec-input" required />
+                <button type="submit" class="btn btn--gold btn--full">Tạo tài khoản</button>
+            </form>
         </div>
     </div>
     <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>

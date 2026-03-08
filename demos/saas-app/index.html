@@ -14,19 +14,31 @@
 </head>
 
 <body>
-    <!-- Auth Modal — Glassmorphism purple -->
+    <!-- Auth Modal — Glass glow panel (unique) -->
     <div class="modal-overlay" id="authModal">
-        <div class="modal glass"><button class="modal__close" onclick="closeModal()">&times;</button>
-            <div class="modal__tabs"><button class="modal__tab active" onclick="switchTab('login')">Đăng
-                    nhập</button><button class="modal__tab" onclick="switchTab('register')">Đăng ký</button></div>
-            <form class="modal__form" id="loginForm" onsubmit="return showToast()"><input type="email"
-                    placeholder="Email" class="modal__input" required /><input type="password" placeholder="Mật khẩu"
-                    class="modal__input" required /><button type="submit" class="btn btn--primary btn--full">Đăng
-                    nhập</button></form>
-            <form class="modal__form hidden" id="registerForm" onsubmit="return showToast()"><input type="text"
-                    placeholder="Tên công ty" class="modal__input" required /><input type="email" placeholder="Email"
-                    class="modal__input" required /><input type="password" placeholder="Mật khẩu" class="modal__input"
-                    required /><button type="submit" class="btn btn--primary btn--full">Tạo tài khoản</button></form>
+        <div class="modal saas-modal">
+            <div class="saas-modal__glow"></div>
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="saas-modal__head">
+                <span>☁️</span>
+                <h3>CloudSync Login</h3>
+            </div>
+            <div class="saas-modal__switch">
+                <button class="saas-sw active" onclick="switchTab('login')">Sign In</button>
+                <button class="saas-sw" onclick="switchTab('register')">Sign Up</button>
+                <div class="saas-sw__slider"></div>
+            </div>
+            <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                <div class="saas-field"><span>✉</span><input type="email" placeholder="your@email.com" required /></div>
+                <div class="saas-field"><span>🔒</span><input type="password" placeholder="Password" required /></div>
+                <button type="submit" class="btn btn--primary btn--full">Sign In →</button>
+            </form>
+            <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                <div class="saas-field"><span>🏢</span><input type="text" placeholder="Company name" required /></div>
+                <div class="saas-field"><span>✉</span><input type="email" placeholder="Work email" required /></div>
+                <div class="saas-field"><span>🔒</span><input type="password" placeholder="Password" required /></div>
+                <button type="submit" class="btn btn--primary btn--full">Create Account →</button>
+            </form>
         </div>
     </div>
     <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
