@@ -1,0 +1,24 @@
+/**
+ * DEMO: Du Lich — Wanderlust
+ */
+function openModal(t) { document.getElementById('authModal').classList.add('open'); switchTab(t || 'login') }
+function closeModal() { document.getElementById('authModal').classList.remove('open') }
+function switchTab(t) { document.querySelectorAll('.travel-tab').forEach((b, i) => b.classList.toggle('active', (t === 'login' && i === 0) || (t === 'register' && i === 1))); var lf = document.getElementById('loginForm'); var rf = document.getElementById('registerForm'); if (lf) lf.classList.toggle('hidden', t !== 'login'); if (rf) rf.classList.toggle('hidden', t !== 'register') }
+document.getElementById('authModal')?.addEventListener('click', e => { if (e.target === e.currentTarget) closeModal() });
+function showToast() { const t = document.getElementById('toast'); t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2500); return false }
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60) });
+
+const burger = document.getElementById('nav-burger');
+const navLinks = document.querySelector('.nav__links');
+if (burger) burger.addEventListener('click', () => { navLinks.classList.toggle('open'); burger.classList.toggle('active') });
+
+const revealEls = document.querySelectorAll('.dest-card, .tour-card, .why-card, .review-card, .cta__content');
+revealEls.forEach(el => el.classList.add('reveal'));
+const revealObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }) }, { threshold: 0.15 });
+revealEls.forEach(el => revealObs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) { t.scrollIntoView({ behavior: 'smooth' }); if (navLinks) navLinks.classList.remove('open'); if (burger) burger.classList.remove('active') } }) });
+
+window.openModal = openModal; window.closeModal = closeModal; window.switchTab = switchTab; window.showToast = showToast;

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JusticeLaw — Tư Vấn Pháp Luật Uy Tín</title>
+    <meta name="description" content="Demo Luật Sư — Deep navy & silver, authoritative serif, trust signals" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <!-- Auth Modal — Courthouse formal style -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal law-modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="law-modal__badge">
+                <div class="law-modal__shield">⚖️</div>
+                <h3>JusticeLaw</h3>
+                <div class="law-modal__trust"><span>🛡️ Bảo mật SSL</span><span>📜 ISO 27001</span></div>
+            </div>
+            <div class="law-modal__divider"></div>
+            <div class="law-modal__body">
+                <div class="law-modal__tabs"><button class="law-tab active" onclick="switchTab('login')">Đăng nhập</button><button class="law-tab" onclick="switchTab('register')">Đăng ký tư vấn</button></div>
+                <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                    <div class="law-field"><label>Email luật sư / Khách hàng</label><input type="email" placeholder="name@email.com" class="law-input" required /></div>
+                    <div class="law-field"><label>Mật khẩu</label><input type="password" placeholder="••••••••" class="law-input" required /></div>
+                    <button type="submit" class="btn btn--navy btn--full">Đăng nhập an toàn →</button>
+                </form>
+                <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                    <div class="law-field"><label>Họ tên</label><input type="text" placeholder="VD: Nguyễn Văn A" class="law-input" required /></div>
+                    <div class="law-field"><label>Email</label><input type="email" placeholder="name@email.com" class="law-input" required /></div>
+                    <div class="law-field"><label>Số điện thoại</label><input type="tel" placeholder="0901 234 567" class="law-input" required /></div>
+                    <div class="law-field"><label>Vấn đề cần tư vấn</label><select class="law-input"><option>Dân sự</option><option>Hình sự</option><option>Doanh nghiệp</option><option>Lao động</option><option>Bất động sản</option></select></div>
+                    <button type="submit" class="btn btn--navy btn--full">Đăng ký tư vấn miễn phí →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">⚖️ Justice<span class="silver">Law</span></a>
+            <ul class="nav__links">
+                <li><a href="#services">Dịch Vụ</a></li>
+                <li><a href="#team">Đội Ngũ</a></li>
+                <li><a href="#cases">Thành Tựu</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+                <li><button class="nav__cta" onclick="openModal('register')">Tư Vấn Miễn Phí</button></li>
+            </ul>
+            <button class="nav__burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <p class="hero__eyebrow">— Uy Tín • Chuyên Nghiệp • Tận Tâm —</p>
+            <h1 class="hero__title">Bảo Vệ<br /><span class="silver">Quyền Lợi</span><br />Của Bạn</h1>
+            <p class="hero__subtitle">Đội ngũ luật sư giàu kinh nghiệm, cam kết mang đến giải pháp pháp lý tối ưu cho mọi vấn đề.</p>
+            <div class="hero__actions">
+                <a href="#" class="btn btn--navy btn--lg" onclick="openModal('register');return false">Đặt Lịch Tư Vấn</a>
+                <a href="#services" class="btn btn--outline">Xem Dịch Vụ →</a>
+            </div>
+            <div class="hero__trust"><span>✓ 15+ Năm Kinh Nghiệm</span><span>✓ 2000+ Vụ Thành Công</span><span>✓ Tư Vấn 24/7</span></div>
+        </div>
+    </header>
+
+    <section class="services" id="services">
+        <div class="container">
+            <p class="section-eyebrow center">Lĩnh Vực Hành Nghề</p>
+            <h2 class="section-title center">Dịch Vụ <span class="silver">Pháp Lý</span></h2>
+            <div class="services__grid">
+                <div class="service-card"><div class="service-card__icon">🏢</div><h3>Doanh Nghiệp</h3><p>Thành lập, M&A, hợp đồng, sở hữu trí tuệ, tranh chấp thương mại</p></div>
+                <div class="service-card"><div class="service-card__icon">🏠</div><h3>Bất Động Sản</h3><p>Giao dịch BĐS, giải quyết tranh chấp đất đai, pháp lý dự án</p></div>
+                <div class="service-card"><div class="service-card__icon">👨‍👩‍👧</div><h3>Hôn Nhân & Gia Đình</h3><p>Ly hôn, quyền nuôi con, thừa kế, chia tài sản</p></div>
+                <div class="service-card"><div class="service-card__icon">⚔️</div><h3>Hình Sự</h3><p>Bào chữa, bảo vệ quyền lợi bị hại, tư vấn thủ tục tố tụng</p></div>
+                <div class="service-card"><div class="service-card__icon">💼</div><h3>Lao Động</h3><p>Hợp đồng lao động, bảo hiểm, tranh chấp lao động</p></div>
+                <div class="service-card"><div class="service-card__icon">🌐</div><h3>Quốc Tế</h3><p>Thương mại quốc tế, đầu tư nước ngoài, di trú</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <div class="container">
+            <p class="section-eyebrow center">Đội Ngũ</p>
+            <h2 class="section-title center">Luật Sư <span class="silver">Hàng Đầu</span></h2>
+            <div class="team__grid">
+                <div class="team-card"><div class="team-card__avatar">NV</div><h3>LS. Nguyễn Văn An</h3><p>Senior Partner — Doanh nghiệp & M&A</p><small>20 năm kinh nghiệm</small></div>
+                <div class="team-card"><div class="team-card__avatar">TH</div><h3>LS. Trần Hải Yến</h3><p>Partner — Bất động sản & Tranh chấp</p><small>15 năm kinh nghiệm</small></div>
+                <div class="team-card"><div class="team-card__avatar">PL</div><h3>LS. Phạm Lê Minh</h3><p>Associate — Hình sự & Lao động</p><small>10 năm kinh nghiệm</small></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cases" id="cases">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stat-item"><span class="stat-item__number" data-target="2000">0</span><span class="stat-item__plus">+</span><p>Vụ Thành Công</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="98">0</span><span class="stat-item__plus">%</span><p>Tỉ Lệ Thắng</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="15">0</span><span class="stat-item__plus">+</span><p>Năm Kinh Nghiệm</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="500">0</span><span class="stat-item__plus">+</span><p>Khách Hàng DN</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta__content">
+                <h2>Cần <span class="silver">Tư Vấn Pháp Lý?</span></h2>
+                <p>Buổi tư vấn đầu tiên miễn phí — Hãy để chúng tôi bảo vệ quyền lợi của bạn</p>
+                <div class="cta__actions">
+                    <a href="#" class="btn btn--navy btn--lg" onclick="openModal('register');return false">Đặt Lịch Tư Vấn Miễn Phí</a>
+                    <a href="#" class="btn btn--outline btn--lg">📞 Hotline: 1900-xxxx</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div><h4>⚖️ Justice<span class="silver">Law</span></h4><p>Công ty Luật TNHH JusticeLaw — Uy tín hàng đầu Việt Nam</p></div>
+                <div class="footer__links"><h4>Dịch vụ</h4><a href="#">Doanh nghiệp</a><a href="#">Bất động sản</a><a href="#">Hình sự</a></div>
+                <div class="footer__links"><h4>Liên hệ</h4><a href="#">contact@justicelaw.vn</a><a href="#">1900-xxxx</a></div>
+            </div>
+            <div class="footer__bottom"><p>&copy; 2025 JusticeLaw. Demo by <strong>WebPro</strong></p><a href="/" class="footer__back">&larr; Quay lại Gallery</a></div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

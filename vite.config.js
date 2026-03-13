@@ -33,10 +33,23 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: getInputFiles(),
+      output: {
+        // Fingerprinted filenames cho long-term caching
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+      },
     },
     // Tối ưu assets
     assetsInlineLimit: 4096, // Inline files < 4KB
     cssCodeSplit: true,      // Mỗi demo có CSS riêng
+    minify: 'terser',        // Minify tốt hơn cho production
+    terserOptions: {
+      compress: { drop_console: false, passes: 2 },
+      format: { comments: false },
+    },
+    // CSS minification
+    cssMinify: true,
   },
   // Cho phép serve files từ thư mục gốc
   publicDir: 'public',

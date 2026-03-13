@@ -4,7 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WebPro Demos — Bộ Sưu Tập Thiết Kế Web Chuyên Nghiệp</title>
-  <meta name="description" content="Khám phá 25+ demo thiết kế web chuyên nghiệp. Từ Agency, E-Commerce, SaaS đến Creative Portfolio." />
+  <meta name="description" content="Khám phá 30 demo thiết kế web chuyên nghiệp. Từ Agency, E-Commerce, SaaS đến Creative Portfolio." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="WebPro Demos — Bộ Sưu Tập Thiết Kế Web Chuyên Nghiệp" />
+  <meta property="og:description" content="Khám phá 30 demo thiết kế web chuyên nghiệp. Từ Agency, E-Commerce, SaaS đến Creative Portfolio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   
   <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@0.309.0/dist/umd/lucide.min.js" defer></script>
   
   <link rel="stylesheet" href="/gallery.css" />
 </head>
@@ -32,7 +42,7 @@
     <div class="hero__content">
       <div class="hero__badge">
         <span class="hero__badge-dot"></span>
-        <span>25+ Premium Demos</span>
+        <span>30 Premium Demos</span>
       </div>
       <h1 class="hero__title">
         Web<span class="hero__title--accent">Pro</span> Demos
@@ -55,11 +65,11 @@
       <!-- Stats bar -->
       <div class="hero__stats">
         <div class="hero__stat">
-          <span class="hero__stat-number" data-count="25">0</span>
+          <span class="hero__stat-number" data-count="30">0</span>
           <span class="hero__stat-label">Demo Templates</span>
         </div>
         <div class="hero__stat">
-          <span class="hero__stat-number" data-count="5">0</span>
+          <span class="hero__stat-number" data-count="8">0</span>
           <span class="hero__stat-label">Ngành Nghề</span>
         </div>
         <div class="hero__stat">
@@ -81,6 +91,12 @@
   <!-- ═══════════════════════════════════════════ -->
   <section class="filter-section" id="categories">
     <div class="container">
+      <!-- Search bar -->
+      <div class="search-bar">
+        <i data-lucide="search" class="search-bar__icon"></i>
+        <input type="text" id="search-input" class="search-bar__input" placeholder="Tìm kiếm demo... (ví dụ: SaaS, gaming, portfolio)" autocomplete="off" />
+      </div>
+
       <div class="filter-bar" id="filter-bar">
         <button class="filter-btn active" data-filter="all">
           <i data-lucide="layout-grid"></i>
@@ -148,6 +164,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scroll-top" aria-label="Cuộn lên đầu trang">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="20" height="20">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
 
   <script type="module" src="/gallery.js"></script>
 </body>

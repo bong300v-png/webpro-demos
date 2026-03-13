@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftCargo — Logistics & Vận Chuyển</title>
+    <meta name="description" content="Demo Logistics — Bold orange-blue, tracking UI, pricing calculator" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <!-- Auth Modal — Shipment tracking style -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal cargo-modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="cargo-modal__header">
+                <div class="cargo-modal__status-bar">
+                    <div class="status-step done"><span>📦</span><small>Tiếp nhận</small></div>
+                    <div class="status-line done"></div>
+                    <div class="status-step active"><span>🔒</span><small>Xác thực</small></div>
+                    <div class="status-line"></div>
+                    <div class="status-step"><span>�</span><small>Vận chuyển</small></div>
+                </div>
+                <h3>SwiftCargo Portal</h3>
+                <p>Đăng nhập để quản lý vận đơn & theo dõi hàng hóa</p>
+            </div>
+            <div class="cargo-modal__body">
+                <div class="cargo-modal__tabs">
+                    <button class="cargo-tab active" onclick="switchTab('login')">Đăng nhập</button>
+                    <button class="cargo-tab" onclick="switchTab('register')">Đăng ký doanh nghiệp</button>
+                </div>
+                <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                    <div class="cargo-field"><label>Email / Mã khách hàng</label><input type="email" placeholder="company@email.com" class="cargo-input" required /></div>
+                    <div class="cargo-field"><label>Mật khẩu</label><input type="password" placeholder="••••••••" class="cargo-input" required /></div>
+                    <button type="submit" class="btn btn--orange btn--full">Đăng nhập →</button>
+                </form>
+                <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                    <div class="cargo-field"><label>Tên công ty</label><input type="text" placeholder="VD: ABC Logistics" class="cargo-input" required /></div>
+                    <div class="cargo-field"><label>Email doanh nghiệp</label><input type="email" placeholder="contact@company.com" class="cargo-input" required /></div>
+                    <div class="cargo-field"><label>SĐT</label><input type="tel" placeholder="028 xxxx xxxx" class="cargo-input" required /></div>
+                    <div class="cargo-field"><label>Nhu cầu</label><select class="cargo-input"><option>Vận chuyển nội địa</option><option>Xuất nhập khẩu</option><option>Kho bãi</option><option>Express</option></select></div>
+                    <button type="submit" class="btn btn--orange btn--full">Đăng ký ngay →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">🚛 Swift<span class="orange">Cargo</span></a>
+            <ul class="nav__links">
+                <li><a href="#services">Dịch Vụ</a></li>
+                <li><a href="#tracking">Tracking</a></li>
+                <li><a href="#fleet">Đội Xe</a></li>
+                <li><a href="#stats">Thành Tựu</a></li>
+                <li><button class="nav__cta" onclick="openModal('register')">Báo Giá</button></li>
+            </ul>
+            <button class="nav__burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero__bg"></div>
+        <div class="hero__content">
+            <div class="hero__badge">🌍 Vận chuyển toàn quốc & quốc tế</div>
+            <h1 class="hero__title">Giao Hàng<br /><span class="orange">Nhanh Chóng</span><br />An Toàn</h1>
+            <p class="hero__subtitle">Giải pháp logistics toàn diện — Từ vận chuyển nội địa, quốc tế đến kho bãi và fulfillment.</p>
+            <div class="hero__actions">
+                <a href="#tracking" class="btn btn--orange btn--lg">Tra Cứu Đơn Hàng</a>
+                <a href="#" class="btn btn--outline btn--lg" onclick="openModal('register');return false">Nhận Báo Giá →</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="tracking" id="tracking">
+        <div class="container">
+            <p class="section-eyebrow center">Tracking</p>
+            <h2 class="section-title center">Tra Cứu <span class="orange">Đơn Hàng</span></h2>
+            <div class="tracking__box">
+                <div class="tracking__input-group">
+                    <input type="text" placeholder="Nhập mã vận đơn (VD: SC-2025-001234)" class="tracking__input" />
+                    <button class="btn btn--orange" onclick="showToast()">Tra Cứu</button>
+                </div>
+                <div class="tracking__demo">
+                    <h3>📦 SC-2025-001234</h3>
+                    <div class="tracking__timeline">
+                        <div class="tracking__step done"><span class="tracking__dot"></span><div><strong>Đã lấy hàng</strong><p>TP.HCM — 10:30, 15/01/2025</p></div></div>
+                        <div class="tracking__step done"><span class="tracking__dot"></span><div><strong>Đang vận chuyển</strong><p>Kho trung chuyển Đà Nẵng — 06:00, 16/01</p></div></div>
+                        <div class="tracking__step active"><span class="tracking__dot"></span><div><strong>Đang giao hàng</strong><p>Shipper đang trên đường giao — Hà Nội</p></div></div>
+                        <div class="tracking__step"><span class="tracking__dot"></span><div><strong>Giao thành công</strong><p>Dự kiến: 17:00, 17/01/2025</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <p class="section-eyebrow center">Dịch Vụ</p>
+            <h2 class="section-title center">Giải Pháp <span class="orange">Logistics</span></h2>
+            <div class="services__grid">
+                <div class="service-card"><span>🚛</span><h3>Vận Chuyển Nội Địa</h3><p>Giao hàng toàn quốc 24-48h, từ chứng từ đến hàng khối lớn</p><div class="service-card__tag">Từ 15.000đ/kg</div></div>
+                <div class="service-card"><span>✈️</span><h3>Vận Chuyển Quốc Tế</h3><p>Air freight, sea freight đến 200+ quốc gia, thủ tục hải quan trọn gói</p><div class="service-card__tag">Liên hệ báo giá</div></div>
+                <div class="service-card"><span>🏭</span><h3>Kho Bãi & Fulfillment</h3><p>Hệ thống kho 50.000m², WMS hiện đại, pick-pack-ship tự động</p><div class="service-card__tag">Từ 5.000đ/m³/ngày</div></div>
+                <div class="service-card"><span>📦</span><h3>Last-Mile Delivery</h3><p>Giao hàng tận nơi, COD, giao trong ngày cho e-commerce</p><div class="service-card__tag">Từ 18.000đ/đơn</div></div>
+                <div class="service-card"><span>🔄</span><h3>Reverse Logistics</h3><p>Thu hồi, đổi trả hàng, xử lý hàng tồn kho chuyên nghiệp</p><div class="service-card__tag">Trọn gói</div></div>
+                <div class="service-card"><span>📊</span><h3>Supply Chain Consulting</h3><p>Tối ưu chuỗi cung ứng, giảm chi phí logistics đến 30%</p><div class="service-card__tag">Tư vấn miễn phí</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fleet" id="fleet">
+        <div class="container">
+            <p class="section-eyebrow center">Đội Xe</p>
+            <h2 class="section-title center">Phương Tiện <span class="orange">Đa Dạng</span></h2>
+            <div class="fleet__grid">
+                <div class="fleet-card"><span>🏍️</span><h3>Xe Máy</h3><p>Giao nhanh nội thành</p><small>Dưới 30kg</small></div>
+                <div class="fleet-card"><span>🚐</span><h3>Xe Van</h3><p>Hàng khối nhỏ-vừa</p><small>500kg — 1.5 tấn</small></div>
+                <div class="fleet-card"><span>🚛</span><h3>Xe Tải</h3><p>Hàng khối lớn</p><small>3 — 15 tấn</small></div>
+                <div class="fleet-card"><span>🚢</span><h3>Container</h3><p>Vận chuyển quốc tế</p><small>20ft — 40ft HC</small></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stat-item"><span class="stat-item__number" data-target="5000">0</span><span class="stat-item__plus">+</span><p>Đơn Hàng/Ngày</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="63">0</span><span class="stat-item__plus">/63</span><p>Tỉnh Thành</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="99">0</span><span class="stat-item__plus">.8%</span><p>Giao Đúng Hạn</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="200">0</span><span class="stat-item__plus">+</span><p>Đội Xe</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2>Cần <span class="orange">Vận Chuyển?</span></h2>
+                <p>Nhận báo giá miễn phí trong 30 phút — Hỗ trợ 24/7</p>
+                <div class="cta__actions">
+                    <a href="#" class="btn btn--orange btn--lg" onclick="openModal('register');return false">Nhận Báo Giá Miễn Phí</a>
+                    <a href="#" class="btn btn--outline btn--lg">📞 Hotline: 1900-xxxx</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div><h4>🚛 Swift<span class="orange">Cargo</span></h4><p>Giải pháp logistics toàn diện cho doanh nghiệp</p></div>
+                <div class="footer__links"><h4>Dịch vụ</h4><a href="#">Nội địa</a><a href="#">Quốc tế</a><a href="#">Kho bãi</a></div>
+                <div class="footer__links"><h4>Liên hệ</h4><a href="#">info@swiftcargo.vn</a><a href="#">1900-xxxx</a></div>
+            </div>
+            <div class="footer__bottom"><p>&copy; 2025 SwiftCargo. Demo by <strong>WebPro</strong></p><a href="/" class="footer__back">&larr; Quay lại Gallery</a></div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>

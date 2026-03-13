@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexChain — Crypto & Web3 Platform</title>
+    <meta name="description" content="Demo Crypto — Neon purple-cyan, blockchain, DeFi dashboard" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <!-- Auth Modal — Wallet Connect style -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal crypto-modal">
+            <div class="crypto-modal__glow"></div>
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="crypto-modal__header">
+                <div class="crypto-modal__logo-ring"><span>🔗</span></div>
+                <h3>Connect to NexChain</h3>
+                <p>Sign in with wallet or email</p>
+            </div>
+            <div class="crypto-modal__wallets">
+                <button class="wallet-btn" onclick="showToast()"><span>🦥</span> MetaMask</button>
+                <button class="wallet-btn" onclick="showToast()"><span>🔵</span> WalletConnect</button>
+                <button class="wallet-btn" onclick="showToast()"><span>👻</span> Phantom</button>
+            </div>
+            <div class="crypto-modal__or"><span>hoặc</span></div>
+            <div class="crypto-modal__tabs"><button class="crypto-tab active" onclick="switchTab('login')">Sign In</button><button class="crypto-tab" onclick="switchTab('register')">Sign Up</button></div>
+            <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                <input type="email" placeholder="Email or 0x address" class="crypto-input" required />
+                <input type="password" placeholder="Password" class="crypto-input" required />
+                <button type="submit" class="btn btn--neon btn--full">Connect →</button>
+            </form>
+            <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                <input type="text" placeholder="Username" class="crypto-input" required />
+                <input type="email" placeholder="Email" class="crypto-input" required />
+                <input type="password" placeholder="Password (min 8 chars)" class="crypto-input" required />
+                <button type="submit" class="btn btn--neon btn--full">Create Account →</button>
+            </form>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Feature coming soon</div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">🔗 Nex<span class="neon">Chain</span></a>
+            <ul class="nav__links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#tokens">Tokens</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><button class="nav__cta" onclick="openModal('register')">Launch App</button></li>
+            </ul>
+            <button class="nav__burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero__content">
+            <div class="hero__badge"><span class="hero__badge-dot"></span> Built on Blockchain</div>
+            <h1 class="hero__title">The Future of<br /><span class="neon">Decentralized</span> Finance</h1>
+            <p class="hero__subtitle">Trade, stake, and earn with zero gas fees. Join 100K+ users on the fastest Layer 2 blockchain.</p>
+            <div class="hero__actions">
+                <a href="#" class="btn btn--neon btn--lg" onclick="openModal('register');return false">Launch App</a>
+                <a href="#features" class="btn btn--outline">Learn More →</a>
+            </div>
+            <div class="hero__live-stats">
+                <div class="live-stat"><span class="live-stat__label">TVL</span><span class="live-stat__value">$2.4B</span></div>
+                <div class="live-stat"><span class="live-stat__label">24h Volume</span><span class="live-stat__value">$148M</span></div>
+                <div class="live-stat"><span class="live-stat__label">NEX Price</span><span class="live-stat__value neon">$12.84</span></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="container">
+            <p class="section-eyebrow center">Core Features</p>
+            <h2 class="section-title center">Why <span class="neon">NexChain?</span></h2>
+            <div class="features__grid">
+                <div class="feature-card"><div class="feature-card__glow"></div><span>⚡</span><h3>Zero Gas Fees</h3><p>Trade without worrying about gas costs. Layer 2 optimized for speed.</p></div>
+                <div class="feature-card"><div class="feature-card__glow"></div><span>🔒</span><h3>Ultra Secure</h3><p>Multi-sig wallets, audited smart contracts, and insurance fund.</p></div>
+                <div class="feature-card"><div class="feature-card__glow"></div><span>💎</span><h3>DeFi Staking</h3><p>Earn up to 18% APY by staking NEX tokens in liquidity pools.</p></div>
+                <div class="feature-card"><div class="feature-card__glow"></div><span>🌐</span><h3>Cross-Chain</h3><p>Bridge assets seamlessly between Ethereum, BSC, and Solana.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tokens" id="tokens">
+        <div class="container">
+            <p class="section-eyebrow center">Live Market</p>
+            <h2 class="section-title center">Token <span class="neon">Dashboard</span></h2>
+            <div class="tokens__grid">
+                <div class="token-card"><div class="token-card__icon">₿</div><div class="token-card__info"><h3>Bitcoin</h3><p>BTC</p></div><div class="token-card__price"><span class="token-card__value">$67,432</span><span class="token-card__change positive">+2.4%</span></div></div>
+                <div class="token-card"><div class="token-card__icon">Ξ</div><div class="token-card__info"><h3>Ethereum</h3><p>ETH</p></div><div class="token-card__price"><span class="token-card__value">$3,891</span><span class="token-card__change positive">+1.8%</span></div></div>
+                <div class="token-card"><div class="token-card__icon">◎</div><div class="token-card__info"><h3>Solana</h3><p>SOL</p></div><div class="token-card__price"><span class="token-card__value">$178</span><span class="token-card__change negative">-0.5%</span></div></div>
+                <div class="token-card highlight"><div class="token-card__icon">◆</div><div class="token-card__info"><h3>NexChain</h3><p>NEX</p></div><div class="token-card__price"><span class="token-card__value">$12.84</span><span class="token-card__change positive">+8.2%</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stat-item"><span class="stat-item__number" data-target="100">0</span><span class="stat-item__plus">K+</span><p>Active Users</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="2">0</span><span class="stat-item__plus">.4B</span><p>Total Value Locked</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="500">0</span><span class="stat-item__plus">M+</span><p>Transactions</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="18">0</span><span class="stat-item__plus">%</span><p>Max APY</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roadmap" id="roadmap">
+        <div class="container">
+            <p class="section-eyebrow center">Roadmap</p>
+            <h2 class="section-title center">What's <span class="neon">Next?</span></h2>
+            <div class="roadmap__timeline">
+                <div class="roadmap-item done"><span class="roadmap-item__dot"></span><div class="roadmap-item__content"><h3>Q1 2025</h3><p>Mainnet Launch, DEX, Staking</p></div></div>
+                <div class="roadmap-item done"><span class="roadmap-item__dot"></span><div class="roadmap-item__content"><h3>Q2 2025</h3><p>Cross-chain bridge, NFT Marketplace</p></div></div>
+                <div class="roadmap-item active"><span class="roadmap-item__dot"></span><div class="roadmap-item__content"><h3>Q3 2025</h3><p>Mobile App, Governance DAO</p></div></div>
+                <div class="roadmap-item"><span class="roadmap-item__dot"></span><div class="roadmap-item__content"><h3>Q4 2025</h3><p>Lending Protocol, Institutional API</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2>Ready to <span class="neon">Go Decentralized?</span></h2>
+                <p>Join 100K+ users trading on NexChain. Zero gas fees, max returns.</p>
+                <a href="#" class="btn btn--neon btn--lg" onclick="openModal('register');return false">Launch App — It's Free</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div><h4>🔗 Nex<span class="neon">Chain</span></h4><p>The next-gen DeFi platform</p></div>
+                <div class="footer__links"><h4>Products</h4><a href="#">DEX</a><a href="#">Staking</a><a href="#">Bridge</a></div>
+                <div class="footer__links"><h4>Community</h4><a href="#">Discord</a><a href="#">Twitter</a><a href="#">Docs</a></div>
+            </div>
+            <div class="footer__bottom"><p>&copy; 2025 NexChain. Demo by <strong>WebPro</strong></p><a href="/" class="footer__back">&larr; Quay lại Gallery</a></div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

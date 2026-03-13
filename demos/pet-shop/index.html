@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PawPals — Pet Shop Yêu Thương</title>
+    <meta name="description" content="Demo Pet Shop — Playful pastel, cute illustrations, e-commerce thú cưng" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <!-- Auth Modal — Cute adoption card style -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal pet-modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="pet-modal__hero">
+                <div class="pet-modal__paws">🐾 🐱 🐶 🐾</div>
+                <h3>Chào bạn nhỏ!</h3>
+                <p>Đăng nhập để yêu thương thú cưng nhiều hơn</p>
+            </div>
+            <div class="pet-modal__body">
+                <div class="pet-modal__tabs">
+                    <button class="pet-tab active" onclick="switchTab('login')">🐾 Đăng nhập</button>
+                    <button class="pet-tab" onclick="switchTab('register')">🌟 Đăng ký</button>
+                </div>
+                <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                    <div class="pet-field"><input type="email" placeholder="Email của bạn" class="pet-input" required /></div>
+                    <div class="pet-field"><input type="password" placeholder="Mật khẩu" class="pet-input" required /></div>
+                    <button type="submit" class="btn btn--pink btn--full">Đăng nhập 🐾</button>
+                </form>
+                <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                    <div class="pet-field"><input type="text" placeholder="Tên của bạn" class="pet-input" required /></div>
+                    <div class="pet-field"><input type="email" placeholder="Email" class="pet-input" required /></div>
+                    <div class="pet-field"><input type="tel" placeholder="Số điện thoại" class="pet-input" required /></div>
+                    <div class="pet-field"><input type="password" placeholder="Tạo mật khẩu" class="pet-input" required /></div>
+                    <button type="submit" class="btn btn--pink btn--full">Gia nhập PawPals 🌟</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast">� Tính năng đang phát triển</div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">🐾 Paw<span class="pink">Pals</span></a>
+            <ul class="nav__links">
+                <li><a href="#products">Sản Phẩm</a></li>
+                <li><a href="#services">Dịch Vụ</a></li>
+                <li><a href="#adopt">Nhận Nuôi</a></li>
+                <li><a href="#reviews">Đánh Giá</a></li>
+                <li><button class="nav__cta" onclick="openModal('register')">🛒 Giỏ Hàng</button></li>
+            </ul>
+            <button class="nav__burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero__shapes"><div class="shape shape--1"></div><div class="shape shape--2"></div><div class="shape shape--3"></div></div>
+        <div class="hero__content">
+            <div class="hero__badge">🎉 Giảm 20% cho đơn hàng đầu tiên</div>
+            <h1 class="hero__title">Yêu Thương<br /><span class="pink">Thú Cưng</span> Của Bạn</h1>
+            <p class="hero__subtitle">Thức ăn, phụ kiện, đồ chơi và dịch vụ chăm sóc tốt nhất cho boss nhà bạn!</p>
+            <div class="hero__actions">
+                <a href="#products" class="btn btn--pink btn--lg">Mua Sắm Ngay 🛒</a>
+                <a href="#adopt" class="btn btn--outline">Nhận Nuôi Bé 🐶</a>
+            </div>
+        </div>
+        <div class="hero__mascot">🐕</div>
+    </header>
+
+    <section class="products" id="products">
+        <div class="container">
+            <p class="section-eyebrow center">Best Sellers</p>
+            <h2 class="section-title center">Sản Phẩm <span class="pink">Hot Nhất</span></h2>
+            <div class="products__grid">
+                <div class="product-card"><div class="product-card__img" style="background: linear-gradient(135deg, #ffd6e0, #ffacc7);">🦴</div><div class="product-card__body"><span class="product-card__badge">Best Seller</span><h3>Thức Ăn Hạt Premium</h3><p>Royal Canin — Cho chó trưởng thành</p><div class="product-card__footer"><span class="product-card__price">450.000đ</span><button class="btn btn--pink btn--sm" onclick="showToast()">Thêm 🛒</button></div></div></div>
+                <div class="product-card"><div class="product-card__img" style="background: linear-gradient(135deg, #c9f0ff, #a0e7e5);">🎀</div><div class="product-card__body"><span class="product-card__badge">New</span><h3>Vòng Cổ LED</h3><p>Phát sáng ban đêm — An toàn</p><div class="product-card__footer"><span class="product-card__price">180.000đ</span><button class="btn btn--pink btn--sm" onclick="showToast()">Thêm 🛒</button></div></div></div>
+                <div class="product-card"><div class="product-card__img" style="background: linear-gradient(135deg, #fff3cd, #ffd6e0);">🧸</div><div class="product-card__body"><span class="product-card__badge">Hot</span><h3>Đồ Chơi Gặm</h3><p>Cao su tự nhiên — Sạch răng</p><div class="product-card__footer"><span class="product-card__price">95.000đ</span><button class="btn btn--pink btn--sm" onclick="showToast()">Thêm 🛒</button></div></div></div>
+                <div class="product-card"><div class="product-card__img" style="background: linear-gradient(135deg, #e8dff5, #fce1e4);">🛁</div><div class="product-card__body"><span class="product-card__badge">Sale</span><h3>Sữa Tắm Organic</h3><p>Chiết xuất oải hương — Khử mùi</p><div class="product-card__footer"><span class="product-card__price"><s>250.000đ</s> 199.000đ</span><button class="btn btn--pink btn--sm" onclick="showToast()">Thêm 🛒</button></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <p class="section-eyebrow center">Dịch Vụ</p>
+            <h2 class="section-title center">Chăm Sóc <span class="pink">Toàn Diện</span></h2>
+            <div class="services__grid">
+                <div class="service-card"><span>🛁</span><h3>Grooming & Spa</h3><p>Tắm, cắt tỉa lông, làm móng chuyên nghiệp</p></div>
+                <div class="service-card"><span>🏥</span><h3>Khám Sức Khỏe</h3><p>Bác sĩ thú y kinh nghiệm, tiêm phòng đầy đủ</p></div>
+                <div class="service-card"><span>🏨</span><h3>Pet Hotel</h3><p>Trông giữ khi bạn vắng nhà, phòng VIP riêng</p></div>
+                <div class="service-card"><span>🚗</span><h3>Giao Hàng Tận Nơi</h3><p>Miễn phí ship đơn từ 300K, giao trong 2h</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="adopt" id="adopt">
+        <div class="container">
+            <p class="section-eyebrow center">Nhận Nuôi</p>
+            <h2 class="section-title center">Các Bé Đang <span class="pink">Tìm Nhà</span></h2>
+            <div class="adopt__grid">
+                <div class="adopt-card"><div class="adopt-card__img" style="background: linear-gradient(135deg, #ffd6e0, #ffe5ec);">🐕</div><div class="adopt-card__body"><h3>Lucky</h3><p>Corgi — 6 tháng — Đực</p><button class="btn btn--outline btn--sm" onclick="openModal('register')">Tìm Hiểu</button></div></div>
+                <div class="adopt-card"><div class="adopt-card__img" style="background: linear-gradient(135deg, #c9f0ff, #dff6ff);">🐈</div><div class="adopt-card__body"><h3>Miu</h3><p>British Shorthair — 4 tháng — Cái</p><button class="btn btn--outline btn--sm" onclick="openModal('register')">Tìm Hiểu</button></div></div>
+                <div class="adopt-card"><div class="adopt-card__img" style="background: linear-gradient(135deg, #fff3cd, #fff8e1);">🐕</div><div class="adopt-card__body"><h3>Bông</h3><p>Poodle — 3 tháng — Cái</p><button class="btn btn--outline btn--sm" onclick="openModal('register')">Tìm Hiểu</button></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <p class="section-eyebrow center">Đánh Giá</p>
+            <h2 class="section-title center">Sen Nào Cũng <span class="pink">Khen</span></h2>
+            <div class="reviews__grid">
+                <div class="review-card"><div class="review-card__stars">⭐⭐⭐⭐⭐</div><p>"Sản phẩm chất lượng, giao hàng nhanh. Boss nhà mình mê lắm! Sẽ mua lại."</p><strong>Thanh Hà</strong></div>
+                <div class="review-card"><div class="review-card__stars">⭐⭐⭐⭐⭐</div><p>"Dịch vụ grooming tuyệt vời, nhân viên yêu thương thú cưng. 10 điểm!"</p><strong>Minh Tú</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2>Giảm <span class="pink">20%</span> Đơn Hàng Đầu Tiên!</h2>
+                <p>Đăng ký thành viên PawPals ngay để nhận ưu đãi</p>
+                <a href="#" class="btn btn--pink btn--lg" onclick="openModal('register');return false">Đăng Ký Ngay 🎉</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div><h4>🐾 Paw<span class="pink">Pals</span></h4><p>Yêu thương thú cưng từ trái tim</p></div>
+                <div class="footer__links"><h4>Sản phẩm</h4><a href="#">Thức ăn</a><a href="#">Phụ kiện</a><a href="#">Đồ chơi</a></div>
+                <div class="footer__links"><h4>Liên hệ</h4><a href="#">hello@pawpals.vn</a><a href="#">1900-xxxx</a></div>
+            </div>
+            <div class="footer__bottom"><p>&copy; 2025 PawPals. Demo by <strong>WebPro</strong></p><a href="/" class="footer__back">&larr; Quay lại Gallery</a></div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>

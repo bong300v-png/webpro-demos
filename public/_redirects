@@ -1,0 +1,13 @@
+# ═══════════════════════════════════════════
+# Cloudflare Pages — Redirects
+# ═══════════════════════════════════════════
+
+# Trailing slash normalization
+/demos/bat-dong-san  /demos/bat-dong-san/  301
+/demos/du-lich  /demos/du-lich/  301
+/demos/luat-su  /demos/luat-su/  301
+/demos/crypto-web3  /demos/crypto-web3/  301
+/demos/portfolio  /demos/portfolio/  301
+/demos/pet-shop  /demos/pet-shop/  301
+/demos/noi-that  /demos/noi-that/  301
+/demos/logistics  /demos/logistics/  301

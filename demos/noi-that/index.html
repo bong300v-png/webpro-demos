@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArtSpace — Nội Thất & Kiến Trúc</title>
+    <meta name="description" content="Demo Nội Thất — Minimal warm, gallery-heavy, project showcase" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <!-- Auth Modal — Design consultation style -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal interior-modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="interior-modal__header">
+                <div class="interior-modal__swatches">
+                    <span class="swatch" style="background:#d4a574"></span>
+                    <span class="swatch" style="background:#8b7e74"></span>
+                    <span class="swatch" style="background:#2c2520"></span>
+                    <span class="swatch" style="background:#f5f0eb"></span>
+                </div>
+                <h3>ArtSpace Studio</h3>
+                <p>Không gian sống — theo phong cách của bạn</p>
+            </div>
+            <div class="interior-modal__body">
+                <div class="interior-modal__tabs">
+                    <button class="interior-tab active" onclick="switchTab('login')">Đăng nhập</button>
+                    <button class="interior-tab" onclick="switchTab('register')">Đặt lịch tư vấn</button>
+                </div>
+                <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                    <div class="interior-field"><label>Email</label><input type="email" placeholder="name@email.com" class="interior-input" required /></div>
+                    <div class="interior-field"><label>Mật khẩu</label><input type="password" placeholder="••••••••" class="interior-input" required /></div>
+                    <button type="submit" class="btn btn--warm btn--full">Đăng nhập →</button>
+                </form>
+                <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                    <div class="interior-field"><label>Họ tên</label><input type="text" placeholder="Nguyễn Văn A" class="interior-input" required /></div>
+                    <div class="interior-field"><label>Email</label><input type="email" placeholder="name@email.com" class="interior-input" required /></div>
+                    <div class="interior-field"><label>SĐT</label><input type="tel" placeholder="0901 234 567" class="interior-input" required /></div>
+                    <div class="interior-field"><label>Phong cách yêu thích</label><select class="interior-input"><option>Minimalist</option><option>Scandinavian</option><option>Industrial</option><option>Japandi</option><option>Modern Classic</option></select></div>
+                    <button type="submit" class="btn btn--warm btn--full">Đặt Lịch Tư Vấn →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">Art<span class="warm">Space</span></a>
+            <ul class="nav__links">
+                <li><a href="#projects">Dự Án</a></li>
+                <li><a href="#services">Dịch Vụ</a></li>
+                <li><a href="#process">Quy Trình</a></li>
+                <li><a href="#about">Về Chúng Tôi</a></li>
+                <li><button class="nav__cta" onclick="openModal('register')">Tư Vấn</button></li>
+            </ul>
+            <button class="nav__burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <header class="hero" id="hero">
+        <div class="hero__content">
+            <p class="hero__eyebrow">Interior Design & Architecture</p>
+            <h1 class="hero__title">Không Gian<br /><span class="warm">Nghệ Thuật</span><br />Sống</h1>
+            <p class="hero__subtitle">Thiết kế nội thất và kiến trúc đẳng cấp — Biến mọi không gian thành tác phẩm nghệ thuật.</p>
+            <div class="hero__actions">
+                <a href="#projects" class="btn btn--warm">Xem Dự Án</a>
+                <a href="#" class="btn btn--outline" onclick="openModal('register');return false">Đặt Lịch Tư Vấn →</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <p class="section-eyebrow center">Portfolio</p>
+            <h2 class="section-title center">Dự Án <span class="warm">Tiêu Biểu</span></h2>
+            <div class="projects__grid">
+                <div class="project-card large">
+                    <div class="project-card__img" style="background: linear-gradient(135deg, #3c3632, #8b7e74);"></div>
+                    <div class="project-card__overlay"><span class="project-card__tag">Penthouse</span><h3>The Zen Penthouse</h3><p>Quận 2, TP.HCM — 280m²</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card__img" style="background: linear-gradient(135deg, #5c4033, #d4c5b2);"></div>
+                    <div class="project-card__overlay"><span class="project-card__tag">Villa</span><h3>Riviera Villa</h3><p>Đà Nẵng — 450m²</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card__img" style="background: linear-gradient(135deg, #2c2c2c, #6b6b6b);"></div>
+                    <div class="project-card__overlay"><span class="project-card__tag">Office</span><h3>TechHub Office</h3><p>Quận 1 — 600m²</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card__img" style="background: linear-gradient(135deg, #8b7e74, #f5f0eb);"></div>
+                    <div class="project-card__overlay"><span class="project-card__tag">Apartment</span><h3>Skyline Residence</h3><p>Quận 7 — 120m²</p></div>
+                </div>
+                <div class="project-card">
+                    <div class="project-card__img" style="background: linear-gradient(135deg, #4a3728, #c9b89e);"></div>
+                    <div class="project-card__overlay"><span class="project-card__tag">Restaurant</span><h3>Sushi Zen</h3><p>Quận 3 — 200m²</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <p class="section-eyebrow center">Dịch Vụ</p>
+            <h2 class="section-title center">Giải Pháp <span class="warm">Thiết Kế</span></h2>
+            <div class="services__grid">
+                <div class="service-card"><span>🏠</span><h3>Thiết Kế Nội Thất</h3><p>Thiết kế căn hộ, biệt thự, penthouse theo phong cách riêng</p></div>
+                <div class="service-card"><span>🏗️</span><h3>Kiến Trúc</h3><p>Thiết kế kiến trúc nhà phố, biệt thự, công trình thương mại</p></div>
+                <div class="service-card"><span>🛋️</span><h3>Thi Công Trọn Gói</h3><p>Trọn gói từ thiết kế đến thi công, bàn giao chìa khóa</p></div>
+                <div class="service-card"><span>🎨</span><h3>Tư Vấn Phong Cách</h3><p>Tư vấn chọn phong cách, vật liệu, nội thất phù hợp</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process" id="process">
+        <div class="container">
+            <p class="section-eyebrow center">Quy Trình</p>
+            <h2 class="section-title center">4 Bước <span class="warm">Đơn Giản</span></h2>
+            <div class="process__grid">
+                <div class="process-step"><span class="process-step__num">01</span><h3>Tư Vấn</h3><p>Lắng nghe nhu cầu, khảo sát không gian, đề xuất concept</p></div>
+                <div class="process-step"><span class="process-step__num">02</span><h3>Thiết Kế</h3><p>Bản vẽ 3D chi tiết, lựa chọn vật liệu, báo giá minh bạch</p></div>
+                <div class="process-step"><span class="process-step__num">03</span><h3>Thi Công</h3><p>Đội ngũ thi công chuyên nghiệp, giám sát chặt chẽ</p></div>
+                <div class="process-step"><span class="process-step__num">04</span><h3>Bàn Giao</h3><p>Nghiệm thu, bàn giao, bảo hành dài hạn</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__content">
+                <div class="about__text">
+                    <p class="section-eyebrow">Về Chúng Tôi</p>
+                    <h2 class="section-title">10 Năm Kiến Tạo <span class="warm">Không Gian Sống</span></h2>
+                    <p>ArtSpace Studio được thành lập với sứ mệnh mang đến những không gian sống đẹp, tiện nghi và mang đậm dấu ấn cá nhân. Với đội ngũ 30+ kiến trúc sư và nhà thiết kế, chúng tôi đã hoàn thành 500+ dự án trên khắp Việt Nam.</p>
+                </div>
+                <div class="about__stats">
+                    <div class="stat-item"><span class="stat-item__number" data-target="500">0</span><span class="stat-item__plus">+</span><p>Dự Án</p></div>
+                    <div class="stat-item"><span class="stat-item__number" data-target="30">0</span><span class="stat-item__plus">+</span><p>Kiến Trúc Sư</p></div>
+                    <div class="stat-item"><span class="stat-item__number" data-target="10">0</span><span class="stat-item__plus">+</span><p>Năm</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2>Bắt Đầu Dự Án <span class="warm">Của Bạn?</span></h2>
+                <p>Tư vấn miễn phí — Hãy để chúng tôi hiện thực hóa không gian mơ ước</p>
+                <a href="#" class="btn btn--warm btn--lg" onclick="openModal('register');return false">Đặt Lịch Tư Vấn Miễn Phí</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div><h4>Art<span class="warm">Space</span></h4><p>Interior Design & Architecture Studio</p></div>
+                <div class="footer__links"><h4>Dịch vụ</h4><a href="#">Nội thất</a><a href="#">Kiến trúc</a><a href="#">Thi công</a></div>
+                <div class="footer__links"><h4>Liên hệ</h4><a href="#">hello@artspace.vn</a><a href="#">1900-xxxx</a></div>
+            </div>
+            <div class="footer__bottom"><p>&copy; 2025 ArtSpace. Demo by <strong>WebPro</strong></p><a href="/" class="footer__back">&larr; Quay lại Gallery</a></div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>

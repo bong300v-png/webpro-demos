@@ -4,7 +4,19 @@
  */
 
 // ═══════════════════════════════════════════════════════
-// DATA — 20 demos, mỗi ngành 1 demo với style & vibe riêng
+// FILTER MAP — Single source of truth cho category grouping
+// ═══════════════════════════════════════════════════════
+const FILTER_MAP = {
+    'all': null,
+    'business': ['business', 'realestate', 'law', 'logistics'],
+    'ecommerce': ['ecommerce', 'petshop'],
+    'saas': ['saas', 'tech', 'crypto'],
+    'creative': ['creative', 'social', 'media', 'portfolio', 'interior'],
+    'specialized': ['beauty', 'fitness', 'education', 'health', 'food', 'event', 'gaming', 'fintech', 'travel'],
+};
+
+// ═══════════════════════════════════════════════════════
+// DATA — 30 demos, mỗi ngành 1 demo với style & vibe riêng
 // ═══════════════════════════════════════════════════════
 const demos = [
     {
@@ -205,6 +217,78 @@ const demos = [
         tags: ['Trending', 'Decor', 'Organic'],
         status: 'live',
     },
+    {
+        id: 23, slug: 'bat-dong-san',
+        title: 'Bất Động Sản',
+        desc: 'Real estate luxury — Emerald & gold, property listings, virtual tour, map integration.',
+        category: 'realestate',
+        gradient: 'linear-gradient(135deg, #1b4332 0%, #2d6a4f 40%, #d4a373 70%, #e9c46a 100%)',
+        tags: ['Listings', 'Map', 'Luxury'],
+        status: 'live',
+    },
+    {
+        id: 24, slug: 'du-lich',
+        title: 'Du Lịch / Booking',
+        desc: 'Travel & booking — Ocean blue, adventure vibes, tour packages, hotel search, wanderlust.',
+        category: 'travel',
+        gradient: 'linear-gradient(135deg, #0077b6 0%, #00b4d8 40%, #90e0ef 70%, #caf0f8 100%)',
+        tags: ['Travel', 'Booking', 'Adventure'],
+        status: 'live',
+    },
+    {
+        id: 25, slug: 'luat-su',
+        title: 'Luật Sư / Tư Vấn',
+        desc: 'Law firm — Deep navy & silver, authoritative serif, consultation booking, trust signals.',
+        category: 'law',
+        gradient: 'linear-gradient(135deg, #0d1b2a 0%, #1b263b 40%, #415a77 70%, #778da9 100%)',
+        tags: ['Professional', 'Trust', 'Consultation'],
+        status: 'live',
+    },
+    {
+        id: 26, slug: 'crypto-web3',
+        title: 'Crypto / Web3',
+        desc: 'Blockchain — Neon purple-cyan, token dashboard, DeFi vibes, futuristic dark theme.',
+        category: 'crypto',
+        gradient: 'linear-gradient(135deg, #0f0f1a 0%, #1a0a2e 30%, #7b2ff7 65%, #00d4ff 100%)',
+        tags: ['Blockchain', 'DeFi', 'Neon'],
+        status: 'live',
+    },
+    {
+        id: 27, slug: 'portfolio',
+        title: 'Portfolio / CV',
+        desc: 'Personal brand — Minimal monochrome, skill showcase, project gallery, timeline.',
+        category: 'portfolio',
+        gradient: 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 40%, #e0e0e0 80%, #ffffff 100%)',
+        tags: ['Minimal', 'Personal', 'Timeline'],
+        status: 'live',
+    },
+    {
+        id: 28, slug: 'pet-shop',
+        title: 'Pet Shop',
+        desc: 'Thú cưng yêu thương — Playful pastel, cute illustrations, e-commerce cho thú cưng.',
+        category: 'petshop',
+        gradient: 'linear-gradient(135deg, #ffd6e0 0%, #ffacc7 30%, #c9f0ff 65%, #a0e7e5 100%)',
+        tags: ['Cute', 'Playful', 'E-shop'],
+        status: 'live',
+    },
+    {
+        id: 29, slug: 'noi-that',
+        title: 'Nội Thất / Kiến Trúc',
+        desc: 'Interior design — Minimal warm, gallery-heavy, project showcase, before-after.',
+        category: 'interior',
+        gradient: 'linear-gradient(135deg, #3c3632 0%, #8b7e74 30%, #d4c5b2 65%, #f5f0eb 100%)',
+        tags: ['Gallery', 'Minimal', 'Design'],
+        status: 'live',
+    },
+    {
+        id: 30, slug: 'logistics',
+        title: 'Logistics / Vận Chuyển',
+        desc: 'Vận tải & logistics — Bold orange-blue, tracking UI, pricing calculator, fleet management.',
+        category: 'logistics',
+        gradient: 'linear-gradient(135deg, #003049 0%, #005f73 35%, #ee6c4d 70%, #f77f00 100%)',
+        tags: ['Tracking', 'Bold', 'Corporate'],
+        status: 'live',
+    },
 ];
 
 // ═══════════════════════════════════════════════════════
@@ -276,16 +360,8 @@ function updateCounts() {
     const cats = {};
     demos.forEach(d => { cats[d.category] = (cats[d.category] || 0) + 1; });
 
-    // Map filter value → categories
-    const filterMap = {
-        'business': ['business'],
-        'ecommerce': ['ecommerce'],
-        'saas': ['saas', 'tech'],
-        'creative': ['creative', 'social', 'media'],
-        'specialized': ['beauty', 'fitness', 'education', 'health', 'food', 'event', 'gaming', 'fintech'],
-    };
-
-    Object.entries(filterMap).forEach(([key, categories]) => {
+    Object.entries(FILTER_MAP).forEach(([key, categories]) => {
+        if (!categories) return;
         const el = document.getElementById(`count-${key}`);
         if (el) {
             el.textContent = categories.reduce((sum, c) => sum + (cats[c] || 0), 0);
@@ -293,6 +369,61 @@ function updateCounts() {
     });
 }
 updateCounts();
+
+// ═══════════════════════════════════════════════════════
+// SEARCH — Tìm kiếm demo theo tên, mô tả, tags
+// ═══════════════════════════════════════════════════════
+const searchInput = document.getElementById('search-input');
+let currentFilter = 'all';
+let currentSearch = '';
+
+function getFilteredDemos() {
+    let result = demos;
+
+    // Apply category filter
+    if (currentFilter !== 'all') {
+        const categories = FILTER_MAP[currentFilter];
+        if (categories) {
+            result = result.filter(d => categories.includes(d.category));
+        }
+    }
+
+    // Apply search
+    if (currentSearch) {
+        const q = currentSearch.toLowerCase();
+        result = result.filter(d =>
+            d.title.toLowerCase().includes(q) ||
+            d.desc.toLowerCase().includes(q) ||
+            d.tags.some(t => t.toLowerCase().includes(q)) ||
+            d.category.toLowerCase().includes(q)
+        );
+    }
+
+    return result;
+}
+
+function renderFiltered() {
+    const filtered = getFilteredDemos();
+    if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.style.display = 'block';
+    } else {
+        emptyState.style.display = 'none';
+        grid.innerHTML = filtered.map(createCard).join('');
+    }
+    if (window.lucide) lucide.createIcons();
+}
+
+if (searchInput) {
+    let debounceTimer;
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            currentSearch = e.target.value.trim();
+            renderFiltered();
+        }, 250);
+    });
+}
 
 // Filter click handler
 filterBar.addEventListener('click', (e) => {
@@ -303,34 +434,8 @@ filterBar.addEventListener('click', (e) => {
     filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    const filter = btn.dataset.filter;
-
-    // Map filter button → actual categories
-    const filterMap = {
-        'all': null,
-        'business': ['business'],
-        'ecommerce': ['ecommerce'],
-        'saas': ['saas', 'tech'],
-        'creative': ['creative', 'social', 'media'],
-        'specialized': ['beauty', 'fitness', 'education', 'health', 'food', 'event', 'gaming', 'fintech'],
-    };
-
-    const categories = filterMap[filter];
-    if (!categories) {
-        renderCards('all');
-    } else {
-        const filtered = demos.filter(d => categories.includes(d.category));
-        if (filtered.length === 0) {
-            grid.innerHTML = '';
-            emptyState.style.display = 'block';
-        } else {
-            emptyState.style.display = 'none';
-            grid.innerHTML = filtered.map(createCard).join('');
-        }
-    }
-
-    // Re-init Lucide icons cho cards mới render
-    if (window.lucide) lucide.createIcons();
+    currentFilter = btn.dataset.filter;
+    renderFiltered();
 });
 
 // ═══════════════════════════════════════════════════════
@@ -368,6 +473,47 @@ const heroObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 
 heroObserver.observe(document.getElementById('hero'));
+
+// ═══════════════════════════════════════════════════════
+// SCROLL TO TOP — Nút cuộn lên đầu trang
+// ═══════════════════════════════════════════════════════
+const scrollTopBtn = document.getElementById('scroll-top');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            scrollTopBtn.classList.add('visible');
+        } else {
+            scrollTopBtn.classList.remove('visible');
+        }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ═══════════════════════════════════════════════════════
+// LAZY REVEAL — Cards xuất hiện khi scroll vào viewport
+// ═══════════════════════════════════════════════════════
+const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            entry.target.style.animationDelay = `${i * 0.05}s`;
+            entry.target.classList.add('demo-card--visible');
+            cardObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '50px' });
+
+// Observe cards sau mỗi lần render
+const originalRenderFiltered = renderFiltered;
+renderFiltered = function() {
+    originalRenderFiltered();
+    document.querySelectorAll('.demo-card').forEach(card => {
+        cardObserver.observe(card);
+    });
+};
+// Re-run to apply observer on initial cards
+document.querySelectorAll('.demo-card').forEach(card => cardObserver.observe(card));
 
 // ═══════════════════════════════════════════════════════
 // INIT — Lucide icons

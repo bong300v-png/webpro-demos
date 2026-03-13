@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LuxEstate — Bất Động Sản Cao Cấp</title>
+    <meta name="description" content="Demo Bất Động Sản — Emerald & Gold, property listings, luxury real estate" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <!-- Auth Modal — Split panel luxury style -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal estate-modal">
+            <button class="modal__close" onclick="closeModal()">&times;</button>
+            <div class="estate-modal__visual">
+                <div class="estate-modal__visual-overlay"></div>
+                <div class="estate-modal__visual-content">
+                    <span class="estate-modal__brand">🏡</span>
+                    <h3>LuxEstate</h3>
+                    <p>Không gian sống đẳng cấp dành cho bạn</p>
+                    <div class="estate-modal__visual-stats"><span>500+ Dự án</span><span>10+ Năm</span></div>
+                </div>
+            </div>
+            <div class="estate-modal__form-side">
+                <h3>Chào mừng trở lại</h3>
+                <p class="estate-modal__subtitle">Đăng nhập để khám phá dự án độc quyền</p>
+                <div class="estate-modal__tabs">
+                    <button class="estate-tab active" onclick="switchTab('login')">Đăng nhập</button>
+                    <button class="estate-tab" onclick="switchTab('register')">Đăng ký</button>
+                </div>
+                <form id="loginForm" class="modal__form" onsubmit="return showToast()">
+                    <div class="estate-field"><label>Email</label><input type="email" placeholder="name@email.com" class="estate-input" required /></div>
+                    <div class="estate-field"><label>Mật khẩu</label><input type="password" placeholder="••••••••" class="estate-input" required /></div>
+                    <button type="submit" class="btn btn--emerald btn--full">Đăng nhập →</button>
+                    <p class="estate-modal__hint">Chưa có tài khoản? <a href="#" onclick="switchTab('register');return false">Đăng ký miễn phí</a></p>
+                </form>
+                <form id="registerForm" class="modal__form hidden" onsubmit="return showToast()">
+                    <div class="estate-field"><label>Họ tên</label><input type="text" placeholder="Nguyễn Văn A" class="estate-input" required /></div>
+                    <div class="estate-field"><label>Email</label><input type="email" placeholder="name@email.com" class="estate-input" required /></div>
+                    <div class="estate-field"><label>Số điện thoại</label><input type="tel" placeholder="0901 234 567" class="estate-input" required /></div>
+                    <div class="estate-field"><label>Mật khẩu</label><input type="password" placeholder="••••••••" class="estate-input" required /></div>
+                    <button type="submit" class="btn btn--emerald btn--full">Tạo Tài Khoản →</button>
+                    <p class="estate-modal__hint">Đã có tài khoản? <a href="#" onclick="switchTab('login');return false">Đăng nhập</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast">🔒 Tính năng đang phát triển</div>
+
+    <!-- Nav -->
+    <nav class="navbar" id="navbar">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">🏡 Lux<span class="gold">Estate</span></a>
+            <ul class="nav__links">
+                <li><a href="#listings">Dự Án</a></li>
+                <li><a href="#features">Tiện Ích</a></li>
+                <li><a href="#stats">Thành Tựu</a></li>
+                <li><a href="#testimonials">Đánh Giá</a></li>
+                <li><button class="nav__cta" onclick="openModal('register')">Liên Hệ</button></li>
+            </ul>
+            <button class="nav__burger" id="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <p class="hero__eyebrow">— Premium Real Estate —</p>
+            <h1 class="hero__title">Không Gian Sống<br /><span class="gold">Đẳng Cấp</span></h1>
+            <p class="hero__subtitle">Khám phá bộ sưu tập bất động sản cao cấp — từ biệt thự, penthouse đến căn hộ view biển, mỗi dự án là một kiệt tác kiến trúc.</p>
+            <div class="hero__actions">
+                <a href="#listings" class="btn btn--emerald">Xem Dự Án</a>
+                <a href="#features" class="btn btn--outline">Tìm Hiểu Thêm →</a>
+            </div>
+        </div>
+        <div class="hero__scroll"><div class="hero__scroll-dot"></div><span>Cuộn xuống</span></div>
+    </header>
+
+    <!-- Listings -->
+    <section class="listings" id="listings">
+        <div class="container">
+            <p class="section-eyebrow center">Dự Án Nổi Bật</p>
+            <h2 class="section-title center">Bất Động Sản <span class="gold">Cao Cấp</span></h2>
+            <div class="listings__grid">
+                <div class="listing-card">
+                    <div class="listing-card__img" style="background: linear-gradient(135deg, #1b4332, #2d6a4f);"><span class="listing-card__price">12.5 Tỷ</span></div>
+                    <div class="listing-card__body">
+                        <h3>The Emerald Villa</h3>
+                        <p class="listing-card__location">📍 Quận 2, TP.HCM</p>
+                        <div class="listing-card__specs"><span>🛏 4 PN</span><span>🚿 3 WC</span><span>📐 320m²</span></div>
+                    </div>
+                </div>
+                <div class="listing-card">
+                    <div class="listing-card__img" style="background: linear-gradient(135deg, #264653, #2a9d8f);"><span class="listing-card__price">8.2 Tỷ</span></div>
+                    <div class="listing-card__body">
+                        <h3>Ocean View Penthouse</h3>
+                        <p class="listing-card__location">📍 Vũng Tàu</p>
+                        <div class="listing-card__specs"><span>🛏 3 PN</span><span>🚿 2 WC</span><span>📐 180m²</span></div>
+                    </div>
+                </div>
+                <div class="listing-card">
+                    <div class="listing-card__img" style="background: linear-gradient(135deg, #3c6e71, #d4a373);"><span class="listing-card__price">5.8 Tỷ</span></div>
+                    <div class="listing-card__body">
+                        <h3>Garden Residence</h3>
+                        <p class="listing-card__location">📍 Quận 7, TP.HCM</p>
+                        <div class="listing-card__specs"><span>🛏 2 PN</span><span>🚿 2 WC</span><span>📐 95m²</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <p class="section-eyebrow center">Tại Sao Chọn Chúng Tôi</p>
+            <h2 class="section-title center">Cam Kết <span class="gold">Chất Lượng</span></h2>
+            <div class="features__grid">
+                <div class="feature-card"><div class="feature-card__icon">🏆</div><h3>Dự Án Chọn Lọc</h3><p>Chỉ hợp tác với các chủ đầu tư uy tín hàng đầu</p></div>
+                <div class="feature-card"><div class="feature-card__icon">🔑</div><h3>Pháp Lý Minh Bạch</h3><p>100% dự án có sổ hồng, pháp lý rõ ràng</p></div>
+                <div class="feature-card"><div class="feature-card__icon">💎</div><h3>Giá Trị Đầu Tư</h3><p>Tư vấn chiến lược đầu tư sinh lời bền vững</p></div>
+                <div class="feature-card"><div class="feature-card__icon">🤝</div><h3>Hỗ Trợ 24/7</h3><p>Đội ngũ tư vấn chuyên nghiệp luôn sẵn sàng</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stat-item"><span class="stat-item__number" data-target="500">0</span><span class="stat-item__plus">+</span><p>Dự Án</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="2000">0</span><span class="stat-item__plus">+</span><p>Khách Hàng</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="10">0</span><span class="stat-item__plus">+</span><p>Năm Kinh Nghiệm</p></div>
+                <div class="stat-item"><span class="stat-item__number" data-target="98">0</span><span class="stat-item__plus">%</span><p>Hài Lòng</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <p class="section-eyebrow center">Khách Hàng Nói Gì</p>
+            <h2 class="section-title center">Đánh Giá <span class="gold">5 Sao</span></h2>
+            <div class="testimonials__grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p>"LuxEstate tư vấn rất tận tâm, giúp gia đình tôi tìm được căn villa trong mơ. Pháp lý rõ ràng, giá hợp lý."</p>
+                    <div class="testimonial-card__author"><div class="testimonial-card__avatar">TH</div><div><strong>Trần Hải</strong><br /><small>Doanh nhân</small></div></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p>"Đầu tư BĐS qua LuxEstate, tôi an tâm hoàn toàn. ROI đạt 18% sau 2 năm, vượt xa kỳ vọng."</p>
+                    <div class="testimonial-card__author"><div class="testimonial-card__avatar">ML</div><div><strong>Minh Long</strong><br /><small>Nhà đầu tư</small></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2>Sẵn Sàng Sở Hữu <span class="gold">Tổ Ấm Mơ Ước?</span></h2>
+                <p>Đặt lịch tham quan dự án miễn phí ngay hôm nay</p>
+                <a href="#" class="btn btn--emerald btn--lg" onclick="openModal('register');return false">Đặt Lịch Tham Quan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div><h4>🏡 Lux<span class="gold">Estate</span></h4><p>Bất động sản cao cấp hàng đầu Việt Nam</p></div>
+                <div class="footer__links"><h4>Dự Án</h4><a href="#">Biệt thự</a><a href="#">Penthouse</a><a href="#">Căn hộ</a></div>
+                <div class="footer__links"><h4>Liên Hệ</h4><a href="#">info@luxestate.vn</a><a href="#">1900-xxxx</a></div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2025 LuxEstate. Demo by <strong>WebPro</strong></p>
+                <a href="/" class="footer__back">← Quay lại Gallery</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
